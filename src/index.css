@@ -1,0 +1,71 @@
+:root {
+  --color-red-shade: #f9350d;
+  --color-red-tint: #fc947f;
+  --color-red: #fa5838;
+
+  --color-green-shade: ##03c9a0;
+  --color-green-tint: ##9ae9d9;
+  --color-green: #00deb0;
+  --color-orange-shade: #edae00;
+  --color-orange-tint: #ffd86d;
+  --color-orange: #ffbd00;
+
+  --color-border: #cccccc;
+
+  --color-btn: #121212;
+  --color-text-black: #1d1d1f;
+  --color-text-gray: #7f7f7f;
+
+  --color-badge-: #d4d4d4;
+
+  --border-r: 1.2rem;
+
+  --font-s-xs: 1.4rem;
+  --font-s-sm: 1.6rem;
+  --font-s-md: 1.8rem;
+  --font-s-lg: 2rem;
+  --font-s-xl: 3.6rem;
+  --font-s-xxl: 5.6rem;
+
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem 2.5rem;
+  height: 5.8rem;
+  font-weight: 700;
+  font-size: var(--font-s-md);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--border-r);
+  text-transform: uppercase;
+  letter-spacing: -0.6px;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -1px;
+}
