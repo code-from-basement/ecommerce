@@ -1,6 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/image/logo_web03_100x.webp";
-import add from "../../../assets/icons/add-outline.svg";
+import searchIcon from "../../../assets/icons/search-outline.svg";
+import profileIcon from "../../../assets/icons/person-outline.svg";
+import favoriteIcon from "../../../assets/icons/heart-outline.svg";
+import basketIcon from "../../../assets/icons/basket-outline.svg";
 import Styles from "./Navbar.module.css";
 
 function Navbar() {
@@ -36,8 +39,18 @@ function Navbar() {
         </ul>
       </div>
       <div className={Styles.navbar__siteItem}>
-        site item
-        <img className={Styles.siteItemIcon} src={add} alt="" />
+        <button className={Styles.searchTrigger}>
+          <img src={searchIcon} alt="" />
+        </button>
+        <Link to="/">
+          <img src={profileIcon} alt="" />
+        </Link>
+        <Link to="/">
+          <img src={favoriteIcon} alt="" />
+        </Link>
+        <Link to="/">
+          <img src={basketIcon} alt="" />
+        </Link>
       </div>
     </nav>
   );

@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 var(--spacing-xl);
+  padding: 0 var(--container-padding-lg);
 }
 
 /* navbar sections */
@@ -23,6 +23,13 @@
 }
 
 .navbar__siteItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+}
+.navbar__siteItem img {
+  width: 24px;
 }
 
 /* navbar brand */
@@ -65,3 +72,8 @@
   font-weight: 800;
 }
 /* navbar siteItem */
+
+.searchTrigger {
+  background-color: transparent;
+  padding: 0;
+}
