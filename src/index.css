@@ -17,6 +17,7 @@
   --color-text-gray: #7f7f7f;
 
   --color-badge-: #d4d4d4;
+  --color-white: #ffffff;
 
   --border-r: 1.2rem;
   --border-circle: 999px;
@@ -35,7 +36,8 @@
   --spacing-xl: 6rem;
   --spacing-xxl: 12rem;
 
-  --container-padding-lg: 8vw;
+  --row-padding-lg: 8vw;
+  --container-padding: 8rem;
 }
 
 * {
@@ -58,21 +60,13 @@ button {
   align-items: center;
   justify-content: center;
   padding: 1.2rem 2.5rem;
-  height: 5.8rem;
-  font-weight: 700;
+  font-weight: 600;
   font-size: var(--font-s-md);
   border: none;
   outline: none;
   cursor: pointer;
   border-radius: var(--border-r);
   text-transform: uppercase;
-  letter-spacing: -0.6px;
-}
-
-h1,
-h2,
-h3 {
-  letter-spacing: -1px;
 }
 
 ul {
@@ -81,4 +75,17 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+input {
+  height: 5.2rem;
+  border-radius: var(--border-r);
+  padding: 1.5rem;
+  font-size: var(--font-s-md);
+  border: none;
+  outline: none;
+  border: 2px solid var(--color-border);
+}
+input:focus {
+  border: 2px solid var(--color-text-black);
 }

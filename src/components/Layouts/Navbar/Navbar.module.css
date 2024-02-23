@@ -1,10 +1,12 @@
 .navbar {
-  height: 6rem;
+  width: 100%;
+  height: 5.5rem;
   box-shadow: 0 1rem 3rem #00000010;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 var(--container-padding-lg);
+  padding: 0 var(--row-padding-lg);
+  position: fixed;
 }
 
 /* navbar sections */
@@ -12,7 +14,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   /* border: 1px solid; */
+}
+.navbar__brand img {
+  width: 90%;
 }
 
 .navbar__links {
@@ -26,7 +32,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
 }
 .navbar__siteItem img {
   width: 24px;
@@ -69,7 +75,7 @@
   justify-content: center;
   padding: var(--spacing-md);
   font-size: var(--font-s-sm);
-  font-weight: 800;
+  font-weight: 700;
 }
 /* navbar siteItem */
 
