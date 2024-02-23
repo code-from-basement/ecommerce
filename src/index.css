@@ -3,8 +3,8 @@
   --color-red-tint: #fc947f;
   --color-red: #fa5838;
 
-  --color-green-shade: ##03c9a0;
-  --color-green-tint: ##9ae9d9;
+  --color-green-shade: #03c9a0;
+  --color-green-tint: #9ae9d9;
   --color-green: #00deb0;
   --color-orange-shade: #edae00;
   --color-orange-tint: #ffd86d;
@@ -19,6 +19,7 @@
   --color-badge-: #d4d4d4;
 
   --border-r: 1.2rem;
+  --border-circle: 999px;
 
   --font-s-xs: 1.4rem;
   --font-s-sm: 1.6rem;
@@ -43,6 +44,7 @@
 html {
   font-family: "Roboto", sans-serif;
   font-size: 62.5%;
+  letter-spacing: -0.5px;
 }
 
 body {
@@ -68,4 +70,12 @@ h1,
 h2,
 h3 {
   letter-spacing: -1px;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }
