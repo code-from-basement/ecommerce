@@ -50,6 +50,7 @@ html {
   font-family: "Roboto", sans-serif;
   font-size: 62.5%;
   letter-spacing: -0.5px;
+  filter: saturate(90%);
 }
 
 body {
@@ -88,4 +89,19 @@ input {
 }
 input:focus {
   border: 2px solid var(--color-text-black);
+}
+
+body::-webkit-scrollbar {
+  width: 1rem;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+body::-webkit-scrollbar-track:hover {
+  background-color: #f1f1f1;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--color-green);
+  border-radius: 999px;
 }

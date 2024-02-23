@@ -1,15 +1,14 @@
-import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Layouts/Footer/Footer";
 import Navbar from "./components/Layouts/Navbar/Navbar";
+import Accessories from "./components/Pages/Accessories/Accessories";
 import Home from "./components/Pages/Home/Home";
 import Keyboards from "./components/Pages/Keyboards/Keyboards";
 import Keycaps from "./components/Pages/Keycaps/Keycaps";
-import Accessories from "./components/Pages/Accessories/Accessories";
 import Switches from "./components/Pages/Switches/Switches";
 
 function App() {
-  const navigate = useNavigate();
   return (
     <div>
       <Navbar />

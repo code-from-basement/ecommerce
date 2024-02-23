@@ -1,7 +1,8 @@
 import React from "react";
+import Styles from "./Keyboards.module.css";
 
 function Keyboards() {
-  return <div>Keyboards</div>;
+  return <div className={Styles.keyboards}>Keyboards</div>;
 }
 
 export default Keyboards;
