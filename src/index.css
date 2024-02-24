@@ -2,7 +2,6 @@
   --color-red-shade: #f9350d;
   --color-red-tint: #fc947f;
   --color-red: #fa5838;
-
   --color-green-shade: #03c9a0;
   --color-green-tint: #9ae9d9;
   --color-green: #00deb0;
@@ -18,6 +17,8 @@
 
   --color-badge-: #d4d4d4;
   --color-white: #ffffff;
+
+  --color-bg-gray: #f1f1f5;
 
   --border-r: 1.2rem;
   --border-circle: 999px;
