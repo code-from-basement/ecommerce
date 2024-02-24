@@ -9,11 +9,13 @@ import Keycaps from "./components/Pages/Keycaps/Keycaps";
 import Switches from "./components/Pages/Switches/Switches";
 import Account from "./components/Pages/Account/Account";
 import WishList from "./components/Pages/WishList/WishList";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   return (
     <div>
       <Navbar />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="keyboards" element={<Keyboards />} />

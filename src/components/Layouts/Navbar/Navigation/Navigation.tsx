@@ -1,12 +1,12 @@
-import React from "react";
-import Styles from "./Navigation.module.css";
 import { Link, NavLink } from "react-router-dom";
-import searchIcon from "../../../../assets/icons/search-outline.svg";
 import basketIcon from "../../../../assets/icons/basket-outline.svg";
 import favoriteIcon from "../../../../assets/icons/heart-outline.svg";
 import profileIcon from "../../../../assets/icons/person-outline.svg";
+import searchIcon from "../../../../assets/icons/search-outline.svg";
 import logo from "../../../../assets/image/logo_web03_100x.webp";
 import { useGlobalContext } from "../../../../context/globalContext";
+import Styles from "./Navigation.module.css";
+import { motion } from "framer-motion";
 
 function Navigation() {
   const { uiToggle, setUiToggle } = useGlobalContext();
