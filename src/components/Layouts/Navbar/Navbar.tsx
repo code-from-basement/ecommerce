@@ -9,7 +9,9 @@ import { useGlobalContext } from "../../../context/globalContext";
 
 function Navbar() {
   const { uiToggle } = useGlobalContext();
+  // destructuring the isSearchOpen from the uiToggle
   const { isSearchOpen } = uiToggle;
+
   return <nav className={Styles.navbar}>{isSearchOpen ? <SearchBar /> : <Navigation />}</nav>;
 }
 

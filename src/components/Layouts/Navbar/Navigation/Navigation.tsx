@@ -10,6 +10,8 @@ import { useGlobalContext } from "../../../../context/globalContext";
 
 function Navigation() {
   const { uiToggle, setUiToggle } = useGlobalContext();
+
+  // Open search bar logic
   const onClickSearchButtonHandler = () => {
     setUiToggle((prevData: any) => {
       return { ...prevData, isSearchOpen: true };

@@ -7,6 +7,7 @@ import { useGlobalContext } from "../../../../context/globalContext";
 function SearchBar() {
   const { setUiToggle } = useGlobalContext();
 
+  // Close search bar logic
   const onClickSearchBarCloseHandler = () => {
     setUiToggle((prevData: any) => {
       return { ...prevData, isSearchOpen: false };
