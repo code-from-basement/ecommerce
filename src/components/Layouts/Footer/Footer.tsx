@@ -1,4 +1,5 @@
 import Styles from "./Footer.module.css";
+import FooterMenu from "./FooterMenu/FooterMenu";
 
 function Footer() {
   return (
@@ -10,7 +11,9 @@ function Footer() {
           <button className={Styles.newsletter__btnSubmit}>subscribe</button>
         </div>
       </div>
-      <div className={Styles.footer__menu}>footer menu</div>
+      <div className={Styles.footer__menu}>
+        <FooterMenu />
+      </div>
       <div className={Styles.footer__base}>
         <p>© 2024 NuPhy® | Wireless Mechanical Keyboards for Mac and Windows</p>
       </div>

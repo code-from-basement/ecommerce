@@ -10,9 +10,9 @@ function Navbar() {
   const { isSearchOpen } = uiToggle;
 
   return (
-    <AnimatePresence>
-      <nav className={Styles.navbar}>{isSearchOpen ? <SearchBar /> : <Navigation />}</nav>;
-    </AnimatePresence>
+    <nav className={Styles.navbar}>
+      <AnimatePresence>{isSearchOpen ? <SearchBar /> : <Navigation />}</AnimatePresence>
+    </nav>
   );
 }
 

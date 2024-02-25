@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Link, NavLink } from "react-router-dom";
 import basketIcon from "../../../../assets/icons/basket-outline.svg";
 import favoriteIcon from "../../../../assets/icons/heart-outline.svg";
@@ -5,8 +6,8 @@ import profileIcon from "../../../../assets/icons/person-outline.svg";
 import searchIcon from "../../../../assets/icons/search-outline.svg";
 import logo from "../../../../assets/image/logo_web03_100x.webp";
 import { useGlobalContext } from "../../../../context/globalContext";
+import { NavigationAnimation } from "../../../UI/Animation/Animation";
 import Styles from "./Navigation.module.css";
-import { motion } from "framer-motion";
 
 function Navigation() {
   const { uiToggle, setUiToggle } = useGlobalContext();
@@ -18,7 +19,7 @@ function Navigation() {
     });
   };
   return (
-    <>
+    <motion.div {...NavigationAnimation} className={Styles.navigation}>
       <div className={Styles.navbar__brand}>
         <Link to="/">
           <img src={logo} alt="brand of the compony " />
@@ -62,7 +63,7 @@ function Navigation() {
           <img src={basketIcon} alt="" />
         </Link>
       </div>
-    </>
+    </motion.div>
   );
 }
 

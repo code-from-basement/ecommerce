@@ -1,8 +1,9 @@
+import { motion } from "framer-motion";
 import searchIcon from "../../../../assets/icons/search-outline.svg";
 import { useGlobalContext } from "../../../../context/globalContext";
+import { SearchBarAnimation } from "../../../UI/Animation/Animation";
 import closeIcon from "./../../../../assets/icons/close-outline.svg";
 import Styles from "./SearchBar.module.css";
-import { motion } from "framer-motion";
 function SearchBar() {
   const { setUiToggle } = useGlobalContext();
 
@@ -13,7 +14,7 @@ function SearchBar() {
     });
   };
   return (
-    <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className={Styles.searchContainer}>
+    <motion.div className={Styles.searchContainer} {...SearchBarAnimation}>
       <input className={Styles.searchInput} type="text" placeholder="Search" />
       <button className={Styles.BtnSearch}>
         <img src={searchIcon} alt="" />

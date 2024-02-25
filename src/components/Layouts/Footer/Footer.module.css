@@ -36,7 +36,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-lg) var(--row-padding-lg);
+  padding: var(--spacing-xl) var(--row-padding-lg);
   border-top: 1px solid var(--color-border);
 }
 /* footer base */
