@@ -1,6 +1,6 @@
 import { DividerH } from "../Divider/Divider";
-import Styles from "./ProductPageFilter.module.css";
 import arrowIcon from "./../../../assets/icons/chevron-down-outline.svg";
+import Styles from "./ProductPageFilter.module.css";
 
 function Filters() {
   const onClickCollapseTrigger = (e) => {
@@ -44,14 +44,14 @@ function Filters() {
           <div className={Styles.collapseBox}>
             <ul>
               <li>
-                <label className={Styles.itemLabel} htmlFor="#1">
-                  <input className={Styles.itemInput} type="checkbox" id="#1" />
+                <label className={Styles.itemLabel} htmlFor="#3">
+                  <input className={Styles.itemInput} type="checkbox" id="#3" />
                   <span className={Styles.itemTitle}>Gem series {`(6)`}</span>
                 </label>
               </li>
               <li>
-                <label className={Styles.itemLabel} htmlFor="#2">
-                  <input className={Styles.itemInput} type="checkbox" id="#2" />
+                <label className={Styles.itemLabel} htmlFor="#4">
+                  <input className={Styles.itemInput} type="checkbox" id="#4" />
                   <span className={Styles.itemTitle}>Air series {`(2)`}</span>
                 </label>
               </li>

@@ -8,17 +8,17 @@
   justify-content: flex-start;
   flex-direction: column;
   gap: var(--spacing-md);
-  border: 1px solid blue;
+  position: relative;
 }
 .form {
   width: 100%;
-  height: 100%;
+  height: min-content;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
-
-  padding: var(--spacing-md);
+  position: sticky;
+  top: 10rem;
 }
 
 .filters__title {
@@ -40,20 +40,24 @@
   background-color: transparent;
   padding: 0;
   text-transform: capitalize;
-
+  margin-bottom: var(--spacing-sm);
   font-size: var(--font-s-sm);
 }
 .filterItem button img {
   width: 2rem;
   height: auto;
-  transition: all 0.1s ease;
+  transition: all 0.2s ease;
 }
 
 .filterItem button.filterItemActive img {
   transform: rotate(180deg);
 }
+.filterItem button.filterItemActive {
+  margin-bottom: 0;
+}
 .collapseBox {
   width: 100%;
+  height: 100%;
   overflow: hidden;
   height: min-content;
   opacity: 1;
@@ -63,10 +67,6 @@
 .collapseBox.collapseBoxActive {
   opacity: 0;
   height: 0;
-}
-
-.collapseBox.collapseBoxActive > .filterItem button {
-  background-color: red;
 }
 
 .collapseBox ul {
@@ -83,7 +83,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: var(--spacing-xs);
+  gap: var(--spacing-sm);
   color: var(--color-text-black);
   cursor: pointer;
 }
