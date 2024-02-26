@@ -1,0 +1,7 @@
+.productPageListItem {
+  border: 2px dotted;
+  grid-column: 2/-1;
+  grid-row: 2/-1;
+  padding: var(--spacing-md);
+  height: 100vh;
+}

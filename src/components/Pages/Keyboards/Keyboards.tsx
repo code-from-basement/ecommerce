@@ -1,13 +1,17 @@
-import React from "react";
+import ProductPageGrid from "../../UI/ProductPageGrid/ProductPageGrid";
+import ProductPageHeader from "../../UI/ProductPageHeader/ProductPageHeader";
+import ProductPageListItem from "../../UI/ProductPageListItem/ProductPageListItem";
+import Filters from "../../UI/ProductPageFilter/ProductPageFilter";
 import Styles from "./Keyboards.module.css";
-import Row from "../../UI/Row/Row";
 
 function Keyboards() {
   return (
     <div className={Styles.keyboards}>
-      <Row>
-        <h1>Keyboards</h1>
-      </Row>
+      <ProductPageGrid>
+        <Filters />
+        <ProductPageHeader />
+        <ProductPageListItem />
+      </ProductPageGrid>
     </div>
   );
 }

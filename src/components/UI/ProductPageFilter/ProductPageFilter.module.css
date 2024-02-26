@@ -1,0 +1,100 @@
+.filters {
+  width: 100%;
+  grid-column: 1/2;
+  grid-row: 1/-1;
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  border: 1px solid blue;
+}
+.form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  padding: var(--spacing-md);
+}
+
+.filters__title {
+  width: 100%;
+  font-size: var(--font-s-xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+}
+
+.filterItem {
+  width: 100%;
+  margin-top: var(--spacing-md);
+}
+.filterItem button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between !important;
+  background-color: transparent;
+  padding: 0;
+  text-transform: capitalize;
+
+  font-size: var(--font-s-sm);
+}
+.filterItem button img {
+  width: 2rem;
+  height: auto;
+  transition: all 0.1s ease;
+}
+
+.filterItem button.filterItemActive img {
+  transform: rotate(180deg);
+}
+.collapseBox {
+  width: 100%;
+  overflow: hidden;
+  height: min-content;
+  opacity: 1;
+  transition: all 0.2s ease;
+}
+
+.collapseBox.collapseBoxActive {
+  opacity: 0;
+  height: 0;
+}
+
+.collapseBox.collapseBoxActive > .filterItem button {
+  background-color: red;
+}
+
+.collapseBox ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  /* gap: var(--spacing-xs);   */
+}
+
+.itemLabel {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--spacing-xs);
+  color: var(--color-text-black);
+  cursor: pointer;
+}
+.itemInput {
+  height: 3.2rem;
+  padding: var(--spacing-sm);
+}
+
+.itemTitle {
+  width: 100%;
+  /* font-weight: 700; */
+  font-size: var(--font-s-sm);
+  text-transform: capitalize;
+}

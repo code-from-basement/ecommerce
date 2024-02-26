@@ -1,0 +1,9 @@
+.productPageHeader {
+  border: 1px solid;
+  grid-column: 2/-1;
+  grid-row: 1/2;
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
