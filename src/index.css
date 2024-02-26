@@ -21,6 +21,7 @@
   --color-bg-gray: #f1f1f5;
 
   --border-r: 1.2rem;
+  --border-r-select: 0.6rem;
   --border-circle: 999px;
 
   --font-s-xs: 1.4rem;
@@ -108,4 +109,18 @@ body::-webkit-scrollbar-track:hover {
 body::-webkit-scrollbar-thumb {
   background-color: var(--color-green);
   border-radius: 999px;
+}
+
+select {
+  height: 4rem;
+  border-radius: var(--border-r-select);
+  font-size: var(--font-s-md);
+  padding: 0 var(--spacing-sm);
+  appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: transparent;
+  z-index: 200;
 }

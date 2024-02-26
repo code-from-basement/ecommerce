@@ -6,3 +6,16 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.sortBy {
+  position: relative;
+}
+.sortBy img {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+  width: 2rem;
+  height: auto;
+  z-index: 100;
+}
