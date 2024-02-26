@@ -9,7 +9,7 @@ function ProductPageHeader() {
       <div className={Styles.sortBy}>
         <img src={arrowIcon} alt="" />
         <select name="sort" id="sort">
-          <option value="#">Features</option>
+          <option value="featured">Featured</option>
           <option value="newest">Newest</option>
           <option value="price">Price:Lower to Higher</option>
           <option value="price">Price:Higher to Lower</option>
