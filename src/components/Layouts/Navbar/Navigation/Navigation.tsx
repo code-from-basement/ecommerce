@@ -18,6 +18,13 @@ function Navigation() {
       return { ...prevData, isSearchOpen: true };
     });
   };
+
+  const onCLickBasketHandler = () => {
+    setUiToggle((prevData) => {
+      return { ...prevData, isBasketOpen: !prevData.isBasketOpen };
+    });
+  };
+
   return (
     <motion.div {...NavigationAnimation} className={Styles.navigation}>
       <div className={Styles.navbar__brand}>
@@ -59,9 +66,9 @@ function Navigation() {
         <Link to="wishlist">
           <img src={favoriteIcon} alt="" />
         </Link>
-        <Link to="/">
+        <button className={Styles.basketTrigger} onClick={onCLickBasketHandler}>
           <img src={basketIcon} alt="" />
-        </Link>
+        </button>
       </div>
     </motion.div>
   );

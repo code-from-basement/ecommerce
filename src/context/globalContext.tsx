@@ -5,6 +5,8 @@ const GlobalContext = createContext();
 const GlobalContextProvider = ({ children }) => {
   const [uiToggle, setUiToggle] = useState({
     isSearchOpen: false,
+    isBasketEmpty: true,
+    isBasketOpen: false,
   });
   return <GlobalContext.Provider value={{ uiToggle, setUiToggle }}>{children}</GlobalContext.Provider>;
 };

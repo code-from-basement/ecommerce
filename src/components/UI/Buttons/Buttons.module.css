@@ -1,0 +1,9 @@
+/* Close Button */
+.closeButton {
+  padding: var(--spacing-sm);
+  background-color: transparent;
+}
+.closeButton img {
+  width: 32px;
+  height: auto;
+}

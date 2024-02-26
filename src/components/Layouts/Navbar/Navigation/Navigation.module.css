@@ -27,13 +27,14 @@
 
 .navbar__siteItem {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-end;
   gap: var(--spacing-md);
   flex: 1;
 }
 .navbar__siteItem img {
   width: 24px;
+  height: auto;
 }
 
 /* search container */
@@ -82,4 +83,9 @@
 .searchTrigger {
   background-color: transparent;
   padding: 0;
+}
+
+.basketTrigger {
+  background-color: transparent;
+  padding: 0 !important;
 }

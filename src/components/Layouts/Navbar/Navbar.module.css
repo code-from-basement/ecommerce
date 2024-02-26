@@ -8,4 +8,5 @@
   padding: 0 var(--row-padding-lg);
   position: fixed;
   background-color: var(--color-white);
+  z-index: 300;
 }
