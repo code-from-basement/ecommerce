@@ -1,11 +1,11 @@
-export const SearchBarAnimation = {
+export const searchBarAnimation = {
   key: "searchBar",
   initial: { opacity: 0, y: -20 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.5 },
 };
 
-export const NavigationAnimation = {
+export const navigationAnimation = {
   key: "navigation",
   initial: { opacity: 0, y: -20 },
   animate: { opacity: 1, y: 0 },
@@ -16,5 +16,5 @@ export const basketAnimation = {
   key: "searchBar",
   initial: { opacity: 0, y: -20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 2 },
+  transition: { duration: 0.5 },
 };

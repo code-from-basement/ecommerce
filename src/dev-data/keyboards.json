@@ -1,0 +1,288 @@
+[
+  {
+    "title": "NuPhy Gem80",
+    "price": 169.95,
+    "description": "QMK/VIA Wireless Custom Mechanical Keyboard",
+    "rate_average": 4,
+    "rate_number": 10,
+    "colors": [
+      {
+        "name": "Cosmic Mocha",
+        "hex": "#b1a99f"
+      },
+      {
+        "name": "Mystic Indigo",
+        "hex": "#204485"
+      },
+      {
+        "name": "Obsidian Black",
+        "hex": "#2b2c2e"
+      }
+    ],
+    "lowProfile": false,
+    "normalProfile": true,
+    "category": "keyboard",
+    "series": "gem",
+    "connectivity": "Tri-mode wireless",
+    "size": 75,
+    "features": "2.4GHz 1000Hz",
+    "new": true,
+    "delivery_time": 3,
+    "shopping_information": "All orders will be shipped by NuPhy within 48 hours of order confirmation, tracking numbers are provided no later than a day after shipment on business days. You can check Shipping Policy for more information.",
+    "warranty_policy": "NuPhy offers a 1-year limited warranty for all NuPhy products. If there is any quality issue, please send relevant images or videos to  for review.",
+    "service_email": "service@nuphy.com",
+    "available": true
+  },
+  {
+    "title": "NuPhy Air96 V2",
+    "price": 129.95,
+    "description": "QMK/VIA Wireless Mechanical Keyboard",
+    "rate_average": 4.5,
+    "rate_number": 2,
+    "colors": [
+      {
+        "name": "Ionic White",
+        "hex": "#e9e9e9"
+      },
+      {
+        "name": "Basalt Black",
+        "hex": "#1f1f1f"
+      },
+      {
+        "name": "Lunar Gray",
+        "hex": "#a4a4a4"
+      }
+    ],
+    "lowProfile": true,
+    "normalProfile": false,
+    "category": "keyboard",
+    "series": "air",
+    "connectivity": "Tri-mode wireless",
+    "size": 96,
+    "features": "2.4GHz 1000Hz",
+    "new": false,
+    "delivery_time": 3,
+    "shopping_information": "All orders will be shipped by NuPhy within 48 hours of order confirmation, tracking numbers are provided no later than a day after shipment on business days. You can check Shipping Policy for more information.",
+    "warranty_policy": "NuPhy offers a 1-year limited warranty for all NuPhy products. If there is any quality issue, please send relevant images or videos to  for review.",
+    "service_email": "service@nuphy.com",
+    "available": true
+  },
+  {
+    "title": "NuPhy Air75 V2",
+    "price": 119.95,
+    "description": "QMK/VIA Wireless Mechanical Keyboard",
+    "rate_average": 4.8,
+    "rate_number": 29,
+    "colors": [
+      {
+        "name": "Ionic White",
+        "hex": "#e9e9e9"
+      },
+      {
+        "name": "Basalt Black",
+        "hex": "#1f1f1f"
+      },
+      {
+        "name": "Lunar Gray",
+        "hex": "#a4a4a4"
+      }
+    ],
+    "lowProfile": true,
+    "normalProfile": false,
+    "category": "keyboard",
+    "series": "air",
+    "connectivity": "Tri-mode wireless",
+    "size": 75,
+    "features": "2.4GHz 1000Hz",
+    "new": false,
+    "delivery_time": 3,
+    "shopping_information": "All orders will be shipped by NuPhy within 48 hours of order confirmation, tracking numbers are provided no later than a day after shipment on business days. You can check Shipping Policy for more information.",
+    "warranty_policy": "NuPhy offers a 1-year limited warranty for all NuPhy products. If there is any quality issue, please send relevant images or videos to  for review.",
+    "service_email": "service@nuphy.com",
+    "available": true
+  },
+  {
+    "title": "NuPhy Air60 V2",
+    "price": 109.95,
+    "description": "QMK/VIA Wireless Mechanical Keyboard",
+    "rate_average": 4.9,
+    "rate_number": 32,
+    "colors": [
+      {
+        "name": "Ionic White",
+        "hex": "#e9e9e9"
+      },
+      {
+        "name": "Basalt Black",
+        "hex": "#1f1f1f"
+      },
+      {
+        "name": "Lunar Gray",
+        "hex": "#a4a4a4"
+      }
+    ],
+    "lowProfile": true,
+    "normalProfile": false,
+    "category": "keyboard",
+    "series": "air",
+    "connectivity": "Tri-mode wireless",
+    "size": 60,
+    "features": "2.4GHz 1000Hz",
+    "new": false,
+    "delivery_time": 2,
+    "shopping_information": "All orders will be shipped by NuPhy within 48 hours of order confirmation, tracking numbers are provided no later than a day after shipment on business days. You can check Shipping Policy for more information.",
+    "warranty_policy": "NuPhy offers a 1-year limited warranty for all NuPhy products. If there is any quality issue, please send relevant images or videos to  for review.",
+    "service_email": "service@nuphy.com",
+    "available": true
+  },
+  {
+    "title": "NuPhy Halo65",
+    "price": 129.95,
+    "description": "QWireless Mechanical Keyboard",
+    "rate_average": 4.2,
+    "rate_number": 212,
+    "colors": [
+      {
+        "name": "Ionic White",
+        "hex": "#e9e9e9"
+      },
+      {
+        "name": "Basalt Black",
+        "hex": "#1f1f1f"
+      }
+    ],
+    "lowProfile": false,
+    "normalProfile": true,
+    "category": "keyboard",
+    "series": "halo",
+    "connectivity": "Tri-mode wireless",
+    "size": 60,
+    "features": "hot-swappable",
+    "new": false,
+    "delivery_time": 2,
+    "shopping_information": "All orders will be shipped by NuPhy within 48 hours of order confirmation, tracking numbers are provided no later than a day after shipment on business days. You can check Shipping Policy for more information.",
+    "warranty_policy": "NuPhy offers a 1-year limited warranty for all NuPhy products. If there is any quality issue, please send relevant images or videos to  for review.",
+    "service_email": "service@nuphy.com",
+    "available": true
+  },
+  {
+    "title": "NuPhy Halo75",
+    "price": 139.95,
+    "description": "QWireless Mechanical Keyboard",
+    "rate_average": 4.8,
+    "rate_number": 152,
+    "colors": [
+      {
+        "name": "Ionic White",
+        "hex": "#e9e9e9"
+      },
+      {
+        "name": "Basalt Black",
+        "hex": "#1f1f1f"
+      }
+    ],
+    "lowProfile": false,
+    "normalProfile": true,
+    "category": "keyboard",
+    "series": "halo",
+    "connectivity": "Tri-mode wireless",
+    "size": 75,
+    "features": "hot-swappable",
+    "new": false,
+    "delivery_time": 2,
+    "shopping_information": "All orders will be shipped by NuPhy within 48 hours of order confirmation, tracking numbers are provided no later than a day after shipment on business days. You can check Shipping Policy for more information.",
+    "warranty_policy": "NuPhy offers a 1-year limited warranty for all NuPhy products. If there is any quality issue, please send relevant images or videos to  for review.",
+    "service_email": "service@nuphy.com",
+    "available": true
+  },
+  {
+    "title": "NuPhy Halo96",
+    "price": 149.95,
+    "description": "QWireless Mechanical Keyboard",
+    "rate_average": 4.9,
+    "rate_number": 512,
+    "colors": [
+      {
+        "name": "Ionic White",
+        "hex": "#e9e9e9"
+      },
+      {
+        "name": "Basalt Black",
+        "hex": "#1f1f1f"
+      }
+    ],
+    "lowProfile": false,
+    "normalProfile": true,
+    "category": "keyboard",
+    "series": "halo",
+    "connectivity": "Tri-mode wireless",
+    "size": 96,
+    "features": "hot-swappable",
+    "new": false,
+    "delivery_time": 7,
+    "shopping_information": "All orders will be shipped by NuPhy within 48 hours of order confirmation, tracking numbers are provided no later than a day after shipment on business days. You can check Shipping Policy for more information.",
+    "warranty_policy": "NuPhy offers a 1-year limited warranty for all NuPhy products. If there is any quality issue, please send relevant images or videos to  for review.",
+    "service_email": "service@nuphy.com",
+    "available": true
+  },
+  {
+    "title": "NuPhy Field75",
+    "price": 169.95,
+    "description": "Wireless Mechanical Gaming Keyboard",
+    "rate_average": 4.2,
+    "rate_number": 112,
+    "colors": [
+      {
+        "name": "Electro",
+        "hex": "#cbf25c"
+      },
+      {
+        "name": "Noether",
+        "hex": "#f26187"
+      },
+      {
+        "name": "Gravity",
+        "hex": "#7e69de"
+      }
+    ],
+    "lowProfile": false,
+    "normalProfile": true,
+    "category": "keyboard",
+    "series": "field",
+    "connectivity": "Tri-mode wireless",
+    "size": 75,
+    "features": "hot-swappable",
+    "new": false,
+    "delivery_time": 3,
+    "shopping_information": "All orders will be shipped by NuPhy within 48 hours of order confirmation, tracking numbers are provided no later than a day after shipment on business days. You can check Shipping Policy for more information.",
+    "warranty_policy": "NuPhy offers a 1-year limited warranty for all NuPhy products. If there is any quality issue, please send relevant images or videos to  for review.",
+    "service_email": "service@nuphy.com",
+    "available": true
+  },
+  {
+    "title": "NuType F1",
+    "price": 119.95,
+    "description": "Wireless Mechanical Keyboard",
+    "rate_average": 4.3,
+    "rate_number": 202,
+    "colors": [
+      {
+        "name": "dark",
+        "hex": "#1f1f1f"
+      }
+    ],
+    "lowProfile": true,
+    "normalProfile": false,
+    "category": "keyboard",
+    "series": "f1",
+    "connectivity": "wired",
+    "size": 65,
+    "features": "hot-swappable",
+    "new": false,
+    "delivery_time": 5,
+    "shopping_information": "All orders will be shipped by NuPhy within 48 hours of order confirmation, tracking numbers are provided no later than a day after shipment on business days. You can check Shipping Policy for more information.",
+    "warranty_policy": "NuPhy offers a 1-year limited warranty for all NuPhy products. If there is any quality issue, please send relevant images or videos to  for review.",
+    "service_email": "service@nuphy.com",
+    "available": true
+  }
+]

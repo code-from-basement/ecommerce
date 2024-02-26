@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import searchIcon from "../../../../assets/icons/search-outline.svg";
 import { useGlobalContext } from "../../../../context/globalContext";
-import { SearchBarAnimation } from "../../../UI/Animation/Animation";
+import { searchBarAnimation } from "../../../UI/Animation/Animation";
 import closeIcon from "./../../../../assets/icons/close-outline.svg";
 import Styles from "./SearchBar.module.css";
 function SearchBar() {
@@ -14,7 +14,7 @@ function SearchBar() {
     });
   };
   return (
-    <motion.div className={Styles.searchContainer} {...SearchBarAnimation}>
+    <motion.div className={Styles.searchContainer} {...searchBarAnimation}>
       <input className={Styles.searchInput} type="text" placeholder="Search" />
       <button className={Styles.BtnSearch}>
         <img src={searchIcon} alt="" />
