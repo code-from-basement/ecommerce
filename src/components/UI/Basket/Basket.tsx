@@ -1,5 +1,5 @@
 import { useGlobalContext } from "../../../context/globalContext";
-import { SearchBarAnimation } from "../Animation/Animation";
+import { basketAnimation } from "../Animation/Animation";
 import { CloseButton } from "../Buttons/Buttons";
 import Styles from "./Basket.module.css";
 import { motion } from "framer-motion";
@@ -20,7 +20,7 @@ function Basket() {
       return children;
     } else {
       return (
-        <motion.div {...SearchBarAnimation} className={Styles.emptyBasket}>
+        <motion.div {...basketAnimation} className={Styles.emptyBasket}>
           <h1>Basket is empty</h1>
           <CloseButton onClick={onCLickCLoseBasketHandler}></CloseButton>
         </motion.div>
@@ -30,7 +30,7 @@ function Basket() {
 
   return (
     <EmptyBasket>
-      <motion.div {...SearchBarAnimation} className={Styles.container}>
+      <motion.div {...basketAnimation} className={Styles.container}>
         <h2>item </h2>
         <h2>item </h2>
         <h2>item </h2>
