@@ -24,7 +24,10 @@
   position: absolute;
   top: 50%;
   right: 0;
-  transform: translate(-360%, -50%);
+  transform: translate(-140%, -50%);
+  border-left: 1px solid var(--color-border);
+  border-radius: 0;
+  padding: 0 var(--spacing-sm);
 }
 .BtnSearch img {
   width: 20px;

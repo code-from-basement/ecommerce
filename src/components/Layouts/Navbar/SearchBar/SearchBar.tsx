@@ -16,7 +16,7 @@ function SearchBar() {
   return (
     <motion.div className={Styles.searchContainer} {...searchBarAnimation}>
       <input className={Styles.searchInput} type="text" placeholder="Search" />
-      <button className={Styles.BtnSearch}>
+      <button className={Styles.BtnSearch} onClick={() => console.log("click")}>
         <img src={searchIcon} alt="" />
       </button>
       <button className={Styles.BtnCLose} onClick={onClickSearchBarCloseHandler}>
