@@ -3,4 +3,5 @@
   grid-template-columns: minmax(25rem, 30rem) 1fr;
   grid-template-rows: 6rem 1fr;
   position: relative;
+  column-gap: var(--spacing-lg);
 }

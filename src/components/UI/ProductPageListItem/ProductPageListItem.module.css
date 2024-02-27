@@ -1,6 +1,6 @@
 .productPageListItem {
   grid-column: 2/-1;
   grid-row: 2/-1;
-  padding: var(--spacing-md);
+  padding: var(--spacing-md) 0;
   height: 100vh;
 }
