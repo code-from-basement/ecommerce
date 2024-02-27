@@ -19,3 +19,6 @@
   height: auto;
   z-index: 100;
 }
+.sortBy select {
+  width: 24rem;
+}
