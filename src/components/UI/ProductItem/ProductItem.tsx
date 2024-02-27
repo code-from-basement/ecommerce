@@ -18,7 +18,11 @@ function ProductItem() {
             <img src={addIcon} alt="" />
           </button>
         </div>
-        <div className={Styles.productItem__colors}>colors</div>
+        <div className={Styles.productItem__colors}>
+          <span className={Styles.colors__block} style={{ backgroundColor: "#edae00" }}></span>
+          <span className={Styles.colors__block} style={{ backgroundColor: "#00deb0" }}></span>
+          <span className={Styles.colors__block} style={{ backgroundColor: "#fa5838" }}></span>
+        </div>
         <div className={Styles.productItem__header}>
           <img src={productImageTest} alt="" />
         </div>
