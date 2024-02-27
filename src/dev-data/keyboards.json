@@ -19,8 +19,7 @@
         "hex": "#2b2c2e"
       }
     ],
-    "lowProfile": false,
-    "normalProfile": true,
+    "profile_type": "low-profile",
     "category": "keyboard",
     "series": "gem",
     "connectivity": "Tri-mode wireless",
@@ -54,8 +53,7 @@
         "hex": "#a4a4a4"
       }
     ],
-    "lowProfile": true,
-    "normalProfile": false,
+    "profile_type": "low-profile",
     "category": "keyboard",
     "series": "air",
     "connectivity": "Tri-mode wireless",
@@ -89,8 +87,7 @@
         "hex": "#a4a4a4"
       }
     ],
-    "lowProfile": true,
-    "normalProfile": false,
+    "profile_type": "low-profile",
     "category": "keyboard",
     "series": "air",
     "connectivity": "Tri-mode wireless",
@@ -124,8 +121,7 @@
         "hex": "#a4a4a4"
       }
     ],
-    "lowProfile": true,
-    "normalProfile": false,
+    "profile_type": "normal-profile",
     "category": "keyboard",
     "series": "air",
     "connectivity": "Tri-mode wireless",
@@ -155,8 +151,7 @@
         "hex": "#1f1f1f"
       }
     ],
-    "lowProfile": false,
-    "normalProfile": true,
+    "profile_type": "low-profile",
     "category": "keyboard",
     "series": "halo",
     "connectivity": "Tri-mode wireless",
@@ -186,8 +181,7 @@
         "hex": "#1f1f1f"
       }
     ],
-    "lowProfile": false,
-    "normalProfile": true,
+    "profile_type": "low-profile",
     "category": "keyboard",
     "series": "halo",
     "connectivity": "Tri-mode wireless",
@@ -217,8 +211,7 @@
         "hex": "#1f1f1f"
       }
     ],
-    "lowProfile": false,
-    "normalProfile": true,
+    "profile_type": "low-profile",
     "category": "keyboard",
     "series": "halo",
     "connectivity": "Tri-mode wireless",
@@ -252,8 +245,7 @@
         "hex": "#7e69de"
       }
     ],
-    "lowProfile": false,
-    "normalProfile": true,
+    "profile_type": "normal-profile",
     "category": "keyboard",
     "series": "field",
     "connectivity": "Tri-mode wireless",
@@ -279,8 +271,7 @@
         "hex": "#1f1f1f"
       }
     ],
-    "lowProfile": true,
-    "normalProfile": false,
+    "profile_type": "low-profile",
     "category": "keyboard",
     "series": "f1",
     "connectivity": "wired",
