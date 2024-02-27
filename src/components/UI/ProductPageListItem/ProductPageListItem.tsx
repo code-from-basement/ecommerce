@@ -11,6 +11,10 @@ function ProductPageListItem() {
       <ProductItem />
       <ProductItem />
       <ProductItem />
+      <ProductItem />
+      <ProductItem />
+      <ProductItem />
+      <ProductItem />
     </section>
   );
 }
