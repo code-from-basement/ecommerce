@@ -5,6 +5,7 @@ import favIconOutline from "./../../../assets/icons/heart-outline.svg";
 import favIconFill from "./../../../assets/icons/heart.svg";
 import addIcon from "./../../../assets/icons/add-outline.svg";
 import productImageTest from "./../../../assets/image/keyboards/NuPhy Gem80-MysticIndigox.webp";
+import StarsBar from "../StarsBar/StarsBar";
 
 function ProductItem() {
   return (
@@ -29,7 +30,7 @@ function ProductItem() {
         <div className={Styles.productItem__footer}>
           <h2>Product Name</h2>
           <p>QMK/VIA Wireless Custom Mechanical Keyboard</p>
-          <p>--stars--</p>
+          <StarsBar />
           <span>$100.95</span>
         </div>
       </Link>
