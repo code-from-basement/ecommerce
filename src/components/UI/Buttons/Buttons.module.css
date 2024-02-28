@@ -7,3 +7,10 @@
   width: 32px;
   height: auto;
 }
+
+/* Primary Button */
+.primaryButton {
+  background-color: var(--color-btn);
+  color: var(--color-white);
+  height: 5.2rem;
+}

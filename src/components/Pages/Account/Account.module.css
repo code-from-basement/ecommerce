@@ -1,5 +1,8 @@
 .account {
   width: 100%;
   padding: var(--container-padding) 0;
-  height: 100vh;
+  height: min-content;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }

@@ -1,14 +1,15 @@
 import React from "react";
 import Styles from "./Account.module.css";
 import Row from "../../UI/Row/Row";
+import { Outlet } from "react-router-dom";
 
 function Account() {
   return (
-    <div className={Styles.account}>
-      <Row>
-        <h1>Account</h1>
-      </Row>
-    </div>
+    <Row>
+      <div className={Styles.account}>
+        <Outlet />
+      </div>
+    </Row>
   );
 }
 

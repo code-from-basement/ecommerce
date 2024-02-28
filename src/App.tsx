@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Layouts/Footer/Footer";
 import Navbar from "./components/Layouts/Navbar/Navbar";
@@ -10,8 +10,11 @@ import Keycaps from "./components/Pages/Keycaps/Keycaps";
 import Switches from "./components/Pages/Switches/Switches";
 import WishList from "./components/Pages/WishList/WishList";
 import ItemPage from "./components/Pages/ItemPage/ItemPage";
+import Login from "./components/Pages/Account/Login/Login";
+import UserProfile from "./components/Pages/Account/UserProfile/UserProfile";
 
 function App() {
+  const val = false;
   return (
     <div>
       <Navbar />
@@ -21,7 +24,10 @@ function App() {
         <Route path="keycaps" element={<Keycaps />} />
         <Route path="accessories" element={<Accessories />} />
         <Route path="switches" element={<Switches />} />
-        <Route path="account" element={<Account />} />
+        <Route path="account" element={<Account />}>
+          <Route index element={<Navigate to={`${val ? "login" : "userprofile"}`} />} />
+          <Route path={`${val ? "login" : "userprofile"}`} element={val ? <Login /> : <UserProfile />} />
+        </Route>
         <Route path="wishlist" element={<WishList />} />
         <Route path="/:title" element={<ItemPage />} />
       </Routes>

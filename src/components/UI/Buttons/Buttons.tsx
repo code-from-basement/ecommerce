@@ -2,8 +2,8 @@ import React from "react";
 import Styles from "./Buttons.module.css";
 import closeIcon from "./../../../assets/icons/close-outline.svg";
 
-export function ButtonPrimary() {
-  return <button>button primary</button>;
+export function ButtonPrimary({ children }: { children: string }) {
+  return <button className={Styles.primaryButton}>{children}</button>;
 }
 
 export function ButtonSecondary() {
