@@ -9,6 +9,7 @@ import Keyboards from "./components/Pages/Keyboards/Keyboards";
 import Keycaps from "./components/Pages/Keycaps/Keycaps";
 import Switches from "./components/Pages/Switches/Switches";
 import WishList from "./components/Pages/WishList/WishList";
+import ItemPage from "./components/Pages/ItemPage/ItemPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="switches" element={<Switches />} />
         <Route path="account" element={<Account />} />
         <Route path="wishlist" element={<WishList />} />
+        <Route path="/:title" element={<ItemPage />} />
       </Routes>
       <Footer />
     </div>
