@@ -1,6 +1,6 @@
 .container {
   width: clamp(32rem, 100%, 42rem);
-  height: 5.5rem;
+  height: min-content;
   padding: var(--spacing-md);
   box-shadow: 0 1rem 3rem #00000010;
   background-color: var(--color-white);

@@ -14,7 +14,7 @@ import Login from "./components/Pages/Account/Login/Login";
 import UserProfile from "./components/Pages/Account/UserProfile/UserProfile";
 
 function App() {
-  const val = false;
+  const val = true;
   return (
     <div>
       <Navbar />

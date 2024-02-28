@@ -53,7 +53,7 @@
 html {
   font-family: "Roboto", sans-serif;
   font-size: 62.5%;
-  letter-spacing: -0.5px;
+  /* letter-spacing: -0.5px; */
   filter: saturate(90%);
 }
 
