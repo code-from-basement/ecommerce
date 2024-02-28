@@ -106,3 +106,28 @@
   border-radius: 0.4rem;
   background-color: red;
 }
+
+/* product item tags */
+.productItem a .productItem__tag {
+  position: absolute;
+  top: 3rem;
+  left: var(--spacing-md);
+}
+.productItem__tag span {
+  padding: var(--spacing-sm);
+  border-radius: var(--border-r);
+  font-size: var(--font-s-xs);
+  font-weight: 700;
+}
+
+.tagNew {
+  text-transform: uppercase;
+  background-color: var(--color-green-shade);
+  color: var(--color-white);
+}
+
+.tagDiscontinue {
+  text-transform: uppercase;
+  background-color: var(--color-btn);
+  color: var(--color-white);
+}

@@ -19,6 +19,11 @@ function ProductItem() {
             <img src={addIcon} alt="" />
           </button>
         </div>
+
+        <div className={Styles.productItem__tag}>
+          {/* <span className={Styles.tagNew}>new</span> */}
+          <span className={Styles.tagDiscontinue}>discontinued</span>
+        </div>
         <div className={Styles.productItem__colors}>
           <span className={Styles.colors__block} style={{ backgroundColor: "#edae00" }}></span>
           <span className={Styles.colors__block} style={{ backgroundColor: "#00deb0" }}></span>
