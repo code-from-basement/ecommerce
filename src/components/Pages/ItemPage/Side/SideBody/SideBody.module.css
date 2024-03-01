@@ -1,0 +1,10 @@
+.sideBody {
+}
+
+.sideBody button {
+  width: 100%;
+  margin-bottom: var(--spacing-sm);
+}
+
+.sideBody__form {
+}

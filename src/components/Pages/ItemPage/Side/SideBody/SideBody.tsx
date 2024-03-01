@@ -3,8 +3,8 @@ import Styles from "./SideBody.module.css";
 import { ButtonOutline, ButtonPrimary } from "../../../../UI/Buttons/Buttons";
 function SideBody() {
   return (
-    <div>
-      <form>
+    <div className={Styles.sideBody}>
+      <form className={Styles.sideBody__form}>
         <label htmlFor="color1">
           label 1
           <input type="radio" id="color1" />
