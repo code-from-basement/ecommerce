@@ -17,7 +17,7 @@
 .collapseBar__btn img {
   width: 2rem;
   height: 2rem;
-  transform: translateX(-2rem);
+  /* transform: translateX(-2rem); */
   transition: all 0.2s ease;
 }
 
@@ -32,10 +32,10 @@
 
 .collapseBar__content__active {
   opacity: 1;
-  height: 20rem;
+  height: 12rem;
   transition: all 0.3s ease;
 }
 
 .collapseBar__btn__active img {
-  transform: translateX(-2rem) rotate(180deg);
+  transform: rotate(180deg);
 }

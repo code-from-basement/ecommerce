@@ -4,7 +4,7 @@ import StarsBar from "../../../../UI/StarsBar/StarsBar";
 
 function SideHeader() {
   return (
-    <div>
+    <div className={Styles.sideHeader}>
       <p>NuPhy®</p>
       <h1>NuPhy Gem80</h1>
       <p>QMK/VIA Wireless Custom Mechanical Keyboard</p>
