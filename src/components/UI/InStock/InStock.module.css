@@ -1,0 +1,34 @@
+.inStock {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 999px;
+  margin: 0 var(--spacing-xs);
+  position: relative;
+  z-index: 200;
+}
+
+.inStock::after {
+  content: "";
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 999px;
+  background-color: var(--color-green);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: onlineAnimation 2s infinite;
+  z-index: 100;
+}
+
+@keyframes onlineAnimation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

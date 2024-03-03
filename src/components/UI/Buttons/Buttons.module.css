@@ -20,4 +20,9 @@
   background-color: transparent;
   border: 2px solid var(--color-btn);
   height: 5.6rem;
+  gap: var(--spacing-sm);
+}
+.outlineButton img {
+  width: 24px;
+  height: auto;
 }

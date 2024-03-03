@@ -9,7 +9,7 @@
   justify-content: flex-start;
   align-items: center;
   justify-content: space-between;
-  height: 5.4rem;
+  height: 3.6rem;
   padding: var(--spacing-md) 0;
   background-color: transparent;
   font-size: var(--font-s-md);
@@ -34,6 +34,7 @@
   opacity: 1;
   height: 12rem;
   transition: all 0.3s ease;
+  margin-top: var(--spacing-sm);
 }
 
 .collapseBar__btn__active img {

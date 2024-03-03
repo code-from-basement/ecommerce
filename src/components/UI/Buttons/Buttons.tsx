@@ -10,8 +10,13 @@ export function ButtonSecondary() {
   return <button>button secondary</button>;
 }
 
-export function ButtonOutline({ children }: { children: string }) {
-  return <button className={Styles.outlineButton}>{children}</button>;
+export function ButtonOutline({ children, icon }: { children: string; icon: string | undefined }) {
+  return (
+    <button className={Styles.outlineButton}>
+      <img src={icon} alt="" />
+      {children}
+    </button>
+  );
 }
 
 export function CloseButton({ onClick }: { onClick: () => void }) {
