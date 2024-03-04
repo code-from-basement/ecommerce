@@ -1,0 +1,149 @@
+[
+  {
+    "title": "Cherry Silent Red Clear-Top Switches",
+    "price": 49.5,
+    "rate_average": 4,
+    "rate_number": 10,
+    "colors": [],
+    "profile_type": "low-profile",
+    "category": "switches",
+    "series": "clicky",
+    "options": [
+      { "count": 90, "available": true, "price": 49.5 },
+      { "count": 36, "available": true, "price": 17.5 }
+    ],
+    "new": true,
+    "delivery_time": 7,
+    "shopping_information": "All orders will be shipped by NuPhy within 48 hours of order confirmation, tracking numbers are provided no later than a day after shipment on business days. You can check Shipping Policy for more information.",
+    "warranty_policy": "NuPhy offers a 1-year limited warranty for all NuPhy products. If there is any quality issue, please send relevant images or videos to  for review.",
+    "service_email": "service@nuphy.com",
+    "available": true,
+    "popularity": 8
+  },
+  {
+    "title": "NuPhy Raspberry Switches",
+    "price": 31.5,
+    "rate_average": 4.7,
+    "rate_number": 12,
+    "colors": [],
+    "profile_type": "low-profile",
+    "category": "switches",
+    "series": "linear",
+    "options": [
+      { "count": 90, "available": true, "price": 31.5 },
+      { "count": 36, "available": true, "price": 12.5 }
+    ],
+    "new": false,
+    "delivery_time": 2,
+    "shopping_information": "All orders will be shipped by NuPhy within 48 hours of order confirmation, tracking numbers are provided no later than a day after shipment on business days. You can check Shipping Policy for more information.",
+    "warranty_policy": "NuPhy offers a 1-year limited warranty for all NuPhy products. If there is any quality issue, please send relevant images or videos to  for review.",
+    "service_email": "service@nuphy.com",
+    "available": true,
+    "popularity": 9
+  },
+  {
+    "title": "NuPhy Lemon Switches",
+    "price": 31.5,
+    "rate_average": 4.8,
+    "rate_number": 129,
+    "colors": [],
+    "profile_type": "low-profile",
+    "category": "switches",
+    "series": "clicky",
+    "options": [
+      { "count": 90, "available": true, "price": 31.5 },
+      { "count": 36, "available": false, "price": 12.5 }
+    ],
+    "new": false,
+    "delivery_time": 3,
+    "shopping_information": "All orders will be shipped by NuPhy within 48 hours of order confirmation, tracking numbers are provided no later than a day after shipment on business days. You can check Shipping Policy for more information.",
+    "warranty_policy": "NuPhy offers a 1-year limited warranty for all NuPhy products. If there is any quality issue, please send relevant images or videos to  for review.",
+    "service_email": "service@nuphy.com",
+    "available": true,
+    "popularity": 8
+  },
+  {
+    "title": "Cherry Silent Red Clear-Top Switches",
+    "price": 49.5,
+    "rate_average": 4.2,
+    "rate_number": 27,
+    "colors": [],
+    "profile_type": "normal-profile",
+    "category": "switches",
+    "series": "tactile",
+    "options": [
+      { "count": 90, "available": true, "price": 49.5 },
+      { "count": 36, "available": false, "price": 19.5 }
+    ],
+    "new": false,
+    "delivery_time": 3,
+    "shopping_information": "All orders will be shipped by NuPhy within 48 hours of order confirmation, tracking numbers are provided no later than a day after shipment on business days. You can check Shipping Policy for more information.",
+    "warranty_policy": "NuPhy offers a 1-year limited warranty for all NuPhy products. If there is any quality issue, please send relevant images or videos to  for review.",
+    "service_email": "service@nuphy.com",
+    "available": true,
+    "popularity": 10
+  },
+  {
+    "title": "NuPhy Cowberry Low-profile Switches",
+    "price": 38.5,
+    "rate_average": 4.2,
+    "rate_number": 27,
+    "colors": [],
+    "profile_type": "normal-profile",
+    "category": "switches",
+    "series": "tactile",
+    "options": [
+      { "count": 100, "available": true, "price": 38.5 },
+      { "count": 36, "available": false, "price": 20.5 }
+    ],
+    "new": false,
+    "delivery_time": 4,
+    "shopping_information": "All orders will be shipped by NuPhy within 48 hours of order confirmation, tracking numbers are provided no later than a day after shipment on business days. You can check Shipping Policy for more information.",
+    "warranty_policy": "NuPhy offers a 1-year limited warranty for all NuPhy products. If there is any quality issue, please send relevant images or videos to  for review.",
+    "service_email": "service@nuphy.com",
+    "available": true,
+    "popularity": 10
+  },
+  {
+    "title": "NuPhy Moss Low-profile Switches",
+    "price": 38.5,
+    "rate_average": 4,
+    "rate_number": 302,
+    "colors": [],
+    "profile_type": "low-profile",
+    "category": "switches",
+    "series": "tactile",
+    "options": [
+      { "count": 100, "available": true, "price": 38.5 },
+      { "count": 36, "available": true, "price": 17.5 }
+    ],
+    "new": false,
+    "delivery_time": 1,
+    "shopping_information": "All orders will be shipped by NuPhy within 48 hours of order confirmation, tracking numbers are provided no later than a day after shipment on business days. You can check Shipping Policy for more information.",
+    "warranty_policy": "NuPhy offers a 1-year limited warranty for all NuPhy products. If there is any quality issue, please send relevant images or videos to  for review.",
+    "service_email": "service@nuphy.com",
+    "available": true,
+    "popularity": 7
+  },
+  {
+    "title": "NuPhy Aloe Low-profile Switches",
+    "price": 38.5,
+    "rate_average": 4.9,
+    "rate_number": 125,
+    "colors": [],
+    "profile_type": "normal-profile",
+    "category": "switches",
+    "series": "linear",
+    "options": [
+      { "count": 100, "available": true, "price": 38.5 },
+      { "count": 36, "available": false, "price": 16.5 }
+    ],
+    "new": true,
+    "delivery_time": 2,
+    "shopping_information": "All orders will be shipped by NuPhy within 48 hours of order confirmation, tracking numbers are provided no later than a day after shipment on business days. You can check Shipping Policy for more information.",
+    "warranty_policy": "NuPhy offers a 1-year limited warranty for all NuPhy products. If there is any quality issue, please send relevant images or videos to  for review.",
+    "service_email": "service@nuphy.com",
+    "available": true,
+    "popularity": 6
+  }
+]
