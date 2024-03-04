@@ -31,7 +31,7 @@
     "series": "linear",
     "options": [
       { "count": 90, "available": true, "price": 31.5 },
-      { "count": 36, "available": true, "price": 12.5 }
+      { "count": 36, "available": false, "price": 12.5 }
     ],
     "new": false,
     "delivery_time": 2,
