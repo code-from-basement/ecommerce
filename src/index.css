@@ -32,6 +32,12 @@
   --font-s-xxl: 3.6rem;
   --font-s-xxxl: 5.6rem;
 
+  --font-w-400: 400;
+  --font-w-500: 500;
+  --font-w-600: 600;
+  --font-w-700: 700;
+  --font-w-800: 800;
+
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 2rem;

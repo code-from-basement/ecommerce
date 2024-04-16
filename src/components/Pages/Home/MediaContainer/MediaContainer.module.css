@@ -1,0 +1,21 @@
+.mainContainer{
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg); */
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    /* background-color: red; */
+    gap: 5rem;
+}
+
+.iconContainer{
+    max-width: 20rem;
+    height: 50%;
+    flex-wrap: wrap;
+    
+}
+
