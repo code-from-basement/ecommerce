@@ -10,7 +10,8 @@
     "delivery_time": 2,
     "service_email": "service@nuphy.com",
     "available": true,
-    "popularity": 8
+    "popularity": 8,
+    "images": ["DeskmatCosmicMocha.webp", "DeskmatMysticIndigo.webp", "DeskmatObsidianBlack.webp"]
   },
   {
     "title": "NuPhy Everest Deskmat",
@@ -23,7 +24,8 @@
     "delivery_time": 2,
     "service_email": "service@nuphy.com",
     "available": true,
-    "popularity": 9
+    "popularity": 9,
+    "images": ["NuPhyNuPhyEverestDeskmat.webp"]
   },
   {
     "title": "NuPhy Emi Koussi Deskmat",
@@ -36,7 +38,8 @@
     "delivery_time": 4,
     "service_email": "service@nuphy.com",
     "available": true,
-    "popularity": 7
+    "popularity": 7,
+    "images": ["NuPhyNuPhyEmiKoussiDeskmat.webp"]
   },
   {
     "title": "Twotone Wrist Rest for Gem80",
@@ -49,7 +52,8 @@
     "delivery_time": 2,
     "service_email": "service@nuphy.com",
     "available": true,
-    "popularity": 9
+    "popularity": 9,
+    "images": ["AcrylicFrostedAcrylicFrosted.webp", "AcrylicNoirAcrylicNoir.webp", "BlackOakBlackOak.webp"]
   },
   {
     "title": "Twotone Wrist Rest for Field75",
@@ -62,7 +66,8 @@
     "delivery_time": 2,
     "service_email": "service@nuphy.com",
     "available": true,
-    "popularity": 9
+    "popularity": 9,
+    "images": ["ElectroElectro.webp", "EtherealEthereal.webp", "NoetherNoether.webp"]
   },
   {
     "title": "NuFolio V3 for Air60 V2",
@@ -75,7 +80,8 @@
     "delivery_time": 2,
     "service_email": "service@nuphy.com",
     "available": true,
-    "popularity": 7
+    "popularity": 7,
+    "images": ["NuFolioV3forAir60NostalgicTan.webp", "NuFolioV3forAir60TundraKhaki.webp"]
   },
   {
     "title": "NuFolio V3 for Air75 V2",
@@ -88,11 +94,12 @@
     "delivery_time": 3,
     "service_email": "service@nuphy.com",
     "available": true,
-    "popularity": 5
+    "popularity": 5,
+    "images": ["NuFolioV3forAir75NostalgicTan.webp", "NuFolioV3forAir75CloudGray.webp"]
   },
   {
-    "title": "NuFolio V3 for Air75 V2",
-    "price": 29.95,
+    "title": "NuFolio V3 for Air96 V2",
+    "price": 32.95,
     "rate_average": 2.45,
     "rate_number": 55,
     "colors": [{ "color": "Nostalgic Tan" }, { "color": "Lustrous Gray" }],
@@ -101,6 +108,7 @@
     "delivery_time": 2,
     "service_email": "service@nuphy.com",
     "available": true,
-    "popularity": 9
+    "popularity": 9,
+    "images": ["NuFolioV3forAir96NostalgicTan.webp", "NuFolioV3forAir96LustrousGray.webp"]
   }
 ]

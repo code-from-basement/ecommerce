@@ -1,9 +1,8 @@
-import React from "react";
-import Styles from "./Side.module.css";
-import SideHeader from "./SideHeader/SideHeader";
-import SideBody from "./SideBody/SideBody";
-import SIdeFooter from "./SideFooter/SIdeFooter";
 import { DividerH } from "../../../UI/Divider/Divider";
+import Styles from "./Side.module.css";
+import SideBody from "./SideBody/SideBody";
+import SIdeFooter from "./SideFooter/SideFooter";
+import SideHeader from "./SideHeader/SideHeader";
 
 function Side() {
   return (
