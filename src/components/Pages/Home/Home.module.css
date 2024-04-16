@@ -8,7 +8,7 @@
   justify-content: center;
   flex-direction: column;
 }
-.homeContainer{
+.homeContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,7 +19,7 @@
   gap: var(--container-padding);
 }
 
-.swiperContainer{
+.swiperContainer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,20 +27,19 @@
   /* max-height: 50%; */
   height: 80rem;
   background-color: blue;
-  
 }
 
-.title{ 
+.title {
   width: 100%;
   height: 8rem;
   /* background-color: red; */
 }
-.title h2{
+.title h2 {
   font-size: var(--font-s-xl);
-  font-weight:var(--font-w-600);
+  font-weight: var(--font-w-600);
 }
 
-.inStockContainer{
+.inStockContainer {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -49,28 +48,25 @@
   background-color: palegreen;
 }
 
-.styleContainer{
+.styleContainer {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   width: 100%;
   height: 45rem;
   background-color: palevioletred;
-
 }
 
-.accessoriesContainer{
-
+.accessoriesContainer {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   width: 100%;
   height: 45rem;
   background-color: gold;
-
 }
 
-.mediaContainer{
+.mediaContainer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,11 +75,10 @@
   min-height: 45rem;
   /* background-color: rgb(98, 0, 255) */
 }
-.iconsContainer{
+.iconsContainer {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 94%;
   height: 100%;
-  
 }
