@@ -1,12 +1,13 @@
 import Row from "../../UI/Row/Row";
 import Styles from "./Home.module.css";
 import MediaContainer from "./MediaContainer/MediaContainer";
+import SwiperContainer from "./SwiperContainer/SwiperContainer";
 
 function Home() {
   return (
     <section className={Styles.container}>
       <div className={Styles.homeContainer}>
-        <div className={Styles.swiperContainer}>hi</div>
+        <div className={Styles.swiperContainer}><SwiperContainer/></div>
         <div className={Styles.inStockContainer}>how</div>
         <div className={Styles.styleContainer}>are</div>
         <div className={Styles.accessoriesContainer}>you</div>

@@ -1,0 +1,26 @@
+.swiperNavBtn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: var(--spacing-md);
+  padding-right: 3rem;
+}
+.swiperNavBtn button {
+  border-radius: var(--border-circle);
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--color-white);
+  transform: translateY(-50%);
+  z-index: 2;
+  padding: 0;
+  box-shadow: 3px 6px 3px var(--color-border);
+}
+.swiperNavBtn button:hover {
+  scale: 1.1;
+}
+.swiperNavBtn button svg {
+  color: var(--color-btn);
+  font-size: var(--font-s-sm);
+}
