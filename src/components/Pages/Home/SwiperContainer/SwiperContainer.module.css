@@ -36,6 +36,7 @@
 }
 .swiperItem button {
   background-color: var(--color-green);
+  height: 5.6rem;
 }
 .swiperItem button:hover {
   background-color: var(--color-green-shade);

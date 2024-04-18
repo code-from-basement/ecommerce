@@ -1,12 +1,12 @@
 import React from "react";
 import Styles from "./SwiperContainer.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import {motion} from "framer-motion"
+import {delay, motion} from "framer-motion"
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
+import { Navigation, Pagination, Mousewheel, Keyboard, Autoplay } from "swiper/modules";
 import SwiperNavBtn from "./SwiperNavBtn";
 
 const slideItems = [
@@ -45,9 +45,13 @@ function SwiperContainer() {
         //  pagination={true}
         mousewheel={true}
         keyboard={true}
-        modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+        modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
         spaceBetween={0}
         loop={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
       >
         {slideItems.map((item, index) => (
           <SwiperSlide key={index}>
