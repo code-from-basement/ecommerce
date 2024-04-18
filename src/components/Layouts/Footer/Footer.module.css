@@ -1,5 +1,8 @@
 .footer {
   width: 100%;
+  z-index: 600;
+  background-color: var(--color-white);
+  /* position: sticky; */
 }
 /* footer news letter */
 .footer__newsletter {

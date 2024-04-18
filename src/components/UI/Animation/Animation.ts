@@ -25,3 +25,10 @@ export const fadeInAnimation = {
   animate: { opacity: 1 },
   transition: { duration: 1, delay: 0.3 },
 };
+
+export const fadeInLoadingAnimation = {
+  key: "fadeInLoading",
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  transition: { duration: 0.3 },
+};

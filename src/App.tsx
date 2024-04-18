@@ -13,13 +13,19 @@ import ItemPage from "./components/Pages/ItemPage/ItemPage";
 import Login from "./components/Pages/Account/Login/Login";
 import UserProfile from "./components/Pages/Account/UserProfile/UserProfile";
 import SignUp from "./components/Pages/Account/SignUp/SignUp";
+import LoadingFullView from "./components/UI/LoadingFullView/LoadingFullView";
+import { useGlobalContext } from "./context/globalContext";
 
 function App() {
+  const { uiToggle, setUiToggle } = useGlobalContext();
+  const { isLoadingFullViewShow } = uiToggle;
   const val = true;
 
   return (
     <div>
       <Navbar />
+      {isLoadingFullViewShow && <LoadingFullView />}
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="keyboards" element={<Keyboards />} />
