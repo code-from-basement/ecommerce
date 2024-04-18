@@ -17,7 +17,7 @@ import LoadingFullView from "./components/UI/LoadingFullView/LoadingFullView";
 import { useGlobalContext } from "./context/globalContext";
 
 function App() {
-  const { uiToggle, setUiToggle } = useGlobalContext();
+  const { uiToggle } = useGlobalContext();
   const { isLoadingFullViewShow } = uiToggle;
   const val = true;
 
