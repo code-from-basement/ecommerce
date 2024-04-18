@@ -89,19 +89,27 @@ a {
   color: inherit;
 }
 
+h1 {
+  font-weight: var(--font-w-800);
+  letter-spacing: -0.1rem;
+}
+
 input {
   height: 5.2rem;
   border-radius: var(--border-r);
   padding: 1.5rem;
-  font-size: var(--font-s-md);
+  font-size: var(--font-s-lg);
   border: none;
   outline: none;
   border: 2px solid var(--color-border);
+  transition: all 0.2s ease-in-out;
 }
 input:focus {
-  border: 2px solid var(--color-text-black);
+  border: 2px solid var(--color-green-shade);
 }
-
+input::placeholder {
+  opacity: 50%;
+}
 body::-webkit-scrollbar {
   width: 1rem;
 }
