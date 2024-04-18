@@ -1,6 +1,7 @@
 import React from "react";
 import Styles from "./SwiperContainer.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
+import {motion} from "framer-motion"
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -51,9 +52,9 @@ function SwiperContainer() {
         {slideItems.map((item, index) => (
           <SwiperSlide key={index}>
             <div className={Styles.swiperItem} style={{ backgroundImage: ` linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(${item.src})` }}>
-              <h2>{item.title}</h2>
-              <p>{item.detail}</p>
-              <button>Buy Now</button>
+              <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ease:"easeOut" , duration:1.2}}>{item.title}</motion.h2>
+              <motion.p initial={{ opacity: 0, y:10 }} whileInView={{ opacity: 1, y:0 }} transition={{ease:"easeOut" , duration:0.5, delay:0.5}}>{item.detail}</motion.p>
+              <motion.button initial={{ opacity: 0, y:10 }} whileInView={{ opacity: 1, y:0 }} transition={{ease:"easeOut" , duration:0.5, delay:1}}>Buy Now</motion.button>
             </div>
           </SwiperSlide>
         ))}
