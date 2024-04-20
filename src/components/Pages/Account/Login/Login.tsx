@@ -18,7 +18,7 @@ function Login() {
   return (
     <motion.div {...fadeInAnimation} className={Styles.login}>
       <h1 className={Styles.pageTitle}>Login</h1>
-      <p>login through your gmail account</p>
+      <p>login to your Nuphy account</p>
 
       <form
         className={Styles.login__form}

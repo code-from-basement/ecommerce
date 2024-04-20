@@ -64,3 +64,22 @@
 .signUp__form button {
   width: 100%;
 }
+
+/* login__cta */
+.login__cta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md) 0;
+}
+
+.login__cta h2 {
+}
+
+.login__cta a {
+  font-size: var(--font-s-sm);
+  color: var(--color-green-shade);
+  margin: 0 var(--spacing-xs);
+  font-weight: var(--font-w-600);
+}

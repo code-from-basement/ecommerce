@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { fadeInAnimation } from "../../../UI/Animation/Animation";
 import { ButtonPrimary } from "../../../UI/Buttons/Buttons";
 import Styles from "./SignUp.module.css";
@@ -18,6 +19,7 @@ function SignUp() {
     <motion.div {...fadeInAnimation} className={Styles.signUp}>
       <h1 className={Styles.pageTitle}>Create new account</h1>
       <p>Choose a unique username and password</p>
+
       <form
         className={Styles.signUp__form}
         onSubmit={handleSubmit((data) => {
@@ -43,7 +45,7 @@ function SignUp() {
         <div className={Styles.row}>
           <input
             className={`${errors.password && Styles.errorInput}`}
-            {...register("password", { minLength: { value: 3, message: "At least 3 character need to create an account." }, required: "Password is required" })}
+            {...register("password", { minLength: { value: 3, message: "At least 3 character need to login." }, required: "Password is required" })}
             type="password"
             name="password"
             placeholder="Password"
@@ -54,6 +56,10 @@ function SignUp() {
 
         <ButtonPrimary>Create new account</ButtonPrimary>
       </form>
+      <div className={Styles.login__cta}>
+        <h2>I have an account here!</h2>
+        <Link to="/account/login">Login</Link>
+      </div>
     </motion.div>
   );
 }
