@@ -13,19 +13,46 @@
   font-size: var(--font-s-xxl);
 }
 .signUp p {
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
   font-size: var(--font-s-md);
   color: var(--color-text-gray);
 }
 
 /* login__form */
-
+.row {
+  width: 100%;
+  margin-bottom: 1rem;
+  position: relative;
+  height: min-content;
+}
+.error {
+  position: absolute;
+  top: 6rem;
+  left: 0;
+  color: red !important;
+  transition: all 0.2s ease-in-out !important;
+  font-size: var(--font-s-sm) !important;
+  opacity: 0.75;
+}
+.inputDescription {
+  position: absolute;
+  top: 6rem;
+  left: 0;
+  color: var(--color-text-gray) !important;
+  transition: all 0.2s ease-in-out !important;
+  opacity: 0.75;
+  font-size: var(--font-s-sm) !important;
+}
+.errorInput {
+  border: 2px solid var(--color-red-shade) !important;
+  background-color: #f9350d05;
+}
 .signUp__form {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
   width: 100%;
   min-width: 28rem;
   max-width: 60rem;
@@ -36,4 +63,23 @@
 }
 .signUp__form button {
   width: 100%;
+}
+
+/* login__cta */
+.login__cta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md) 0;
+}
+
+.login__cta h2 {
+}
+
+.login__cta a {
+  font-size: var(--font-s-sm);
+  color: var(--color-green-shade);
+  margin: 0 var(--spacing-xs);
+  font-weight: var(--font-w-600);
 }
