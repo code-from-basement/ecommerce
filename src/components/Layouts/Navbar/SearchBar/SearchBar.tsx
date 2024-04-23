@@ -4,7 +4,9 @@ import { useGlobalContext } from "../../../../context/globalContext";
 import { searchBarAnimation } from "../../../UI/Animation/Animation";
 import closeIcon from "./../../../../assets/icons/close-outline.svg";
 import Styles from "./SearchBar.module.css";
+import { useNavigate } from "react-router-dom";
 function SearchBar() {
+  const navigate = useNavigate();
   const { setUiToggle } = useGlobalContext();
 
   // Close search bar logic
@@ -13,10 +15,14 @@ function SearchBar() {
       return { ...prevData, isSearchOpen: false };
     });
   };
+
+  const onClickSearchButtonHandler = () => {
+    navigate("search");
+  };
   return (
     <motion.div className={Styles.searchContainer} {...searchBarAnimation}>
       <input className={Styles.searchInput} type="text" placeholder="Search" />
-      <button className={Styles.BtnSearch} onClick={() => console.log("click")}>
+      <button className={Styles.BtnSearch} onClick={onClickSearchButtonHandler}>
         <img src={searchIcon} alt="" />
       </button>
       <button className={Styles.BtnCLose} onClick={onClickSearchBarCloseHandler}>
