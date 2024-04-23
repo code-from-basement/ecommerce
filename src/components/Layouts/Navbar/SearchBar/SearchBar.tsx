@@ -23,26 +23,30 @@ function SearchBar() {
   // Search button logic
   const onClickSearchButtonHandler = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    navigate("search");
-    setUiToggle((prevData: any) => {
-      return { ...prevData, isLoadingFullViewShow: true };
-    });
-    try {
-      const searchValue = searchInputRef.current?.value;
-      const response = await fetch(`http://127.0.0.1:5555/api/search?q=${searchValue}`);
-      const data = await response.json();
-      console.log(data);
-    } catch (err) {
-      console.log(err, "error in search button");
-    } finally {
-      searchInputRef.current!.value = "";
-      setTimeout(() => {
-        setUiToggle((prevData: any) => {
-          return { ...prevData, isLoadingFullViewShow: false };
-        });
-      }, 2000);
+    if (searchInputRef.current?.value) {
+      setUiToggle((prevData: any) => {
+        return { ...prevData, isLoadingFullViewShow: true };
+      });
+      try {
+        const searchValue = searchInputRef.current?.value;
+        const response = await fetch(`http://127.0.0.1:5555/api/search?q=${searchValue}`);
+        const data = await response.json();
+        console.log(data);
+      } catch (err) {
+        console.log(err, "error in search button");
+      } finally {
+        searchInputRef.current!.value = "";
+        setTimeout(() => {
+          setUiToggle((prevData: any) => {
+            return { ...prevData, isLoadingFullViewShow: false };
+          });
+        }, 2000);
+        navigate("search");
+      }
     }
+    return;
   };
+
   return (
     <motion.div className={Styles.searchContainer} {...searchBarAnimation}>
       <input
