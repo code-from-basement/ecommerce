@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import searchIcon from "../../../../assets/icons/search-outline.svg";
 import { useGlobalContext } from "../../../../context/globalContext";
 import { searchBarAnimation } from "../../../UI/Animation/Animation";
@@ -11,6 +11,7 @@ function SearchBar() {
   // Ref for search input
   const searchInputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
+  const location = useLocation();
   const { setUiToggle } = useGlobalContext();
 
   // Close search bar logic
@@ -31,7 +32,7 @@ function SearchBar() {
         const searchValue = searchInputRef.current?.value;
         const response = await fetch(`http://127.0.0.1:5555/api/search?q=${searchValue}`);
         const data = await response.json();
-        console.log(data);
+        navigate(`/search?q=${searchValue}`, { state: { data: data.data, pathname: location.pathname } });
       } catch (err) {
         console.log(err, "error in search button");
       } finally {
@@ -41,7 +42,6 @@ function SearchBar() {
             return { ...prevData, isLoadingFullViewShow: false };
           });
         }, 2000);
-        navigate("search");
       }
     }
     return;
