@@ -3,3 +3,11 @@
   padding: var(--container-padding) 0;
   height: 100vh;
 }
+.search__title {
+  font-size: var(--font-s-xxl);
+}
+
+.search__titleSub {
+  font-size: var(--font-s-md);
+  color: var(--color-text-gray);
+}

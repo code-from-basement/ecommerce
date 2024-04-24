@@ -24,12 +24,14 @@ function SearchBar() {
   // Search button logic
   const onClickSearchButtonHandler = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    const searchValue = searchInputRef.current?.value;
+
     if (searchInputRef.current?.value) {
       setUiToggle((prevData: any) => {
         return { ...prevData, isLoadingFullViewShow: true };
       });
+
       try {
-        const searchValue = searchInputRef.current?.value;
         const response = await fetch(`http://127.0.0.1:5555/api/search?q=${searchValue}`);
         const data = await response.json();
         navigate(`/search?q=${searchValue}`, { state: { data: data.data, pathname: location.pathname } });
@@ -41,7 +43,7 @@ function SearchBar() {
           setUiToggle((prevData: any) => {
             return { ...prevData, isLoadingFullViewShow: false };
           });
-        }, 2000);
+        }, 1000);
       }
     }
     return;
@@ -54,7 +56,7 @@ function SearchBar() {
         type="text"
         placeholder="Search here..."
         ref={searchInputRef}
-        onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => e.key === "Enter" && onClickSearchButtonHandler(e)}
+        onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => e.key === "Enter" && onClickSearchButtonHandler(e as any)}
       />
       <button className={Styles.BtnSearch} onClick={onClickSearchButtonHandler}>
         <img src={searchIcon} alt="" />

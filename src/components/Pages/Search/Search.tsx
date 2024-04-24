@@ -9,7 +9,7 @@ const Search = memo(() => {
   render++;
   console.log("Search", render);
   const location = useLocation();
-  console.log(location.state);
+  console.log(location);
 
   const NoItemFoundComponent = () => {
     return (
@@ -22,7 +22,10 @@ const Search = memo(() => {
   return (
     <div className={Styles.search}>
       <Row>
-        <h1>Search here:</h1>
+        <h1 className={Styles.search__title}>Search</h1>
+        <p className={Styles.search__titleSub}>
+          Search result : {location.state.data.length} item{location.state.data.length > 1 ? "s" : ""}
+        </p>
       </Row>
       <Row>
         {location.state?.data.length === 0 ? (
