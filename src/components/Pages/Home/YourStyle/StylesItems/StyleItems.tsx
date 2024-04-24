@@ -1,13 +1,11 @@
-import React from "react";
-import Styles from "./ItemAccessories.module.css";
-import { Link } from "react-router-dom";
-
-import StarsBar from "../../../../UI/StarsBar/StarsBar";
+import React from 'react'
+import Styles from './StyleItems.module.css'
+import { Link } from 'react-router-dom'
+import StarsBar from '../../../../UI/StarsBar/StarsBar'
 import favIconOutline from "../../../../../assets/icons/heart-outline.svg";
 import addIcon from "./../../../../../assets/icons/add-outline.svg";
 
-
-function ItemAccessories({ item}: any) {
+function StyleItems({item}: any) {
   return (
     <div className={Styles.itemContainer}>
       <Link to="#">
@@ -43,7 +41,7 @@ function ItemAccessories({ item}: any) {
 
       </Link>
     </div>
-  );
+  )
 }
 
-export default ItemAccessories;
+export default StyleItems

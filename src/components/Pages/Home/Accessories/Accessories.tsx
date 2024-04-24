@@ -1,22 +1,17 @@
 import React, { useEffect } from 'react'
 import Styles from './Accessories.module.css'
 import ItemAccessories from './ItemAccessories/ItemAccessories'
+import { useGlobalContext } from '../../../../context/globalContext';
 
 function Accessories() {
-  useEffect(() => {
-    const fetchItems = async () => {
-      const response = await fetch('http://127.0.0.1:5555/api/products/accessories')
-      const data = await response.json()
-      console.log(data)
-    }
-    fetchItems();
-  }, [])
+  const { fiveAccessoriesItems } = useGlobalContext();
   return (
     <div className={Styles.accessoriesContainer}>
         <h2>Accessories</h2>
         <div className={Styles.accessoriesItems}>
-            {/* <ItemAccessories/>      */}
-            
+          {fiveAccessoriesItems.map((item:any, index:number) => (
+                <ItemAccessories key={index} item={item} />
+            ))}
         </div>
     </div>
   )
