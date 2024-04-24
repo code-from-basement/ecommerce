@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import searchIcon from "../../../../assets/icons/search-outline.svg";
 import { useGlobalContext } from "../../../../context/globalContext";
 import { searchBarAnimation } from "../../../UI/Animation/Animation";
@@ -8,6 +8,7 @@ import closeIcon from "./../../../../assets/icons/close-outline.svg";
 import Styles from "./SearchBar.module.css";
 
 function SearchBar() {
+  const [searchParams, setSearchParams] = useSearchParams();
   // Ref for search input
   const searchInputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
@@ -24,6 +25,9 @@ function SearchBar() {
   // Search button logic
   const onClickSearchButtonHandler = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    let params = searchParams.get("q");
+    setSearchParams({ q: searchInputRef.current?.value });
+    console.log(params, "params");
     const searchValue = searchInputRef.current?.value;
 
     if (searchInputRef.current?.value) {
