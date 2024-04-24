@@ -5,12 +5,14 @@ import favIconOutline from "./../../../assets/icons/heart-outline.svg";
 import favIconFill from "./../../../assets/icons/heart.svg";
 import addIcon from "./../../../assets/icons/add-outline.svg";
 import StarsBar from "../StarsBar/StarsBar";
+import { motion } from "framer-motion";
+import { fadeInAnimation, fadeInImage } from "../Animation/Animation";
 
 function ProductItem({ product }: { product: any }) {
   const { _id, title, price, new: isNew, rate_average, colors, description, images } = product;
 
   return (
-    <div className={Styles.productItem}>
+    <motion.div {...fadeInAnimation} className={Styles.productItem}>
       <Link to="#">
         <div className={Styles.productItem__action}>
           <button id={_id}>
@@ -29,7 +31,7 @@ function ProductItem({ product }: { product: any }) {
           })}
         </div>
         <div className={Styles.productItem__header}>
-          <img src={`/src/assets/image/${images[0]}`} alt={title} />
+          <motion.img {...fadeInImage} src={`/src/assets/image/${images[0]}`} alt={title} />
         </div>
         <div className={Styles.productItem__footer}>
           <h2>{title}</h2>
@@ -38,7 +40,7 @@ function ProductItem({ product }: { product: any }) {
           <span>${price}</span>
         </div>
       </Link>
-    </div>
+    </motion.div>
   );
 }
 
