@@ -1,16 +1,14 @@
-import React from "react";
-import Styles from "./ItemAccessories.module.css";
-import { Link } from "react-router-dom";
-
-import StarsBar from "../../../../UI/StarsBar/StarsBar";
+import React from 'react'
+import Styles from './StockKeyboardItems.module.css'
+import { Link } from 'react-router-dom'
+import StarsBar from '../../../../UI/StarsBar/StarsBar'
 import favIconOutline from "../../../../../assets/icons/heart-outline.svg";
 import addIcon from "./../../../../../assets/icons/add-outline.svg";
 
-
-function ItemAccessories({ item}: any) {
+function StockKeyboardItems({item}:any) {
   return (
     <div className={Styles.itemContainer}>
-      <Link to="#">
+        <Link to="#">
         <div className={Styles.itemContainer__action}>
           <button>
             <img src={favIconOutline} alt="" />
@@ -40,10 +38,9 @@ function ItemAccessories({ item}: any) {
           <StarsBar number={item.rate_average}/>
           <span>${item.price}</span>
         </div>
-
       </Link>
     </div>
-  );
+  )
 }
 
-export default ItemAccessories;
+export default StockKeyboardItems
