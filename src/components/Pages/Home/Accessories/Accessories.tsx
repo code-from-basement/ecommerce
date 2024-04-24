@@ -8,7 +8,7 @@ function Accessories() {
     <div className={Styles.accessoriesContainer}>
       <h2>Accessories</h2>
       <div className={Styles.accessoriesItems}>
-        {fiveAccessoriesItems.map((item: any, index: number) => (
+        {fiveAccessoriesItems?.map((item: any, index: number) => (
           <ItemAccessories key={index} item={item} />
         ))}
       </div>

@@ -4,39 +4,38 @@ import { Link } from "react-router-dom";
 import favIconOutline from "./../../../assets/icons/heart-outline.svg";
 import favIconFill from "./../../../assets/icons/heart.svg";
 import addIcon from "./../../../assets/icons/add-outline.svg";
-import productImageTest from "./../../../assets/image/NuPhyGem80-MysticIndigox.webp";
 import StarsBar from "../StarsBar/StarsBar";
 
-function ProductItem() {
+function ProductItem({ product }: { product: any }) {
+  const { _id, title, price, new: isNew, rate_average, colors, description, images } = product;
+
   return (
     <div className={Styles.productItem}>
       <Link to="#">
         <div className={Styles.productItem__action}>
-          <button>
+          <button id={_id}>
             <img src={favIconOutline} alt="" />
           </button>
-          <button>
+          <button id={_id}>
             <img src={addIcon} alt="" />
           </button>
         </div>
 
-        <div className={Styles.productItem__tag}>
-          <span className={Styles.tagNew}>new</span>
-          {/* <span className={Styles.tagDiscontinue}>discontinued</span> */}
-        </div>
+        <div className={Styles.productItem__tag}>{isNew ? <span className={Styles.tagNew}>New</span> : ""}</div>
+        {/* <span className={Styles.tagDiscontinue}>discontinued</span> */}
         <div className={Styles.productItem__colors}>
-          <span className={Styles.colors__block} style={{ backgroundColor: "#edae00" }}></span>
-          <span className={Styles.colors__block} style={{ backgroundColor: "#00deb0" }}></span>
-          <span className={Styles.colors__block} style={{ backgroundColor: "#fa5838" }}></span>
+          {colors?.map((color: any, index: number) => {
+            return <span key={index} className={Styles.colors__block} style={{ backgroundColor: `${color.hex}` }}></span>;
+          })}
         </div>
         <div className={Styles.productItem__header}>
-          <img src={productImageTest} alt="" />
+          <img src={`/src/assets/image/${images[0]}`} alt={title} />
         </div>
         <div className={Styles.productItem__footer}>
-          <h2>Product Name</h2>
-          <p>QMK/VIA Wireless Custom Mechanical Keyboard</p>
-          <StarsBar />
-          <span>$100.95</span>
+          <h2>{title}</h2>
+          <p>{description}</p>
+          <StarsBar rate_average={rate_average} />
+          <span>${price}</span>
         </div>
       </Link>
     </div>
