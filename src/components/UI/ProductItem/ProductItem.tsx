@@ -1,4 +1,3 @@
-import React from "react";
 import Styles from "./ProductItem.module.css";
 import { Link } from "react-router-dom";
 import favIconOutline from "./../../../assets/icons/heart-outline.svg";
@@ -31,7 +30,7 @@ function ProductItem({ product }: { product: any }) {
           })}
         </div>
         <div className={Styles.productItem__header}>
-          <motion.img {...fadeInImage} src={`/src/assets/image/${images[0]}`} alt={title} />
+          <img src={`/src/assets/image/${images[0]}`} alt={title} />
         </div>
         <div className={Styles.productItem__footer}>
           <h2>{title}</h2>

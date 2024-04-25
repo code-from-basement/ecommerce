@@ -3,13 +3,8 @@ import { useLocation } from "react-router-dom";
 import Row from "../../UI/Row/Row";
 import Styles from "./Search.module.css";
 
-let render = 0;
-
 const Search = memo(() => {
-  render++;
-  console.log("Search", render);
   const location = useLocation();
-  console.log(location);
 
   const NoItemFoundComponent = () => {
     return (
@@ -24,7 +19,7 @@ const Search = memo(() => {
       <Row>
         <h1 className={Styles.search__title}>Search</h1>
         <p className={Styles.search__titleSub}>
-          Search result : {location.state.data.length} item{location.state.data.length > 1 ? "s" : ""}
+          Search result : {location.state?.data.length} item{location.state?.data.length > 1 ? "s" : ""}
         </p>
       </Row>
       <Row>
