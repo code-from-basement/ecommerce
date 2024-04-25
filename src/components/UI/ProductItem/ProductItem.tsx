@@ -1,4 +1,3 @@
-import React from "react";
 import Styles from "./ProductItem.module.css";
 import { Link } from "react-router-dom";
 import favIconOutline from "./../../../assets/icons/heart-outline.svg";
