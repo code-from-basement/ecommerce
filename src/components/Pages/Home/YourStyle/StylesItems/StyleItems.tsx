@@ -35,7 +35,7 @@ function StyleItems({item}: any) {
         <div className={Styles.itemContainer__footer}>
           <h2>{item.title}</h2>
           {/* <p>QMK/VIA Wireless Custom Mechanical Keyboard</p> */}
-          <StarsBar number={item.rate_average}/>
+          <StarsBar rate_average={item.rate_average}/>
           <span>${item.price}</span>
         </div>
 
