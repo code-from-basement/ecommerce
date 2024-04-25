@@ -5,7 +5,7 @@ import favIconFill from "./../../../assets/icons/heart.svg";
 import addIcon from "./../../../assets/icons/add-outline.svg";
 import StarsBar from "../StarsBar/StarsBar";
 import { motion } from "framer-motion";
-import { fadeInAnimation, fadeInImage } from "../Animation/Animation";
+import { fadeInAnimation } from "../Animation/Animation";
 
 function ProductItem({ product }: { product: any }) {
   const { _id, title, price, new: isNew, rate_average, colors, description, images } = product;
