@@ -1,5 +1,5 @@
 .keyboards {
   width: 100%;
   padding: var(--container-padding) var(--row-padding-lg);
-  height: min-content;
+  height: clamp(min-content, 100vh, max-content);
 }

@@ -1,11 +1,11 @@
-import React from 'react'
-import Styles from './StyleItems.module.css'
-import { Link } from 'react-router-dom'
-import StarsBar from '../../../../UI/StarsBar/StarsBar'
+import React from "react";
+import Styles from "./StyleItems.module.css";
+import { Link } from "react-router-dom";
+import StarsBar from "../../../../UI/StarsBar/StarsBar";
 import favIconOutline from "../../../../../assets/icons/heart-outline.svg";
 import addIcon from "./../../../../../assets/icons/add-outline.svg";
 
-function StyleItems({item}: any) {
+function StyleItems({ item }: any) {
   return (
     <div className={Styles.itemContainer}>
       <Link to="#">
@@ -18,9 +18,7 @@ function StyleItems({item}: any) {
           </button>
         </div>
 
-        <div className={Styles.itemContainer__tag}>        
-            {item.new === true ?  <span className={Styles.tagNew}>New</span> : null}         
-        </div>
+        <div className={Styles.itemContainer__tag}>{item.new === true ? <span className={Styles.tagNew}>New</span> : null}</div>
 
         <div className={Styles.itemContainer__colors}>
           <span className={Styles.colors__block} style={{ backgroundColor: "#edae00" }}></span>
@@ -35,13 +33,12 @@ function StyleItems({item}: any) {
         <div className={Styles.itemContainer__footer}>
           <h2>{item.title}</h2>
           {/* <p>QMK/VIA Wireless Custom Mechanical Keyboard</p> */}
-          <StarsBar rate_average={item.rate_average}/>
+          <StarsBar rate_average={item.rate_average} />
           <span>${item.price}</span>
         </div>
-
       </Link>
     </div>
-  )
+  );
 }
 
-export default StyleItems
+export default StyleItems;

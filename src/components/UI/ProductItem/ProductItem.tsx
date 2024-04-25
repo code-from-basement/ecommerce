@@ -12,7 +12,7 @@ function ProductItem({ product }: { product: any }) {
 
   return (
     <motion.div {...fadeInAnimation} className={Styles.productItem}>
-      <Link to="#">
+      <Link to={`/${title}`}>
         <div className={Styles.productItem__action}>
           <button id={_id}>
             <img src={favIconOutline} alt="" />

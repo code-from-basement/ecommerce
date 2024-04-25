@@ -5,9 +5,7 @@ import StarsBar from "../../../../UI/StarsBar/StarsBar";
 import favIconOutline from "../../../../../assets/icons/heart-outline.svg";
 import addIcon from "./../../../../../assets/icons/add-outline.svg";
 
-
-function ItemAccessories({ item}: any) {
-
+function ItemAccessories({ item }: any) {
   return (
     <div className={Styles.itemContainer}>
       <Link to="#">
@@ -20,19 +18,14 @@ function ItemAccessories({ item}: any) {
           </button>
         </div>
 
-        <div className={Styles.itemContainer__tag}>        
-            {item.new === true ?  <span className={Styles.tagNew}>New</span> : null}         
-        </div>
+        <div className={Styles.itemContainer__tag}>{item.new === true ? <span className={Styles.tagNew}>New</span> : null}</div>
 
         <div className={Styles.itemContainer__colors}>
-         
-        
-          {/* <span className={Styles.colors__block} style={{ backgroundColor: "#edae00" }}></span>
+          <span className={Styles.colors__block} style={{ backgroundColor: "#edae00" }}></span>
           <span className={Styles.colors__block} style={{ backgroundColor: "#00deb0" }}></span>
-        <span className={Styles.colors__block} style={{ backgroundColor: "#fa5838" }}></span> */}
+          <span className={Styles.colors__block} style={{ backgroundColor: "#fa5838" }}></span>
         </div>
 
-       
         <div className={Styles.itemContainer_header}>
           <img src={`/src/assets/image/${item.images[0]}`} alt={item.title} />
         </div>
@@ -40,10 +33,9 @@ function ItemAccessories({ item}: any) {
         <div className={Styles.itemContainer__footer}>
           <h2>{item.title}</h2>
           {/* <p>QMK/VIA Wireless Custom Mechanical Keyboard</p> */}
-          <StarsBar rate_average={item.rate_average}/>
+          <StarsBar rate_average={item.rate_average} />
           <span>${item.price}</span>
         </div>
-
       </Link>
     </div>
   );
