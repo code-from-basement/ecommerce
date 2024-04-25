@@ -115,7 +115,7 @@
 
 .itemContainer__colors {
   position: absolute;
-  top: 54%;
+  top: 60%;
   right: var(--spacing-md);
   display: flex;
   gap: var(--spacing-xs);

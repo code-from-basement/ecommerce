@@ -44,6 +44,7 @@ const GlobalContextProvider = ({ children }: { children: React.ReactNode }) => {
       const res = await fetch("http://127.0.0.1:5555/api/products/keyboards?first=5");
       const data = await res.json();
       const keyboardsItems = await data.data;
+      console.log(keyboardsItems, "keyboardsItems");
       setFiveKeyboardsItems(keyboardsItems);
     };
     fetchKeyboardsItems();
