@@ -1,14 +1,39 @@
 import React, { useState } from "react";
-import Styles from "./SideBody.module.css";
-import checkIcon from "./../../../../../assets/icons/checkmark-outline.svg";
-import lockIcon from "./../../../../../assets/icons/lock-closed-outline.svg";
-import heartIcon from "./../../../../../assets/icons/heart-outline.svg";
 import { ButtonOutline, ButtonPrimary } from "../../../../UI/Buttons/Buttons";
 import InStock from "../../../../UI/InStock/InStock";
-function SideBody() {
+import checkIcon from "./../../../../../assets/icons/checkmark-outline.svg";
+import heartIcon from "./../../../../../assets/icons/heart-outline.svg";
+import lockIcon from "./../../../../../assets/icons/lock-closed-outline.svg";
+import Styles from "./SideBody.module.css";
+
+function SideBody({ sideBodyData }: any) {
+  const { colors, delivery_time, available } = sideBodyData.data[0];
   const [color, setColor] = useState("Ionic White");
-  const onChangeColorHandler = (e) => {
+
+  const onChangeColorHandler = (e: any) => {
     setColor(e.target.value);
+    const target = e.target;
+    const parent = target.parentElement;
+    const labels = parent.querySelectorAll("label");
+    console.log(labels);
+    // labels.forEach((label: any) => {
+    //   label.classList.remove("active");
+    // });
+  };
+
+  const ColorPanelComponent = () => {
+    return (
+      <>
+        {colors?.map((item: any, i: number) => {
+          return (
+            <React.Fragment key={i}>
+              <input className={Styles.input} type="radio" name="group" value={item.name} id={item.name} />
+              <label className={Styles.inputLabel} htmlFor={item.name} style={{ backgroundColor: `${item.hex}` }}></label>
+            </React.Fragment>
+          );
+        })}
+      </>
+    );
   };
 
   return (
@@ -18,12 +43,7 @@ function SideBody() {
         <p>&nbsp;{color}</p>
       </div>
       <form className={Styles.sideBody__form} onChange={(e) => onChangeColorHandler(e)}>
-        <input className={Styles.input} type="radio" name="group" value="Ionic White" id="input1" defaultChecked />
-        <label className={Styles.inputLabel} htmlFor="input1" style={{ backgroundColor: "#e9e9e9" }}></label>
-        <input className={Styles.input} type="radio" name="group" value="Basalt Black" id="input2" />
-        <label className={Styles.inputLabel} htmlFor="input2" style={{ backgroundColor: "#1f1f1f" }}></label>
-        <input className={Styles.input} type="radio" name="group" value="Lunar Gray" id="input3" />
-        <label className={Styles.inputLabel} htmlFor="input3" style={{ backgroundColor: "#a4a4a4" }}></label>
+        <ColorPanelComponent />
       </form>
       <div className={Styles.sideBody__info}>
         <div className={Styles.textAndIcon}>
@@ -35,8 +55,11 @@ function SideBody() {
           <span>Secure payments</span>
         </div>
         <div className={Styles.textAndIcon}>
-          <InStock />
-          <span>In stock and ships in 1-2 business days </span>
+          <InStock available={available} />
+          <span>
+            {`${available === false ? "It is not" : "It is in"}`} stock{" "}
+            {available === false ? "" : `and ships in ${delivery_time - 1}-${delivery_time} business days.`}
+          </span>
         </div>
       </div>
       <ButtonPrimary>add to basket</ButtonPrimary>

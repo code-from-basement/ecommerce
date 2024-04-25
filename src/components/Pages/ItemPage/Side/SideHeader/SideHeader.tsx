@@ -1,15 +1,15 @@
-import React from "react";
-import Styles from "./SideHeader.module.css";
 import StarsBar from "../../../../UI/StarsBar/StarsBar";
+import Styles from "./SideHeader.module.css";
 
-function SideHeader() {
+function SideHeader({ data }: any) {
+  const { title, price, rate_average, description } = data[0];
   return (
     <div className={Styles.sideHeader}>
       <p>NuPhy®</p>
-      <h1>NuPhy Gem80</h1>
-      <p>QMK/VIA Wireless Custom Mechanical Keyboard</p>
-      <StarsBar />
-      <span>$149.95</span>
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <StarsBar rate_average={rate_average} />
+      <span>${price}</span>
     </div>
   );
 }

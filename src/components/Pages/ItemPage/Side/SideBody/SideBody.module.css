@@ -76,10 +76,10 @@
 }
 
 .input {
-  display: none;
+  /* display: none; */
 }
 
-.input:checked + .inputLabel {
+/* .input:checked + .inputLabel {
   box-shadow: 0 0 0 3px var(--color-green);
   border: 3px solid var(--color-white);
-}
+} */

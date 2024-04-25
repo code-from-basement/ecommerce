@@ -3,5 +3,5 @@
   padding: var(--container-padding) var(--row-padding-lg);
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-column-gap: var(--spacing-xl);
+  grid-column-gap: var(--spacing-lg);
 }
