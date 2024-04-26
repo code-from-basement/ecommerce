@@ -1,6 +1,8 @@
+import { fadeInAnimation } from "../Animation/Animation";
 import { DividerH } from "../Divider/Divider";
 import arrowIcon from "./../../../assets/icons/chevron-down-outline.svg";
 import Styles from "./ProductPageFilter.module.css";
+import { motion } from "framer-motion";
 
 function Filters() {
   const onClickCollapseTrigger = (e) => {
@@ -11,7 +13,7 @@ function Filters() {
 
   return (
     <div className={Styles.filters}>
-      <form className={Styles.form}>
+      <motion.form {...fadeInAnimation} className={Styles.form}>
         <h2 className={Styles.filters__title}>Keyboards</h2>
         <DividerH />
         <div className={Styles.filterItem}>
@@ -58,7 +60,7 @@ function Filters() {
             </ul>
           </div>
         </div>
-      </form>
+      </motion.form>
     </div>
   );
 }
