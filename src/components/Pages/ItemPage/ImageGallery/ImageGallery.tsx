@@ -1,12 +1,8 @@
 import Styles from "./ImageGallery.module.css";
+import Picture1 from "./../../../../assets/image/AcrylicNoirAcrylicNoir.webp";
 
-function ImageGallery() {
-  return (
-    <div className={Styles.imageGallery}>
-      image gallery
-      {/* <img src={`/src/assets/image/${imageName}`} alt="" /> */}
-    </div>
-  );
+export default function ImageGallery() {
+  return <div className={Styles.imageGallery}>image</div>;
 }
 
-export default ImageGallery;
+/* <img src={`/src/assets/image/${imageName}`} alt="" /> */

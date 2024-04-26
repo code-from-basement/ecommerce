@@ -57,7 +57,7 @@ function SideBody({ sideBodyData }: any) {
         <div className={Styles.textAndIcon}>
           <InStock available={available} />
           <span>
-            {`${available === false ? "It is not" : "It is in"}`} stock{" "}
+            {`${available === false ? "It is not" : "It is in"}`} stock.{" "}
             {available === false ? "" : `and ships in ${delivery_time - 1}-${delivery_time} business days.`}
           </span>
         </div>
