@@ -1,6 +1,8 @@
 import { memo } from "react";
 import { useLocation } from "react-router-dom";
+import ProductPageGrid from "../../UI/ProductPageGrid/ProductPageGrid";
 import Row from "../../UI/Row/Row";
+import SearchProductItem from "../../UI/SearchProductItem/SearchProductItem";
 import Styles from "./Search.module.css";
 
 const Search = memo(() => {
@@ -23,19 +25,13 @@ const Search = memo(() => {
         </p>
       </Row>
       <Row>
-        {location.state?.data.length === 0 ? (
-          <NoItemFoundComponent />
-        ) : (
-          <ul>
-            {location.state?.data.map((item: any, index: number) => {
-              return (
-                <div key={index}>
-                  <li>{item.title}</li>
-                </div>
-              );
-            })}
-          </ul>
-        )}
+        <div className={Styles.product__list}>
+          {location.state?.data.length > 0
+            ? location.state?.data.map((item: any) => {
+                return <SearchProductItem key={item._id} data={item} />;
+              })
+            : NoItemFoundComponent()}
+        </div>
       </Row>
     </div>
   );
