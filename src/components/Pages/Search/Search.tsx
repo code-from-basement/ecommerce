@@ -4,15 +4,17 @@ import ProductPageGrid from "../../UI/ProductPageGrid/ProductPageGrid";
 import Row from "../../UI/Row/Row";
 import SearchProductItem from "../../UI/SearchProductItem/SearchProductItem";
 import Styles from "./Search.module.css";
+import { motion } from "framer-motion";
+import { fadeInNotFoundMessage } from "../../UI/Animation/Animation";
 
 const Search = memo(() => {
   const location = useLocation();
 
   const NoItemFoundComponent = () => {
     return (
-      <div>
+      <motion.div {...fadeInNotFoundMessage} className={Styles.NotFoundMessage}>
         <h1>No item found with the name, please try again.</h1>
-      </div>
+      </motion.div>
     );
   };
 

@@ -81,6 +81,10 @@ button {
   text-transform: uppercase;
   transition: all 0.2s ease-in-out;
 }
+button:disabled {
+  background-color: var(--color-border) !important;
+  cursor: default;
+}
 
 ul {
   list-style: none;

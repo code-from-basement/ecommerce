@@ -1,6 +1,6 @@
 import React from "react";
 import Styles from "./SearchProductItem.module.css";
-import { fadeInAnimation } from "../Animation/Animation";
+import { fadeInSearchProductItemAnimation } from "../Animation/Animation";
 import favIconOutline from "./../../../assets/icons/heart-outline.svg";
 import addIcon from "./../../../assets/icons/add-outline.svg";
 import favIconFill from "./../../../assets/icons/heart.svg";
@@ -11,7 +11,7 @@ export default function SearchProductItem({ data }: any) {
   const { _id, title, price, images, rate_average, description, new: isNew, colors } = data;
 
   return (
-    <motion.div {...fadeInAnimation} className={Styles.productItem}>
+    <motion.div {...fadeInSearchProductItemAnimation} className={Styles.productItem}>
       <Link to={`/${title}`}>
         <div className={Styles.productItem__action}>
           <button id={_id}>
