@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { ButtonOutline, ButtonPrimary } from "../../../../UI/Buttons/Buttons";
 import InStock from "../../../../UI/InStock/InStock";
 import checkIcon from "./../../../../../assets/icons/checkmark-outline.svg";
@@ -6,34 +6,27 @@ import heartIcon from "./../../../../../assets/icons/heart-outline.svg";
 import lockIcon from "./../../../../../assets/icons/lock-closed-outline.svg";
 import Styles from "./SideBody.module.css";
 
-function SideBody({ sideBodyData }: any) {
+const ColorPanelComponent = (colors: any) => {
+  return (
+    <>
+      {colors?.map((item: any, i: number) => {
+        return (
+          <React.Fragment key={i}>
+            <input className={Styles.input} type="radio" id={item.name} name="group" defaultChecked={i === 0 ? true : false} />
+            <label className={Styles.inputLabel} htmlFor={item.name} style={{ backgroundColor: `${item.hex}` }}></label>
+          </React.Fragment>
+        );
+      })}
+    </>
+  );
+};
+
+const SideBody = memo(({ sideBodyData }: any) => {
   const { colors, delivery_time, available } = sideBodyData.data[0];
-  const [color, setColor] = useState("Ionic White");
+  const [color, setColor] = useState(colors[0].name);
 
   const onChangeColorHandler = (e: any) => {
-    setColor(e.target.value);
-    const target = e.target;
-    const parent = target.parentElement;
-    const labels = parent.querySelectorAll("label");
-    console.log(labels);
-    // labels.forEach((label: any) => {
-    //   label.classList.remove("active");
-    // });
-  };
-
-  const ColorPanelComponent = () => {
-    return (
-      <>
-        {colors?.map((item: any, i: number) => {
-          return (
-            <React.Fragment key={i}>
-              <input className={Styles.input} type="radio" name="group" value={item.name} id={item.name} />
-              <label className={Styles.inputLabel} htmlFor={item.name} style={{ backgroundColor: `${item.hex}` }}></label>
-            </React.Fragment>
-          );
-        })}
-      </>
-    );
+    setColor(e.target.id);
   };
 
   return (
@@ -43,7 +36,7 @@ function SideBody({ sideBodyData }: any) {
         <p>&nbsp;{color}</p>
       </div>
       <form className={Styles.sideBody__form} onChange={(e) => onChangeColorHandler(e)}>
-        <ColorPanelComponent />
+        {ColorPanelComponent(colors)}
       </form>
       <div className={Styles.sideBody__info}>
         <div className={Styles.textAndIcon}>
@@ -66,6 +59,6 @@ function SideBody({ sideBodyData }: any) {
       <ButtonOutline icon={heartIcon}>add to wishlist</ButtonOutline>
     </div>
   );
-}
+});
 
 export default SideBody;
