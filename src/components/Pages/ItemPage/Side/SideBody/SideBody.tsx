@@ -9,21 +9,22 @@ import Styles from "./SideBody.module.css";
 const ColorPanelComponent = (colors: any) => {
   return (
     <>
-      {colors?.map((item: any, i: number) => {
-        return (
-          <React.Fragment key={i}>
-            <input className={Styles.input} type="radio" id={item.name} name="group" defaultChecked={i === 0 ? true : false} />
-            <label className={Styles.inputLabel} htmlFor={item.name} style={{ backgroundColor: `${item.hex}` }}></label>
-          </React.Fragment>
-        );
-      })}
+      {colors &&
+        colors?.map((item: any, i: number) => {
+          return (
+            <React.Fragment key={i}>
+              <input className={Styles.input} type="radio" id={item.name} name="group" defaultChecked={i === 0 ? true : false} />
+              <label className={Styles.inputLabel} htmlFor={item.name} style={{ backgroundColor: `${item.hex}` }}></label>
+            </React.Fragment>
+          );
+        })}
     </>
   );
 };
 
 const SideBody = memo(({ sideBodyData }: any) => {
   const { colors, delivery_time, available } = sideBodyData.data[0];
-  const [color, setColor] = useState(colors[0].name);
+  const [color, setColor] = useState(colors[0]?.name || "");
 
   const onChangeColorHandler = (e: any) => {
     setColor(e.target.id);
@@ -32,8 +33,8 @@ const SideBody = memo(({ sideBodyData }: any) => {
   return (
     <div className={Styles.sideBody}>
       <div className={Styles.colorsName}>
-        <h2>Colors - </h2>
-        <p>&nbsp;{color}</p>
+        {colors.length > 0 && <h2>Colors - </h2>}
+        {colors.length > 0 && <p>&nbsp;{color}</p>}
       </div>
       <form className={Styles.sideBody__form} onChange={(e) => onChangeColorHandler(e)}>
         {ColorPanelComponent(colors)}

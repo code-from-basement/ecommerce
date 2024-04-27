@@ -7,7 +7,7 @@ import StarsBar from "../StarsBar/StarsBar";
 import { motion } from "framer-motion";
 import { fadeInAnimation } from "../Animation/Animation";
 
-function ProductItem({ product }: { product: any }) {
+const ProductItem = ({ product }: { product: any }) => {
   const { _id, title, price, new: isNew, rate_average, colors, description, images } = product;
 
   return (
@@ -41,6 +41,6 @@ function ProductItem({ product }: { product: any }) {
       </Link>
     </motion.div>
   );
-}
+};
 
 export default ProductItem;

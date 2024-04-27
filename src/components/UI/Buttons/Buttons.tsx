@@ -3,7 +3,6 @@ import Styles from "./Buttons.module.css";
 import closeIcon from "./../../../assets/icons/close-outline.svg";
 
 export function ButtonPrimary({ children, disabled }: { children: string; disabled: boolean }) {
-  console.log(disabled);
   return (
     <button className={Styles.primaryButton} disabled={disabled}>
       {children}
