@@ -55,7 +55,7 @@ const SideBody = memo(({ sideBodyData }: any) => {
           </span>
         </div>
       </div>
-      <ButtonPrimary disabled={available}>add to basket</ButtonPrimary>
+      <ButtonPrimary disabled={!available}>add to basket</ButtonPrimary>
       <ButtonOutline icon={heartIcon}>add to wishlist</ButtonOutline>
     </div>
   );

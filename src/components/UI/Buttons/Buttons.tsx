@@ -5,7 +5,7 @@ import closeIcon from "./../../../assets/icons/close-outline.svg";
 export function ButtonPrimary({ children, disabled }: { children: string; disabled: boolean }) {
   console.log(disabled);
   return (
-    <button className={Styles.primaryButton} disabled={!disabled}>
+    <button className={Styles.primaryButton} disabled={disabled}>
       {children}
     </button>
   );
