@@ -1,16 +1,20 @@
 import { memo } from "react";
 import { useLocation } from "react-router-dom";
+import ProductPageGrid from "../../UI/ProductPageGrid/ProductPageGrid";
 import Row from "../../UI/Row/Row";
+import SearchProductItem from "../../UI/SearchProductItem/SearchProductItem";
 import Styles from "./Search.module.css";
+import { motion } from "framer-motion";
+import { fadeInNotFoundMessage } from "../../UI/Animation/Animation";
 
 const Search = memo(() => {
   const location = useLocation();
 
   const NoItemFoundComponent = () => {
     return (
-      <div>
+      <motion.div {...fadeInNotFoundMessage} className={Styles.NotFoundMessage}>
         <h1>No item found with the name, please try again.</h1>
-      </div>
+      </motion.div>
     );
   };
 
@@ -23,19 +27,13 @@ const Search = memo(() => {
         </p>
       </Row>
       <Row>
-        {location.state?.data.length === 0 ? (
-          <NoItemFoundComponent />
-        ) : (
-          <ul>
-            {location.state?.data.map((item: any, index: number) => {
-              return (
-                <div key={index}>
-                  <li>{item.title}</li>
-                </div>
-              );
-            })}
-          </ul>
-        )}
+        <div className={Styles.product__list}>
+          {location.state?.data.length > 0
+            ? location.state?.data.map((item: any) => {
+                return <SearchProductItem key={item._id} data={item} />;
+              })
+            : NoItemFoundComponent()}
+        </div>
       </Row>
     </div>
   );

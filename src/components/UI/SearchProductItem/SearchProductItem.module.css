@@ -1,8 +1,8 @@
 .productItem {
   width: 100%;
-  /* height: 55rem; */
   z-index: 200;
   transition: all 0.3s ease;
+  margin-top: var(--spacing-md);
 }
 .productItem a {
   display: flex;
@@ -97,8 +97,8 @@
 
 .productItem__colors {
   position: absolute;
-  top: 67%;
-  right: var(--spacing-md);
+  top: 66%;
+  right: var(--spacing-sm);
   display: flex;
   align-items: center;
   justify-content: center;

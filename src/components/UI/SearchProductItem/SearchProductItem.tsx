@@ -1,17 +1,16 @@
-import Styles from "./ProductItem.module.css";
-import { Link } from "react-router-dom";
+import Styles from "./SearchProductItem.module.css";
+import { fadeInSearchProductItemAnimation } from "../Animation/Animation";
 import favIconOutline from "./../../../assets/icons/heart-outline.svg";
 import addIcon from "./../../../assets/icons/add-outline.svg";
 import favIconFill from "./../../../assets/icons/heart.svg";
-import StarsBar from "../StarsBar/StarsBar";
 import { motion } from "framer-motion";
-import { fadeInAnimation } from "../Animation/Animation";
-
-const ProductItem = ({ product }: { product: any }) => {
-  const { _id, title, price, new: isNew, rate_average, colors, description, images } = product;
+import { Link } from "react-router-dom";
+import StarsBar from "../StarsBar/StarsBar";
+export default function SearchProductItem({ data }: any) {
+  const { _id, title, price, images, rate_average, description, new: isNew, colors } = data;
 
   return (
-    <motion.div {...fadeInAnimation} className={Styles.productItem}>
+    <motion.div {...fadeInSearchProductItemAnimation} className={Styles.productItem}>
       <Link to={`/${title}`}>
         <div className={Styles.productItem__action}>
           <button id={_id}>
@@ -21,7 +20,6 @@ const ProductItem = ({ product }: { product: any }) => {
             <img src={addIcon} alt="" />
           </button>
         </div>
-
         <div className={Styles.productItem__tag}>{isNew ? <span className={Styles.tagNew}>New</span> : ""}</div>
         {/* <span className={Styles.tagDiscontinue}>discontinued</span> */}
         <div className={Styles.productItem__colors}>
@@ -29,6 +27,7 @@ const ProductItem = ({ product }: { product: any }) => {
             return <span key={index} className={Styles.colors__block} style={{ backgroundColor: `${color.hex}` }}></span>;
           })}
         </div>
+
         <div className={Styles.productItem__header}>
           <img src={`/src/assets/image/${images[0]}`} alt={title} />
         </div>
@@ -41,6 +40,4 @@ const ProductItem = ({ product }: { product: any }) => {
       </Link>
     </motion.div>
   );
-};
-
-export default ProductItem;
+}

@@ -14,6 +14,9 @@
   color: var(--color-white);
   height: 5.6rem;
 }
+.primaryBtn:disabled {
+  background-color: red !important;
+}
 
 /* Outline Button */
 .outlineButton {

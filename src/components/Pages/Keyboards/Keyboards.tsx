@@ -11,7 +11,7 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 function Keyboards() {
   const location = useLocation();
   const url = `${location.pathname}${location.search}`;
-  const { data } = useSWR(`http://127.0.0.1:5555/api/products/${url}`, fetcher, {
+  const { data } = useSWR([`http://127.0.0.1:5555/api/products/${url}`], fetcher, {
     revalidateIfStale: false,
   });
 
