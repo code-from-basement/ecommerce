@@ -26,7 +26,7 @@ function ItemPage() {
   if (data) {
     return (
       <motion.div {...fadeInItemPage} className={Styles.itemPage}>
-        <ImageGallery />
+        <ImageGallery {...data} />
         <Side {...data} />
       </motion.div>
     );

@@ -1,0 +1,32 @@
+.container {
+  background-color: white;
+  box-shadow: 0 1rem 2rem #00000025;
+  padding: var(--spacing-sm);
+  border-radius: 1rem;
+  width: min-content;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 200;
+  position: absolute;
+  /* transform: translate(-100%, -1rem); */
+  display: flex;
+  gap: var(--spacing-sm);
+}
+.btn {
+  padding: var(--spacing-sm);
+  border-radius: var(--border-r-select);
+  border: 2px solid var(--color-green);
+  width: 8rem;
+  height: 8rem;
+}
+.btn:hover {
+  filter: brightness(95%);
+}
+
+.btn:active {
+  filter: contrast(90%);
+}
+
+.btn img {
+  width: 130%;
+}
