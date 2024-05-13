@@ -8,7 +8,7 @@ import addIcon from "./../../../../../assets/icons/add-outline.svg";
 function ItemAccessories({ item }: any) {
   return (
     <div className={Styles.itemContainer}>
-      <Link to="#">
+      <Link to={`/${item.title}`}>
         <div className={Styles.itemContainer__action}>
           <button>
             <img src={favIconOutline} alt="" />
