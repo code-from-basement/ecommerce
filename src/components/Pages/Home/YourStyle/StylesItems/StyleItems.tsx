@@ -20,11 +20,13 @@ function StyleItems({ item }: any) {
 
         <div className={Styles.itemContainer__tag}>{item.new === true ? <span className={Styles.tagNew}>New</span> : null}</div>
 
-        <div className={Styles.itemContainer__colors}>
-          <span className={Styles.colors__block} style={{ backgroundColor: "#edae00" }}></span>
-          <span className={Styles.colors__block} style={{ backgroundColor: "#00deb0" }}></span>
-          <span className={Styles.colors__block} style={{ backgroundColor: "#fa5838" }}></span>
-        </div>
+        {item.colors.length !== 0 && (
+          <div className={Styles.itemContainer__colors}>
+            {item.colors.map((color: any, index: number) => {
+              return <span key={index} className={Styles.colors__block} style={{ backgroundColor: `${color.hex}` }}></span>;
+            })}
+          </div>
+        )}
 
         <div className={Styles.itemContainer_header}>
           <img src={`/src/assets/image/${item.images[0]}`} alt={item.title} />
@@ -32,7 +34,6 @@ function StyleItems({ item }: any) {
 
         <div className={Styles.itemContainer__footer}>
           <h2>{item.title}</h2>
-          {/* <p>QMK/VIA Wireless Custom Mechanical Keyboard</p> */}
           <StarsBar rate_average={item.rate_average} />
           <span>${item.price}</span>
         </div>
