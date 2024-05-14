@@ -8,7 +8,7 @@ import addIcon from "./../../../../../assets/icons/add-outline.svg";
 function ItemAccessories({ item }: any) {
   return (
     <div className={Styles.itemContainer}>
-      <Link to="#">
+      <Link to={`/${item.title}`}>
         <div className={Styles.itemContainer__action}>
           <button>
             <img src={favIconOutline} alt="" />
@@ -20,10 +20,15 @@ function ItemAccessories({ item }: any) {
 
         <div className={Styles.itemContainer__tag}>{item.new === true ? <span className={Styles.tagNew}>New</span> : null}</div>
 
-        <div className={Styles.itemContainer__colors}>
+        {/* <div className={Styles.itemContainer__colors}>
           <span className={Styles.colors__block} style={{ backgroundColor: "#edae00" }}></span>
           <span className={Styles.colors__block} style={{ backgroundColor: "#00deb0" }}></span>
           <span className={Styles.colors__block} style={{ backgroundColor: "#fa5838" }}></span>
+        </div> */}
+        <div className={Styles.itemContainer__colors}>
+          {item.colors.map((color: any, index: number) => {
+            return <span key={index} className={Styles.colors__block} style={{ backgroundColor: `${color.hex}` }}></span>;
+          })}
         </div>
 
         <div className={Styles.itemContainer_header}>
