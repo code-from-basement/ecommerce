@@ -1,3 +1,5 @@
+import { ExitToApp } from "@mui/icons-material";
+
 export const searchBarAnimation = {
   key: "searchBar",
   initial: { opacity: 0, y: -20 },
