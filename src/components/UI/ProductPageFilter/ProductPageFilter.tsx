@@ -5,6 +5,7 @@ import { fadeInAnimation } from "../Animation/Animation";
 import { DividerH } from "../Divider/Divider";
 import arrowIcon from "./../../../assets/icons/chevron-down-outline.svg";
 import Styles from "./ProductPageFilter.module.css";
+import { FaLessThanEqual } from "react-icons/fa";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -27,15 +28,41 @@ function Filters() {
     e: React.ChangeEvent<HTMLInputElement>,
     filterValue: string
   ) => {
+    const checkFilterProperty = searchParams.get("filterProperty") || false;
+    const checkValue = searchParams.get("value") || false;
+    const checkFilter = searchParams.get("filter") || false;
+    const hasQuery = checkFilterProperty && checkValue && checkFilter;
+    //
     const value = e.target.value;
     const filterProperty = filterValue;
-    if (e.target.checked) {
-      setSearchParams((prev) => {
-        const prevData = new URLSearchParams(prev);
-        return { ...prevData, filter: "true", filterProperty: filterProperty, value: value };
+    //
+    if (!hasQuery) {
+      return setSearchParams({
+        filterProperty: filterProperty,
+        value: value,
+        filter: "true",
       });
-    } else {
-      setSearchParams(window.location.pathname);
+    }
+    if (hasQuery && !e.target.checked) {
+      searchParams.delete("filterProperty", filterProperty);
+      searchParams.delete("value", value);
+      if (searchParams.getAll("value")?.length === 0) {
+        searchParams.delete("filter");
+        return setSearchParams(searchParams);
+      }
+
+      return setSearchParams(searchParams);
+    }
+
+    if (hasQuery) {
+      searchParams.append("filterProperty", filterProperty);
+      searchParams.append("value", value);
+      // searchParams.append("filter", "true");
+      return setSearchParams(searchParams);
+    }
+
+    if (hasQuery) {
+      return console.log("object");
     }
   };
 

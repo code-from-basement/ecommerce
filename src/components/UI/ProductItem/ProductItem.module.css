@@ -28,6 +28,7 @@
   width: 100%;
   overflow: hidden;
   border-radius: var(--border-r);
+  position: relative;
 }
 .productItem__header img {
   width: 100%;
@@ -97,8 +98,8 @@
 
 .productItem__colors {
   position: absolute;
-  top: 67%;
-  right: var(--spacing-md);
+  bottom: var(--spacing-sm);
+  right: var(--spacing-sm);
   display: flex;
   align-items: center;
   justify-content: center;

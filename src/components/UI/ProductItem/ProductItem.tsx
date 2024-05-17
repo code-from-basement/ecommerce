@@ -22,14 +22,22 @@ const ProductItem = ({ product }: { product: any }) => {
           </button>
         </div>
 
-        <div className={Styles.productItem__tag}>{isNew ? <span className={Styles.tagNew}>New</span> : ""}</div>
-        {/* <span className={Styles.tagDiscontinue}>discontinued</span> */}
-        <div className={Styles.productItem__colors}>
-          {colors?.map((color: any, index: number) => {
-            return <span key={index} className={Styles.colors__block} style={{ backgroundColor: `${color.hex}` }}></span>;
-          })}
+        <div className={Styles.productItem__tag}>
+          {isNew ? <span className={Styles.tagNew}>New</span> : ""}
         </div>
+        {/* <span className={Styles.tagDiscontinue}>discontinued</span> */}
         <div className={Styles.productItem__header}>
+          <div className={Styles.productItem__colors}>
+            {colors?.map((color: any, index: number) => {
+              return (
+                <span
+                  key={index}
+                  className={Styles.colors__block}
+                  style={{ backgroundColor: `${color.hex}` }}
+                ></span>
+              );
+            })}
+          </div>
           <img src={`/src/assets/image/${images[0]}`} alt={title} />
         </div>
         <div className={Styles.productItem__footer}>
