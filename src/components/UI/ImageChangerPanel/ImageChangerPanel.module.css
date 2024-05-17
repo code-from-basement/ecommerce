@@ -6,7 +6,7 @@
   width: min-content;
   bottom: 1rem;
   right: 1rem;
-  z-index: 700;
+  z-index: 300;
   position: absolute;
   /* transform: translate(-100%, -1rem); */
   display: flex;

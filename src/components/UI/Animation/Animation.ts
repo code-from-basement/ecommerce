@@ -1,4 +1,5 @@
 import { ExitToApp } from "@mui/icons-material";
+import { duration } from "@mui/material";
 
 export const searchBarAnimation = {
   key: "searchBar",
@@ -25,14 +26,14 @@ export const fadeInAnimation = {
   key: "fadeIn",
   initial: { opacity: 0 },
   animate: { opacity: 1 },
-  transition: { duration: 0.5 },
+  transition: { duration: 0.7 },
 };
 
 export const fadeInLoadingAnimation = {
   key: "fadeInLoading",
   initial: { opacity: 0 },
   animate: { opacity: 1 },
-  transition: { duration: 0.2 },
+  transition: { duration: 0 },
   Exit: { opacity: 0 },
 };
 
