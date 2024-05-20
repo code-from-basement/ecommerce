@@ -37,17 +37,14 @@ function Filters() {
     const value = e.target.value;
     const filterProperty = filterValue;
     //
+
+    // choose first filter option
     if (!hasQuery) {
       console.log("1");
       searchParams.append("filterProperty", filterProperty);
       searchParams.append("value", value);
       searchParams.append("filter", "true");
       setSearchParams(searchParams);
-      // return setSearchParams({
-      //   filterProperty: filterProperty,
-      //   value: value,
-      //   filter: "true",
-      // });
     }
     if (hasQuery && !e.target.checked) {
       console.log("2");
