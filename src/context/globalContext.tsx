@@ -17,7 +17,6 @@ const GlobalContextProvider = ({ children }: { children: React.ReactNode }) => {
     isLoadingFullViewShow: false,
   });
 
-
   return (
     <GlobalContext.Provider
       value={{

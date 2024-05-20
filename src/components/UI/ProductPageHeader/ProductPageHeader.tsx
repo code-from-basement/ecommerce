@@ -8,14 +8,30 @@ function ProductPageHeader({ data }: any) {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const onChangeHandler = async (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSearchParams(() => {
-      const sortValue = event.target.value.split("-")[0];
-      const directionValue = event.target.value.split("-")[1];
-      return {
-        ...(sortValue && { sort: sortValue }),
-        ...(directionValue && { direction: directionValue }),
-      };
-    });
+    const sortValue = event.target.value.split("-")[0];
+    const directionValue = event.target.value.split("-")[1];
+    console.log(sortValue, directionValue, "sortValue, directionValue");
+    if (sortValue && directionValue) {
+      console.log("1");
+      searchParams.delete("sort");
+      searchParams.delete("direction");
+      searchParams.append("sort", sortValue);
+      searchParams.append("direction", directionValue);
+      return setSearchParams(searchParams);
+    }
+    if (sortValue && !directionValue) {
+      console.log("2");
+      searchParams.delete("sort");
+      searchParams.delete("direction");
+      searchParams.append("sort", sortValue);
+      return setSearchParams(searchParams);
+    }
+    if (!sortValue && !directionValue) {
+      console.log("3");
+      searchParams.delete("sort");
+      searchParams.delete("direction");
+      return setSearchParams(searchParams);
+    }
   };
 
   return (

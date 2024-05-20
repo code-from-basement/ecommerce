@@ -18,16 +18,23 @@ function StockKeyboardItems({ item }: any) {
           </button>
         </div>
 
-        <div className={Styles.itemContainer__tag}>{item.new === true ? <span className={Styles.tagNew}>New</span> : null}</div>
-
-        <div className={Styles.itemContainer__colors}>
-          {item.colors.map((color: any, index: number) => {
-            return <span key={index} className={Styles.colors__block} style={{ backgroundColor: `${color.hex}` }}></span>;
-          })}
+        <div className={Styles.itemContainer__tag}>
+          {item.new === true ? <span className={Styles.tagNew}>New</span> : null}
         </div>
 
         <div className={Styles.itemContainer_header}>
           <img src={`/src/assets/image/${item.images[0]}`} alt={item.title} />
+          <div className={Styles.itemContainer__colors}>
+            {item.colors.map((color: any, index: number) => {
+              return (
+                <span
+                  key={index}
+                  className={Styles.colors__block}
+                  style={{ backgroundColor: `${color.hex}` }}
+                ></span>
+              );
+            })}
+          </div>
         </div>
 
         <div className={Styles.itemContainer__footer}>

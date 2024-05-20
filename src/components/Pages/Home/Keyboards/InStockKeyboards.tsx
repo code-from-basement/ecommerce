@@ -4,11 +4,10 @@ import StockKeyboardItems from "./InStockKeyboardItems/StockKeyboardItems";
 import useSWR from "swr";
 
 function InStockKeyboards() {
-
   //fetch for first five accessories in home page
-  const fetcher = (url: string) => fetch(url).then((res)=>res.json());
-  const {data} = useSWR(['http://127.0.0.1:5555/api/products/keyboards?first=5'], fetcher, {
-    revalidateIfStale: false
+  const fetcher = (url: string) => fetch(url).then((res) => res.json());
+  const { data } = useSWR(["http://127.0.0.1:5555/api/products/keyboards?first=5"], fetcher, {
+    revalidateIfStale: false,
   });
 
   console.log(data?.data, "from SWRConfig");

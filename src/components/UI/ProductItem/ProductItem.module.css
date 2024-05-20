@@ -74,6 +74,7 @@
   opacity: 0;
   transform: translateY(4px);
   transition: all 0.2s ease;
+  z-index: 200;
 }
 .productItem__action button {
   background-color: var(--color-white);

@@ -61,6 +61,7 @@ html {
   font-size: 62.5%;
   /* letter-spacing: -0.5px; */
   filter: saturate(90%);
+  overflow-x: hidden;
 }
 
 body {
