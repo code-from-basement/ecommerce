@@ -10,24 +10,24 @@ function ProductPageHeader({ data }: any) {
   const onChangeHandler = async (event: React.ChangeEvent<HTMLSelectElement>) => {
     const sortValue = event.target.value.split("-")[0];
     const directionValue = event.target.value.split("-")[1];
-    console.log(sortValue, directionValue, "sortValue, directionValue");
+
+    //in case of select "asc" or "desc" price
     if (sortValue && directionValue) {
-      console.log("1");
       searchParams.delete("sort");
       searchParams.delete("direction");
       searchParams.append("sort", sortValue);
       searchParams.append("direction", directionValue);
       return setSearchParams(searchParams);
     }
+    // in case of  select sort "popular"
     if (sortValue && !directionValue) {
-      console.log("2");
       searchParams.delete("sort");
       searchParams.delete("direction");
       searchParams.append("sort", sortValue);
       return setSearchParams(searchParams);
     }
+    // In case of select sort "feature"
     if (!sortValue && !directionValue) {
-      console.log("3");
       searchParams.delete("sort");
       searchParams.delete("direction");
       return setSearchParams(searchParams);
