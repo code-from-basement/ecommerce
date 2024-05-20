@@ -72,12 +72,12 @@
   overflow: hidden;
   border-radius: var(--border-r);
   /* border: 3px solid blue; */
+  
 }
 .itemContainer_header img {
   width: 100%;
   /* border: 3px solid green; */
   height: auto;
-
   /* height: 20rem; */
 }
 
