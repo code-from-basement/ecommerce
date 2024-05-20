@@ -67,6 +67,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  /* height: auto; */
   height: 27rem;
   overflow: hidden;
   border-radius: var(--border-r);
@@ -75,7 +76,7 @@
 .itemContainer_header img {
   width: 100%;
   /* border: 3px solid green; */
-  height: 100%;
+  height: auto;
 
   /* height: 20rem; */
 }

@@ -20,11 +20,6 @@ function ItemAccessories({ item }: any) {
 
         <div className={Styles.itemContainer__tag}>{item.new === true ? <span className={Styles.tagNew}>New</span> : null}</div>
 
-        {/* <div className={Styles.itemContainer__colors}>
-          <span className={Styles.colors__block} style={{ backgroundColor: "#edae00" }}></span>
-          <span className={Styles.colors__block} style={{ backgroundColor: "#00deb0" }}></span>
-          <span className={Styles.colors__block} style={{ backgroundColor: "#fa5838" }}></span>
-        </div> */}
         <div className={Styles.itemContainer__colors}>
           {item.colors.map((color: any, index: number) => {
             return <span key={index} className={Styles.colors__block} style={{ backgroundColor: `${color.hex}` }}></span>;
