@@ -32,18 +32,25 @@ function Filters() {
     const checkValue = searchParams.get("value") || false;
     const checkFilter = searchParams.get("filter") || false;
     const hasQuery = checkFilterProperty && checkValue && checkFilter;
+    console.log(hasQuery, "hasQuery");
     //
     const value = e.target.value;
     const filterProperty = filterValue;
     //
     if (!hasQuery) {
-      return setSearchParams({
-        filterProperty: filterProperty,
-        value: value,
-        filter: "true",
-      });
+      console.log("1");
+      searchParams.append("filterProperty", filterProperty);
+      searchParams.append("value", value);
+      searchParams.append("filter", "true");
+      setSearchParams(searchParams);
+      // return setSearchParams({
+      //   filterProperty: filterProperty,
+      //   value: value,
+      //   filter: "true",
+      // });
     }
     if (hasQuery && !e.target.checked) {
+      console.log("2");
       searchParams.delete("filterProperty", filterProperty);
       searchParams.delete("value", value);
       if (searchParams.getAll("value")?.length === 0) {
@@ -55,6 +62,7 @@ function Filters() {
     }
 
     if (hasQuery) {
+      console.log("3");
       searchParams.append("filterProperty", filterProperty);
       searchParams.append("value", value);
       // searchParams.append("filter", "true");
@@ -62,6 +70,7 @@ function Filters() {
     }
 
     if (hasQuery) {
+      console.log("4");
       return console.log("object");
     }
   };

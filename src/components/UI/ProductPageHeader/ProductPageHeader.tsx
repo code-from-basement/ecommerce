@@ -1,6 +1,6 @@
 import React from "react";
 import { useSearchParams } from "react-router-dom";
-import { useGlobalContext } from "../../../context/globalContext";
+
 import arrowIcon from "./../../../assets/icons/chevron-down-outline.svg";
 import Styles from "./ProductPageHeader.module.css";
 
