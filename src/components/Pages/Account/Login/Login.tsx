@@ -4,6 +4,7 @@ import { ButtonPrimary } from "../../../UI/Buttons/Buttons";
 import Styles from "./Login.module.css";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
+
 import useLogin from "../../../../hooks/useLogin";
 
 function Login() {
@@ -58,7 +59,7 @@ function Login() {
           {!errors.password && <InputDescription />}
         </div>
 
-        <ButtonPrimary>Login to your account</ButtonPrimary>
+        <ButtonPrimary disabled={isLoading}>{isLoading ? "loading" : "Login"}</ButtonPrimary>
       </form>
       <div className={Styles.login__cta}>
         <h2>Don't have an account?</h2>

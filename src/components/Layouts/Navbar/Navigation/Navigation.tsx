@@ -8,8 +8,10 @@ import logo from "../../../../assets/image/logo_web03_100x.webp";
 import { useGlobalContext } from "../../../../context/globalContext";
 import { navigationAnimation } from "../../../UI/Animation/Animation";
 import Styles from "./Navigation.module.css";
+import { useAuthContext } from "../../../../context/authContext";
 
 function Navigation() {
+  const { authUser } = useAuthContext();
   const { uiToggle, setUiToggle } = useGlobalContext();
 
   // Open search bar logic
@@ -60,9 +62,7 @@ function Navigation() {
         <button className={Styles.searchTrigger} onClick={onClickSearchButtonHandler}>
           <img src={searchIcon} alt="" />
         </button>
-        <Link to="account">
-          <img src={profileIcon} alt="" />
-        </Link>
+        <Link to="account">{authUser ? <img src={authUser.profilePicture} /> : <img src={profileIcon} alt="" />}</Link>
         <Link to="wishlist">
           <img src={favoriteIcon} alt="" />
         </Link>

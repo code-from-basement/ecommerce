@@ -12,7 +12,7 @@ export function ButtonPrimary({
   onClick: () => void;
 }) {
   return (
-    <button onClick={onClick} className={Styles.primaryButton} disabled={disabled}>
+    <button onClick={onClick || undefined} className={Styles.primaryButton} disabled={disabled}>
       {children}
     </button>
   );

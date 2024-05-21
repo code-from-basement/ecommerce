@@ -17,11 +17,15 @@ export default function () {
       });
       const data = await response.json();
       localStorage.setItem("userData", JSON.stringify(data));
-      setAuthUser(data);
+      setTimeout(() => {
+        setAuthUser(data);
+      }, 2000);
     } catch (err) {
       alert(err);
     } finally {
-      setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 2000);
     }
   };
   return { isLoading, loginHandler };
