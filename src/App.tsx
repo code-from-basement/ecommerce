@@ -35,7 +35,10 @@ function App() {
         <Route path="switches" element={<Switches />} />
         <Route path="account" element={<Account />}>
           <Route index element={<Navigate to={`${val ? "login" : "userprofile"}`} />} />
-          <Route path={`${val ? "login" : "userprofile"}`} element={val ? <Login /> : <UserProfile />} />
+          <Route
+            path={`${val ? "login" : "userprofile"}`}
+            element={val ? <Login /> : <UserProfile />}
+          />
           <Route path="signup" element={<SignUp />} />
         </Route>
         <Route path="wishlist" element={<WishList />} />
