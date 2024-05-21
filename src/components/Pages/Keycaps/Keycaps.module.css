@@ -1,5 +1,7 @@
 .keycaps {
   width: 100%;
-  padding: var(--container-padding) 0;
-  height: 100vh;
+  padding: var(--container-padding) var(--row-padding-lg);
+  height: 100%;
+  min-height: 100vh;
+  max-height: min-content;
 }
