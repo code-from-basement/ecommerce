@@ -4,27 +4,10 @@ import { ButtonPrimary } from "../../../UI/Buttons/Buttons";
 import Styles from "./Login.module.css";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
-import useSWR from "swr";
+import useLogin from "../../../../hooks/useLogin";
 
 function Login() {
-  const loginHandler = async (currentUserData: { username: string; password: number }) => {
-    console.log(currentUserData, "current user data");
-    try {
-      const response = await fetch("http://127.0.0.1:5555/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(currentUserData),
-      });
-      const data = await response.json();
-
-      console.log(data, "form login fetch response");
-    } catch (err) {
-      console.log(err, "error from login  fetch");
-    } finally {
-    }
-  };
+  const { isLoading, loginHandler } = useLogin();
 
   const {
     register,
