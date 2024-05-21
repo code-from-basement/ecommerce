@@ -27,7 +27,8 @@ const ProductItem = ({ product }: { product: any }) => {
         </div>
         {/* <span className={Styles.tagDiscontinue}>discontinued</span> */}
         <div className={Styles.productItem__header}>
-          <div className={Styles.productItem__colors}>
+          {colors.length !==0 &&(
+            <div className={Styles.productItem__colors}>
             {colors?.map((color: any, index: number) => {
               return (
                 <span
@@ -38,6 +39,7 @@ const ProductItem = ({ product }: { product: any }) => {
               );
             })}
           </div>
+          )}
           <img src={`/src/assets/image/${images[0]}`} alt={title} />
         </div>
         <div className={Styles.productItem__footer}>

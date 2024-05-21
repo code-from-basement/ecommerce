@@ -19,7 +19,7 @@ function ItemAccessories({ item }: any) {
         </div>
 
         <div className={Styles.itemContainer__tag}>{item.new === true ? <span className={Styles.tagNew}>New</span> : null}</div>
-
+ 
         <div className={Styles.itemContainer_header}>
           <img src={`/src/assets/image/${item.images[0]}`} alt={item.title} />
           <div className={Styles.itemContainer__colors}>
