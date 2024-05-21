@@ -4,8 +4,11 @@ import { ButtonPrimary } from "../../../UI/Buttons/Buttons";
 import Styles from "./Login.module.css";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
+import useLogin from "../../../../hooks/useLogin";
 
 function Login() {
+  const { isLoading, loginHandler } = useLogin();
+
   const {
     register,
     handleSubmit,
@@ -22,8 +25,8 @@ function Login() {
 
       <form
         className={Styles.login__form}
-        onSubmit={handleSubmit((data) => {
-          console.log(data);
+        onSubmit={handleSubmit((currentUserData) => {
+          loginHandler(currentUserData);
         })}
       >
         <div className={Styles.row}>

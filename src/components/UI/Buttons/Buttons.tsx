@@ -2,9 +2,17 @@ import React from "react";
 import Styles from "./Buttons.module.css";
 import closeIcon from "./../../../assets/icons/close-outline.svg";
 
-export function ButtonPrimary({ children, disabled }: { children: string; disabled: boolean }) {
+export function ButtonPrimary({
+  children,
+  disabled,
+  onClick,
+}: {
+  children: string;
+  disabled: boolean;
+  onClick: () => void;
+}) {
   return (
-    <button className={Styles.primaryButton} disabled={disabled}>
+    <button onClick={onClick} className={Styles.primaryButton} disabled={disabled}>
       {children}
     </button>
   );

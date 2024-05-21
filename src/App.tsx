@@ -16,11 +16,13 @@ import Switches from "./components/Pages/Switches/Switches";
 import WishList from "./components/Pages/WishList/WishList";
 import LoadingFullView from "./components/UI/LoadingFullView/LoadingFullView";
 import { useGlobalContext } from "./context/globalContext";
+import { useAuthContext } from "./context/authContext";
 
 function App() {
   const { uiToggle } = useGlobalContext();
+  const { authUser } = useAuthContext();
+  console.log(authUser);
   const { isLoadingFullViewShow } = uiToggle;
-  const val = true;
 
   return (
     <div>
@@ -34,8 +36,10 @@ function App() {
         <Route path="accessories" element={<Accessories />} />
         <Route path="switches" element={<Switches />} />
         <Route path="account" element={<Account />}>
-          <Route index element={<Navigate to={`${val ? "login" : "userprofile"}`} />} />
-          <Route path={`${val ? "login" : "userprofile"}`} element={val ? <Login /> : <UserProfile />} />
+          <Route index element={<Navigate to={`${!authUser ? "login" : "userprofile"}`} />} />
+          <Route path="login" element={!authUser ? <Login /> : <Navigate to={"/"} />} />
+          <Route path="userprofile" element={authUser ? <UserProfile /> : <Navigate to={"/"} />} />
+          {/* <Route path={`${!authUser ? "login" : "userprofile"}`} element={!authUser ? <Login /> : <UserProfile />} /> */}
           <Route path="signup" element={<SignUp />} />
         </Route>
         <Route path="wishlist" element={<WishList />} />
