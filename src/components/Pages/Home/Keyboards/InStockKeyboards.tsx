@@ -10,7 +10,6 @@ function InStockKeyboards() {
     revalidateIfStale: false,
   });
 
-  console.log(data?.data, "from SWRConfig");
   return (
     <div className={Styles.keyboardsContainer}>
       <h2>In Stock Keyboards</h2>
