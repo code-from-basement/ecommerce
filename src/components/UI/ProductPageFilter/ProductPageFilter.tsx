@@ -17,6 +17,8 @@ function Filters() {
     revalidateIfStale: false,
   });
   const result = data?.data;
+  const pageCategory =`${location.pathname.slice(1)}`;
+  // console.log(pageCategory, "pageCategory");
 
   const onClickCollapseTrigger = (e: any) => {
     e.preventDefault();
@@ -75,7 +77,7 @@ function Filters() {
   return (
     <div className={Styles.filters}>
       <motion.form {...fadeInAnimation} className={Styles.form}>
-        <h2 className={Styles.filters__title}>Keyboards</h2>
+        <h2 className={Styles.filters__title}>{pageCategory}</h2>
         <DividerH />
         {result?.map((filter: any, i: number) => {
           return (
@@ -98,7 +100,7 @@ function Filters() {
                             onChange={(e) => onChangeInputCheckBoxHandler(e, filter?.title)}
                           />
                           <span className={Styles.itemTitle}>
-                            {filter.title === "size" ? `${option?.title}%` : option?.title}
+                            {filter.title === "size" ? `${option?.title}%` : filter.title === "series" && pageCategory=== "keycaps"? `${option.title}`.toUpperCase() : option.title}                           
                             {` (${option?.number})`}
                           </span>
                         </label>
