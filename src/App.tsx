@@ -27,7 +27,6 @@ function App() {
     <div>
       <Navbar />
       {isLoadingFullViewShow && <LoadingFullView />}
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="keyboards" element={<Keyboards />} />
