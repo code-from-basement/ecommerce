@@ -107,6 +107,9 @@
   background-color: var(--color-green) !important;
   border: 0.2rem solid var(--color-green-shade);
 }
+.itemInput:disabled + .itemTitle {
+  opacity: 0.5;
+}
 
 .itemTitle {
   width: 100%;

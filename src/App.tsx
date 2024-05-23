@@ -21,7 +21,6 @@ import { useAuthContext } from "./context/authContext";
 function App() {
   const { uiToggle } = useGlobalContext();
   const { authUser } = useAuthContext();
-  console.log(authUser);
   const { isLoadingFullViewShow } = uiToggle;
 
   return (
@@ -39,7 +38,6 @@ function App() {
           <Route index element={<Navigate to={`${!authUser ? "login" : "userprofile"}`} />} />
           <Route path="login" element={!authUser ? <Login /> : <Navigate to={"/"} />} />
           <Route path="userprofile" element={authUser ? <UserProfile /> : <Navigate to={"/"} />} />
-          {/* <Route path={`${!authUser ? "login" : "userprofile"}`} element={!authUser ? <Login /> : <UserProfile />} /> */}
           <Route path="signup" element={<SignUp />} />
         </Route>
         <Route path="wishlist" element={<WishList />} />

@@ -1,6 +1,5 @@
 import { memo } from "react";
 import { useLocation } from "react-router-dom";
-import ProductPageGrid from "../../UI/ProductPageGrid/ProductPageGrid";
 import Row from "../../UI/Row/Row";
 import SearchProductItem from "../../UI/SearchProductItem/SearchProductItem";
 import Styles from "./Search.module.css";
