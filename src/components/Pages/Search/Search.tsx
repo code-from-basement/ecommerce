@@ -5,10 +5,10 @@ import SearchProductItem from "../../UI/SearchProductItem/SearchProductItem";
 import Styles from "./Search.module.css";
 import { motion } from "framer-motion";
 import { fadeInNotFoundMessage } from "../../UI/Animation/Animation";
+import useMetaDataUpdater from "../../../hooks/useMetaDataUpdater";
 
 const Search = memo(() => {
   const location = useLocation();
-
   const NoItemFoundComponent = () => {
     return (
       <motion.div {...fadeInNotFoundMessage} className={Styles.NotFoundMessage}>
@@ -16,6 +16,8 @@ const Search = memo(() => {
       </motion.div>
     );
   };
+  const url = `${location.pathname}`;
+  useMetaDataUpdater(url);
 
   return (
     <div className={Styles.search}>

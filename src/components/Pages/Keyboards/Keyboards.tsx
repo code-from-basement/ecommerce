@@ -5,6 +5,7 @@ import ProductPageGrid from "../../UI/ProductPageGrid/ProductPageGrid";
 import ProductPageHeader from "../../UI/ProductPageHeader/ProductPageHeader";
 import ProductPageListItem from "../../UI/ProductPageListItem/ProductPageListItem";
 import Styles from "./Keyboards.module.css";
+import useMetaDataUpdater from "../../../hooks/useMetaDataUpdater";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -14,6 +15,7 @@ function Keyboards() {
   const { data } = useSWR([`http://127.0.0.1:5555/api/products/${url}`], fetcher, {
     revalidateIfStale: false,
   });
+  useMetaDataUpdater(url);
 
   return (
     <div className={Styles.keyboards}>

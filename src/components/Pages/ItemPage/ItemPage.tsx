@@ -7,12 +7,15 @@ import { fadeInItemPage } from "../../UI/Animation/Animation";
 import ImageGallery from "./ImageGallery/ImageGallery";
 import Styles from "./ItemPage.module.css";
 import Side from "./Side/Side";
+import useMetaDataUpdater from "../../../hooks/useMetaDataUpdater";
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 function ItemPage() {
   const { setUiToggle } = useGlobalContext();
   const location = useLocation();
-  const url = `${location.pathname}`;
+  let url = `${location.pathname}`;
+  useMetaDataUpdater(url);
+
   // Fetching through SWR
   const { data } = useSWR(`http://127.0.0.1:5555/api/products${url}`, fetcher, {});
   const result = data?.data[0];

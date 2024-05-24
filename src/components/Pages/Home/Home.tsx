@@ -1,3 +1,4 @@
+import useMetaDataUpdater from "../../../hooks/useMetaDataUpdater";
 import Row from "../../UI/Row/Row";
 import Accessories from "./Accessories/Accessories";
 import Styles from "./Home.module.css";
@@ -7,6 +8,7 @@ import SwiperContainer from "./SwiperContainer/SwiperContainer";
 import Style from "./YourStyle/Style";
 
 function Home() {
+  useMetaDataUpdater("Home page");
   return (
     <section className={Styles.container}>
       <div className={Styles.homeContainer}>
