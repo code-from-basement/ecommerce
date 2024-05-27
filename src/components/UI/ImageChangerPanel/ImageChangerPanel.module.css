@@ -4,13 +4,13 @@
   padding: var(--spacing-sm);
   border-radius: 1rem;
   width: min-content;
-  bottom: 1rem;
-  right: 1rem;
   z-index: 300;
-  position: absolute;
   /* transform: translate(-100%, -1rem); */
   display: flex;
   gap: var(--spacing-sm);
+  position: absolute;
+  bottom: var(--spacing-lg);
+  right: var(--spacing-lg);
 }
 .btn {
   padding: var(--spacing-sm);

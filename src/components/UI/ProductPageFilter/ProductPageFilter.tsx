@@ -46,36 +46,41 @@ function Filters() {
     if (hasQuery && !e.target.checked) {
       console.log("2");
 
-      if (
-        searchParams.getAll("filterProperty")?.length > 1 &&
-        searchParams.getAll("filterProperty")[0] === searchParams.getAll("filterProperty")[1]
-      ) {
-        console.log("2 / 1");
-        searchParams.delete("filterProperty", filterProperty);
-        searchParams.delete("value", value);
-        searchParams.append("filterProperty", filterProperty);
-        return setSearchParams(searchParams);
-      }
+      // Logic for filtering section
+      const filterPropertyArray = Array.from(searchParams.entries());
+      for (let i = 0; i < filterPropertyArray.length; i++) {
+        if (
+          searchParams.getAll("filterProperty")?.length > 1 &&
+          searchParams.getAll("filterProperty")[i] === searchParams.getAll("filterProperty")[i + 1]
+        ) {
+          console.log("2 / 1");
+          searchParams.delete("filterProperty", filterProperty);
+          searchParams.delete("value", value);
+          searchParams.append("filterProperty", filterProperty);
+          return setSearchParams(searchParams);
+        }
 
-      if (
-        searchParams.getAll("filterProperty")?.length > 1 &&
-        searchParams.getAll("filterProperty")[0] !== searchParams.getAll("filterProperty")[1]
-      ) {
-        console.log("2 / 2");
-        searchParams.delete("filterProperty", filterProperty);
-        searchParams.delete("value", value);
-        return setSearchParams(searchParams);
-      }
+        if (
+          searchParams.getAll("filterProperty")?.length > 1 &&
+          searchParams.getAll("filterProperty")[i] !== searchParams.getAll("filterProperty")[i + 1]
+        ) {
+          console.log("2 / 2");
+          searchParams.delete("filterProperty", filterProperty);
+          searchParams.delete("value", value);
+          return setSearchParams(searchParams);
+        }
 
-      if (searchParams.getAll("filterProperty").length === 1) {
-        console.log("2 / 3");
-        searchParams.delete("filterProperty", filterProperty);
-        searchParams.delete("value", value);
-        searchParams.delete("filter");
-        return setSearchParams(searchParams);
+        if (searchParams.getAll("filterProperty").length === 1) {
+          console.log("2 / 3");
+          searchParams.delete("filterProperty", filterProperty);
+          searchParams.delete("value", value);
+          searchParams.delete("filter");
+          return setSearchParams(searchParams);
+        }
       }
     }
 
+    // choose second filter option
     if (hasQuery) {
       console.log("3");
       searchParams.append("filterProperty", filterProperty);

@@ -2,6 +2,7 @@
   width: 100%;
   z-index: 600;
   background-color: var(--color-white);
+  margin-top: var(--spacing-xxl);
   /* position: sticky; */
 }
 /* footer news letter */
