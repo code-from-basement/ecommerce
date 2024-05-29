@@ -27,7 +27,6 @@ function SearchBar() {
     e.preventDefault();
     let params = searchParams.get("q");
     setSearchParams({ q: searchInputRef.current?.value });
-    console.log(params, "params");
     const searchValue = searchInputRef.current?.value;
 
     if (searchInputRef.current?.value) {
@@ -60,7 +59,9 @@ function SearchBar() {
         type="text"
         placeholder="Search here..."
         ref={searchInputRef}
-        onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => e.key === "Enter" && onClickSearchButtonHandler(e as any)}
+        onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) =>
+          e.key === "Enter" && onClickSearchButtonHandler(e as any)
+        }
       />
       <button className={Styles.BtnSearch} onClick={onClickSearchButtonHandler}>
         <img src={searchIcon} alt="" />

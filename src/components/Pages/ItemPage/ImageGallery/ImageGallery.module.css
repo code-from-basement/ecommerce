@@ -5,4 +5,5 @@
   overflow: hidden;
   border-radius: var(--border-r);
   height: 90vh;
+  position: relative;
 }

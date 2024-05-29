@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useAuthContext } from "../context/authContext";
 
-export default function () {
+const useLogin = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { setAuthUser } = useAuthContext();
 
@@ -29,4 +29,6 @@ export default function () {
     }
   };
   return { isLoading, loginHandler };
-}
+};
+
+export default useLogin;

@@ -4,8 +4,8 @@ import { ButtonPrimary } from "../../../UI/Buttons/Buttons";
 import Styles from "./Login.module.css";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
-
 import useLogin from "../../../../hooks/useLogin";
+import { Refresh } from "@mui/icons-material";
 
 function Login() {
   const { isLoading, loginHandler } = useLogin();
@@ -59,7 +59,9 @@ function Login() {
           {!errors.password && <InputDescription />}
         </div>
 
-        <ButtonPrimary disabled={isLoading}>{isLoading ? "loading" : "Login"}</ButtonPrimary>
+        <ButtonPrimary onClick={() => {}} disabled={isLoading}>
+          {isLoading ? "loading..." : "Login"}
+        </ButtonPrimary>
       </form>
       <div className={Styles.login__cta}>
         <h2>Don't have an account?</h2>

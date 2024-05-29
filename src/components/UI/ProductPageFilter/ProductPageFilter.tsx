@@ -6,6 +6,7 @@ import { DividerH } from "../Divider/Divider";
 import arrowIcon from "./../../../assets/icons/chevron-down-outline.svg";
 import Styles from "./ProductPageFilter.module.css";
 import { FaLessThanEqual } from "react-icons/fa";
+import { CloudLightning } from "lucide-react";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -17,7 +18,7 @@ function Filters() {
     revalidateIfStale: false,
   });
   const result = data?.data;
-  const pageCategory =`${location.pathname.slice(1)}`;
+  const pageCategory = `${location.pathname.slice(1)}`;
   // console.log(pageCategory, "pageCategory");
 
   const onClickCollapseTrigger = (e: any) => {
@@ -26,20 +27,14 @@ function Filters() {
     e.target.classList.toggle(Styles.filterItemActive);
   };
 
-  const onChangeInputCheckBoxHandler = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    filterValue: string
-  ) => {
+  const onChangeInputCheckBoxHandler = (e: React.ChangeEvent<HTMLInputElement>, filterValue: string) => {
     const checkFilterProperty = searchParams.get("filterProperty") || false;
     const checkValue = searchParams.get("value") || false;
     const checkFilter = searchParams.get("filter") || false;
     const hasQuery = checkFilterProperty && checkValue && checkFilter;
-    console.log(hasQuery, "hasQuery");
     //
     const value = e.target.value;
     const filterProperty = filterValue;
-    //
-
     // choose first filter option
     if (!hasQuery) {
       console.log("1");
@@ -50,27 +45,48 @@ function Filters() {
     }
     if (hasQuery && !e.target.checked) {
       console.log("2");
-      searchParams.delete("filterProperty", filterProperty);
-      searchParams.delete("value", value);
-      if (searchParams.getAll("value")?.length === 0) {
-        searchParams.delete("filter");
-        return setSearchParams(searchParams);
-      }
 
-      return setSearchParams(searchParams);
+      // Logic for filtering section
+      const filterPropertyArray = Array.from(searchParams.entries());
+      for (let i = 0; i < filterPropertyArray.length; i++) {
+        if (
+          searchParams.getAll("filterProperty")?.length > 1 &&
+          searchParams.getAll("filterProperty")[i] === searchParams.getAll("filterProperty")[i + 1]
+        ) {
+          console.log("2 / 1");
+          searchParams.delete("filterProperty", filterProperty);
+          searchParams.delete("value", value);
+          searchParams.append("filterProperty", filterProperty);
+          return setSearchParams(searchParams);
+        }
+
+        if (
+          searchParams.getAll("filterProperty")?.length > 1 &&
+          searchParams.getAll("filterProperty")[i] !== searchParams.getAll("filterProperty")[i + 1]
+        ) {
+          console.log("2 / 2");
+          searchParams.delete("filterProperty", filterProperty);
+          searchParams.delete("value", value);
+          return setSearchParams(searchParams);
+        }
+
+        if (searchParams.getAll("filterProperty").length === 1) {
+          console.log("2 / 3");
+          searchParams.delete("filterProperty", filterProperty);
+          searchParams.delete("value", value);
+          searchParams.delete("filter");
+          return setSearchParams(searchParams);
+        }
+      }
     }
 
+    // choose second filter option
     if (hasQuery) {
       console.log("3");
       searchParams.append("filterProperty", filterProperty);
       searchParams.append("value", value);
       // searchParams.append("filter", "true");
       return setSearchParams(searchParams);
-    }
-
-    if (hasQuery) {
-      console.log("4");
-      return console.log("object");
     }
   };
 
@@ -98,9 +114,14 @@ function Filters() {
                             id={option.title}
                             value={option?.title}
                             onChange={(e) => onChangeInputCheckBoxHandler(e, filter?.title)}
+                            disabled={false}
                           />
                           <span className={Styles.itemTitle}>
-                            {filter.title === "size" ? `${option?.title}%` : filter.title === "series" && pageCategory=== "keycaps"? `${option.title}`.toUpperCase() : option.title}                           
+                            {filter.title === "size"
+                              ? `${option?.title}%`
+                              : filter.title === "series" && pageCategory === "keycaps"
+                              ? `${option.title}`.toUpperCase()
+                              : option.title}
                             {` (${option?.number})`}
                           </span>
                         </label>

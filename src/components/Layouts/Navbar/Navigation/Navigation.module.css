@@ -1,6 +1,7 @@
 /* navbar sections */
 .navigation {
   width: 100%;
+  width: 168rem;
   height: 100%;
   display: flex;
   align-items: center;

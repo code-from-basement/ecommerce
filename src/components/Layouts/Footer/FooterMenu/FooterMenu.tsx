@@ -52,7 +52,11 @@ function FooterMenu() {
       <div className={Styles.col}>
         <ul className={Styles.col__list}>
           <h2 className={Styles.col__title}>We accept</h2>
-          <p>banks may use text messages to help protect accounts and provide convenient messages to customers. The utilization of text messaging varies from bank to bank, so it's important to understand how yours might reach out to you once you agree to receive texts from them.</p>
+          <p>
+            banks may use text messages to help protect accounts and provide convenient messages to customers. The
+            utilization of text messaging varies from bank to bank, so it's important to understand how yours might
+            reach out to you once you agree to receive texts from them.
+          </p>
         </ul>
       </div>
     </div>

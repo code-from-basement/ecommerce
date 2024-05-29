@@ -5,14 +5,14 @@ import favoriteIcon from "../../../../assets/icons/heart-outline.svg";
 import profileIcon from "../../../../assets/icons/person-outline.svg";
 import searchIcon from "../../../../assets/icons/search-outline.svg";
 import logo from "../../../../assets/image/logo_web03_100x.webp";
+import { useAuthContext } from "../../../../context/authContext";
 import { useGlobalContext } from "../../../../context/globalContext";
 import { navigationAnimation } from "../../../UI/Animation/Animation";
 import Styles from "./Navigation.module.css";
-import { useAuthContext } from "../../../../context/authContext";
 
 function Navigation() {
   const { authUser } = useAuthContext();
-  const { uiToggle, setUiToggle } = useGlobalContext();
+  const { setUiToggle } = useGlobalContext();
 
   // Open search bar logic
   const onClickSearchButtonHandler = () => {
@@ -22,7 +22,7 @@ function Navigation() {
   };
 
   const onCLickBasketHandler = () => {
-    setUiToggle((prevData) => {
+    setUiToggle((prevData: any) => {
       return { ...prevData, isBasketOpen: !prevData.isBasketOpen };
     });
   };

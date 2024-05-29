@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import useSWR from "swr";
 import { useGlobalContext } from "../../../context/globalContext";
+import useMetaDataUpdater from "../../../hooks/useMetaDataUpdater";
 import { fadeInItemPage } from "../../UI/Animation/Animation";
 import ImageGallery from "./ImageGallery/ImageGallery";
 import Styles from "./ItemPage.module.css";
@@ -12,7 +13,9 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 function ItemPage() {
   const { setUiToggle } = useGlobalContext();
   const location = useLocation();
-  const url = `${location.pathname}`;
+  let url = `${location.pathname}`;
+  useMetaDataUpdater(url);
+
   // Fetching through SWR
   const { data } = useSWR(`http://127.0.0.1:5555/api/products${url}`, fetcher, {});
   const result = data?.data[0];
