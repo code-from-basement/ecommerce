@@ -119,6 +119,7 @@
   position: absolute;
   top: 3rem;
   left: var(--spacing-md);
+  z-index: 300;
 }
 .itemContainer__tag span {
   padding: var(--spacing-sm);

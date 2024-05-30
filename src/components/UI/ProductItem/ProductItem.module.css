@@ -121,6 +121,7 @@
   position: absolute;
   top: 3rem;
   left: var(--spacing-md);
+  z-index: 300;
 }
 .productItem__tag span {
   padding: var(--spacing-sm);
