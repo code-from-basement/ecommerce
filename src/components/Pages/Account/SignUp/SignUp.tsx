@@ -4,8 +4,10 @@ import { ButtonPrimary } from "../../../UI/Buttons/Buttons";
 import Styles from "./SignUp.module.css";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
+import useSignUp from "../../../../hooks/useSignup";
 
 function SignUp() {
+  const { isLoading, signUpHandler } = useSignUp();
   const {
     register,
     handleSubmit,
@@ -22,8 +24,8 @@ function SignUp() {
 
       <form
         className={Styles.signUp__form}
-        onSubmit={handleSubmit((data) => {
-          console.log(data);
+        onSubmit={handleSubmit((userData: any) => {
+          signUpHandler(userData);
         })}
       >
         <div className={Styles.row}>
@@ -45,7 +47,10 @@ function SignUp() {
         <div className={Styles.row}>
           <input
             className={`${errors.password && Styles.errorInput}`}
-            {...register("password", { minLength: { value: 3, message: "At least 3 character need to login." }, required: "Password is required" })}
+            {...register("password", {
+              minLength: { value: 3, message: "At least 3 character need to login." },
+              required: "Password is required",
+            })}
             type="password"
             name="password"
             placeholder="Password"
@@ -54,7 +59,9 @@ function SignUp() {
           {!errors.password && <InputDescription />}
         </div>
 
-        <ButtonPrimary>Create new account</ButtonPrimary>
+        <ButtonPrimary onClick={() => {}} disabled={isLoading}>
+          {isLoading ? "Loading..." : " Create new account"}
+        </ButtonPrimary>
       </form>
       <div className={Styles.login__cta}>
         <h2>I have an account here!</h2>

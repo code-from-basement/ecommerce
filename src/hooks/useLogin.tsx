@@ -17,6 +17,7 @@ const useLogin = () => {
       });
       const data = await response.json();
       localStorage.setItem("userData", JSON.stringify(data));
+
       setTimeout(() => {
         setAuthUser(data);
       }, 2000);

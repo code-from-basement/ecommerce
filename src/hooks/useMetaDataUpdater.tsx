@@ -1,5 +1,4 @@
 function useMetaDataUpdater(value: string) {
-  console.log(typeof value);
   if (value) {
     let metaDataTitle = value;
     metaDataTitle = metaDataTitle.replace(/\//g, " ").replace(/%20/g, " ");

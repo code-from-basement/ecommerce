@@ -62,7 +62,10 @@ function Navigation() {
         <button className={Styles.searchTrigger} onClick={onClickSearchButtonHandler}>
           <img src={searchIcon} alt="" />
         </button>
-        <Link to="account">{authUser ? <img src={authUser.profilePicture} /> : <img src={profileIcon} alt="" />}</Link>
+        <Link to="account">
+          <img src={profileIcon} alt="" />
+          {/* {authUser ? <img src={authUser.profilePicture} /> : <img src={profileIcon} alt="" />} */}
+        </Link>
         <Link to="wishlist">
           <img src={favoriteIcon} alt="" />
         </Link>

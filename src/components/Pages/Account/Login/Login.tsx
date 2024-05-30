@@ -5,7 +5,6 @@ import Styles from "./Login.module.css";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import useLogin from "../../../../hooks/useLogin";
-import { Refresh } from "@mui/icons-material";
 
 function Login() {
   const { isLoading, loginHandler } = useLogin();
@@ -26,7 +25,7 @@ function Login() {
 
       <form
         className={Styles.login__form}
-        onSubmit={handleSubmit((currentUserData) => {
+        onSubmit={handleSubmit((currentUserData: any) => {
           loginHandler(currentUserData);
         })}
       >

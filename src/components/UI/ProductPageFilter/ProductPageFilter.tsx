@@ -19,7 +19,6 @@ function Filters() {
   });
   const result = data?.data;
   const pageCategory = `${location.pathname.slice(1)}`;
-  // console.log(pageCategory, "pageCategory");
 
   const onClickCollapseTrigger = (e: any) => {
     e.preventDefault();
