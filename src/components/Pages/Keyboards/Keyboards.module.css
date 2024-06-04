@@ -5,5 +5,5 @@
   max-width: 168rem;
   margin: 0 auto;
   max-height: min-content;
-  padding: var(--container-padding) 0;
+  padding: var(--container-padding) var(--spacing-md);
 }

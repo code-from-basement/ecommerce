@@ -41,7 +41,6 @@
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
-  /* gap: var(--spacing-xs); */
   width: 100%;
   padding: var(--spacing-sm);
 }
@@ -74,6 +73,7 @@
   opacity: 0;
   transform: translateY(4px);
   transition: all 0.2s ease;
+  z-index: 300;
 }
 .productItem__action button {
   background-color: var(--color-white);
@@ -127,7 +127,9 @@
   font-size: var(--font-s-xs);
   font-weight: 700;
 }
-
+.productItem__tag {
+  z-index: 300;
+}
 .tagNew {
   text-transform: uppercase;
   background-color: var(--color-green-shade);
@@ -138,4 +140,5 @@
   text-transform: uppercase;
   background-color: var(--color-btn);
   color: var(--color-white);
+  z-index: 300;
 }

@@ -20,9 +20,7 @@ export default function SearchProductItem({ data }: any) {
             <img src={addIcon} alt="" />
           </button>
         </div>
-        <div className={Styles.productItem__tag}>
-          {isNew ? <span className={Styles.tagNew}>New</span> : ""}
-        </div>
+        <div className={Styles.productItem__tag}>{isNew ? <span className={Styles.tagNew}>New</span> : ""}</div>
         {/* <span className={Styles.tagDiscontinue}>discontinued</span> */}
 
         <div className={Styles.productItem__header}>
@@ -30,11 +28,7 @@ export default function SearchProductItem({ data }: any) {
             <div className={Styles.productItem__colors}>
               {colors?.map((color: any, index: number) => {
                 return (
-                  <span
-                    key={index}
-                    className={Styles.colors__block}
-                    style={{ backgroundColor: `${color.hex}` }}
-                  ></span>
+                  <span key={index} className={Styles.colors__block} style={{ backgroundColor: `${color.hex}` }}></span>
                 );
               })}
             </div>

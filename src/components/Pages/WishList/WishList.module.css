@@ -1,5 +1,9 @@
 .wishlist {
   width: 100%;
-  padding: var(--container-padding) 0;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
+  max-width: 168rem;
+  margin: 0 auto;
+  max-height: min-content;
+  padding: var(--container-padding) var(--spacing-md);
 }

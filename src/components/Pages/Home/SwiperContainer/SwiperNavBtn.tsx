@@ -1,4 +1,3 @@
-import React from "react";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { useSwiper } from "swiper/react";
 import Styles from "./SwiperNavBtn.module.css";

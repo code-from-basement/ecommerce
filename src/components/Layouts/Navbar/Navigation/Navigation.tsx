@@ -26,6 +26,7 @@ function Navigation() {
       return { ...prevData, isBasketOpen: !prevData.isBasketOpen };
     });
   };
+  const isActive = ({ isActive }: any) => (isActive ? `${Styles.active} ` : "");
 
   return (
     <motion.div {...navigationAnimation} className={Styles.navigation}>
@@ -37,22 +38,22 @@ function Navigation() {
       <div className={Styles.navbar__links}>
         <ul className={Styles.list}>
           <li className={Styles.listItem}>
-            <NavLink className={Styles.link} to="keyboards">
+            <NavLink className={isActive} to="keyboards">
               Custom Keyboards
             </NavLink>
           </li>
           <li className={Styles.listItem}>
-            <NavLink className={Styles.link} to="keycaps">
+            <NavLink className={isActive} to="keycaps">
               Keycaps
             </NavLink>
           </li>
           <li className={Styles.listItem}>
-            <NavLink className={Styles.link} to="switches">
+            <NavLink className={isActive} to="switches">
               Switches
             </NavLink>
           </li>
           <li className={Styles.listItem}>
-            <NavLink className={Styles.link} to="accessories">
+            <NavLink className={isActive} to="accessories">
               Accessories
             </NavLink>
           </li>

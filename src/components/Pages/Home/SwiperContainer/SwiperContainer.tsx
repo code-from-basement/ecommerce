@@ -1,12 +1,11 @@
-import React from "react";
-import Styles from "./SwiperContainer.module.css";
+import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { delay, motion } from "framer-motion";
+import Styles from "./SwiperContainer.module.css";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination, Mousewheel, Keyboard, Autoplay } from "swiper/modules";
+import { Autoplay, Keyboard, Mousewheel, Navigation, Pagination } from "swiper/modules";
 import SwiperNavBtn from "./SwiperNavBtn";
 
 const slideItems = [
