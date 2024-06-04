@@ -1,5 +1,4 @@
 import useMetaDataUpdater from "../../../hooks/useMetaDataUpdater";
-import Row from "../../UI/Row/Row";
 import Accessories from "./Accessories/Accessories";
 import Styles from "./Home.module.css";
 import InStockKeyboards from "./Keyboards/InStockKeyboards";
