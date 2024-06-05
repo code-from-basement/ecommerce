@@ -80,7 +80,7 @@ button {
   cursor: pointer;
   border-radius: var(--border-r);
   text-transform: uppercase;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out !important;
 }
 button:disabled {
   background-color: var(--color-border) !important;

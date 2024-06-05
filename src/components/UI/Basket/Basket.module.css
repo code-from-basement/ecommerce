@@ -51,6 +51,9 @@
 }
 .listItem {
   padding: var(--spacing-md) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
 }
 
 .subTotal {
@@ -61,10 +64,12 @@
 
 .subTotal__title {
   font-size: var(--font-s-lg);
+  font-weight: 800;
 }
 
 .subTotal__number {
   font-size: var(--font-s-lg);
+  font-weight: 800;
 }
 .subFooter {
   width: 100%;

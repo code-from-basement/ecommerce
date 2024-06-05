@@ -1,14 +1,14 @@
-import react, { useEffect } from "react";
 import { useGlobalContext } from "../../../context/globalContext";
 import { basketAnimation } from "../Animation/Animation";
+import BasketItem from "../BasketItem/BasketItem";
 import { ButtonPrimary, CloseButton } from "../Buttons/Buttons";
 import Styles from "./Basket.module.css";
 import { motion } from "framer-motion";
-import { WidthFull } from "@mui/icons-material";
 
 function Basket() {
-  const { uiToggle, setUiToggle } = useGlobalContext();
+  const { uiToggle, setUiToggle, basketData } = useGlobalContext();
   const { isBasketEmpty, isBasketOpen } = uiToggle;
+  console.log(basketData);
 
   const EmptyBasket = ({ children }: { children: React.ReactNode }) => {
     const onCLickCLoseBasketHandler = () => {
@@ -37,7 +37,11 @@ function Basket() {
   return (
     <EmptyBasket>
       <motion.div id="basket" {...basketAnimation} className={Styles.basket}>
-        <div className={Styles.listItem}>listItem</div>
+        <div className={Styles.listItem}>
+          <BasketItem />
+          <BasketItem />
+          <BasketItem />
+        </div>
         <hr />
         <div className={Styles.subTotal}>
           <h2 className={Styles.subTotal__title}>Subtotal</h2>
