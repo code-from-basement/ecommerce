@@ -14,7 +14,6 @@ export default function useSignUp() {
         body: JSON.stringify(userData),
       });
       const data = await response.json();
-      console.log(data);
     } catch (err) {
       console.log(err);
     } finally {

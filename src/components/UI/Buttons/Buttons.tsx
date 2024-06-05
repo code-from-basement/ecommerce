@@ -6,13 +6,16 @@ export function ButtonPrimary({
   children,
   disabled,
   onClick,
+  style,
 }: {
   children: string;
   disabled: boolean;
   onClick: () => void;
+  style: any;
 }) {
+  console.log(style);
   return (
-    <button onClick={onClick || undefined} className={Styles.primaryButton} disabled={disabled}>
+    <button style={style} onClick={onClick || undefined} className={Styles.primaryButton} disabled={disabled}>
       {children}
     </button>
   );

@@ -10,4 +10,5 @@
   position: fixed;
   background-color: var(--color-white);
   z-index: 600;
+  position: relative;
 }

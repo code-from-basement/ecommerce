@@ -13,10 +13,11 @@ const useLogin = () => {
         headers: {
           "Content-Type": "application/json",
         },
-
+        credentials: "include",
         body: JSON.stringify(currentUserData),
       });
       const data = await response.json();
+      console.log(data, " form login hook");
       localStorage.setItem("userData", JSON.stringify(data));
 
       setTimeout(() => {

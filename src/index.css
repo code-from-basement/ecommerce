@@ -99,6 +99,9 @@ h1 {
   font-weight: var(--font-w-800);
   letter-spacing: -0.1rem;
 }
+hr {
+  opacity: 0.3;
+}
 
 input {
   height: 5.2rem;

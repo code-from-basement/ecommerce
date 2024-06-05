@@ -20,8 +20,8 @@ import { useAuthContext } from "./context/authContext";
 
 function App() {
   const { uiToggle } = useGlobalContext();
-  const { authUser } = useAuthContext();
   const { isLoadingFullViewShow } = uiToggle;
+  const { authUser } = useAuthContext();
 
   return (
     <div>
