@@ -43,13 +43,17 @@ const GlobalContextProvider = ({ children }: { children: React.ReactNode }) => {
       image: ["NuPhyGem80-ObsidianBlackx.webp"],
     },
   ]);
+
+  const [favoritesListData, setFavoritesListData] = useState<object[]>([]);
   return (
     <GlobalContext.Provider
       value={{
         uiToggle,
         basketData,
+        favoritesListData,
         setUiToggle,
         setBasketData,
+        setFavoritesListData,
       }}
     >
       {children}

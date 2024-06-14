@@ -47,15 +47,22 @@
   font-size: var(--font-s-lg);
 }
 .controllers button {
-  padding: var(--spacing-sm);
+  padding: var(--spacing-xs);
   border-radius: 0;
-  width: 2.8rem;
-  height: 2.8rem;
+  /* width: 2.8rem;
+  height: 2.8rem; */
   background-color: var(--color-badge);
   border-radius: 0.2rem;
 }
 .controllers button:hover {
   filter: brightness(105%);
+}
+.controllers button:active {
+  filter: brightness(110%);
+}
+.controllers button svg {
+  width: 1.6rem;
+  height: 1.6rem;
 }
 .unitPrice {
   font-weight: 500;
