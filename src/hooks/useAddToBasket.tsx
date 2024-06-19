@@ -23,8 +23,9 @@ const useAddToBasket = () => {
       await addNewItem.json();
       const getBasketData = await fetch(`http://127.0.0.1:5555/api/basket/665887115410397b7d72db38`);
       const basketDataResponse = await getBasketData.json();
-
-      setBasketData(basketDataResponse?.data);
+      setTimeout(async () => {
+        await setBasketData(basketDataResponse?.data);
+      }, 1000);
     } catch (error) {
       setError(error);
     }

@@ -68,6 +68,9 @@
   width: 1.6rem;
   height: 1.6rem;
 }
+.controllers button:disabled {
+  background-color: rgb(237, 237, 237) !important;
+}
 .unitPrice {
   font-weight: 500;
   font-size: var(--font-s-lg);

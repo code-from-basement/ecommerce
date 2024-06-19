@@ -12,7 +12,7 @@ export default function BasketItem(item: any) {
         <h3 className={Styles.contentContainer__description}>{item.description}</h3>
         <div className={Styles.counterContainer}>
           <div className={Styles.controllers}>
-            <button>
+            <button disabled={item.quantity === 1 ? true : false}>
               <MinusIcon />
             </button>
             <p className={Styles.controllers__num}>{item.quantity}</p>
