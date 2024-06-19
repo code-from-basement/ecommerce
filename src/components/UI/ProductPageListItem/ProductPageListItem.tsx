@@ -1,6 +1,5 @@
-import React from "react";
-import Styles from "./ProductPageListItem.module.css";
 import ProductItem from "../ProductItem/ProductItem";
+import Styles from "./ProductPageListItem.module.css";
 
 function ProductPageListItem({ data }: any) {
   return (

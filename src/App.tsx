@@ -17,6 +17,7 @@ import WishList from "./components/Pages/WishList/WishList";
 import LoadingFullView from "./components/UI/LoadingFullView/LoadingFullView";
 import { useGlobalContext } from "./context/globalContext";
 import { useAuthContext } from "./context/authContext";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const { uiToggle } = useGlobalContext();
@@ -44,6 +45,15 @@ function App() {
         <Route path="/:title" element={<ItemPage />} />
       </Routes>
       <Footer />
+      <Toaster
+        position="bottom-right"
+        reverseOrder={false}
+        toastOptions={{
+          style: {
+            fontSize: "1.5rem",
+          },
+        }}
+      />
     </div>
   );
 }

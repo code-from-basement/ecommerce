@@ -7,17 +7,14 @@ export default function ImageChangerPanel({ data, onClick }: any) {
     onClick(value);
     setIndexNum(index);
   };
+  console.log(data);
 
   return (
     <div className={styles.container}>
       {data?.map((item: string, index: number) => {
         return (
-          <button
-            key={index}
-            className={index === indexNum ? `${styles.btn} ${styles.active}` : `${styles.btn}`}
-            onClick={() => onClickSendValueToParent(item, index)}
-          >
-            <img src={`/src/assets/image/${item}`} alt="" />
+          <button key={index} className={index === indexNum ? `${styles.btn} ${styles.active}` : `${styles.btn}`} onClick={() => onClickSendValueToParent(item, index)}>
+            <img src={`/src/assets/image/${item}`} alt={data[index]} title={data[index]} />
           </button>
         );
       })}
