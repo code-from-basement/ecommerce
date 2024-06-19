@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 function Basket() {
   const { uiToggle, setUiToggle, basketData } = useGlobalContext();
   const { isBasketEmpty, isBasketOpen } = uiToggle;
+  console.log(basketData);
 
   const EmptyBasket = ({ children }: { children: React.ReactNode }) => {
     const onCLickCLoseBasketHandler = () => {
@@ -37,7 +38,7 @@ function Basket() {
     <EmptyBasket>
       <motion.div id="basket" {...basketAnimation} className={Styles.basket}>
         <div className={Styles.listItem}>
-          {basketData?.map(({ item, index }: { item: any; index: number }) => {
+          {basketData?.map((item: any, index: number) => {
             return <BasketItem key={index} {...item} />;
           })}
         </div>

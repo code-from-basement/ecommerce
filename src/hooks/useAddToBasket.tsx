@@ -6,7 +6,6 @@ import { useGlobalContext } from "../context/globalContext";
 const useAddToBasket = () => {
   const { basketData, setBasketData } = useGlobalContext();
   const { authUser } = useAuthContext();
-  console.log(basketData);
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<any>(null);
@@ -24,15 +23,14 @@ const useAddToBasket = () => {
       await addNewItem.json();
       const getBasketData = await fetch(`http://127.0.0.1:5555/api/basket/665887115410397b7d72db38`);
       const basketDataResponse = await getBasketData.json();
-      setTimeout(() => {
-        setBasketData(basketDataResponse?.data);
-      }, 1000);
+
+      setBasketData(basketDataResponse?.data);
     } catch (error) {
       setError(error);
     }
     setTimeout(() => {
-      toast.success(`${product.title} added to basket`);
       setIsLoading(false);
+      toast.success(`${product.title} added to basket`);
     }, 1000);
   };
 
