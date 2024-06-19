@@ -37,7 +37,7 @@ function Basket() {
     <EmptyBasket>
       <motion.div id="basket" {...basketAnimation} className={Styles.basket}>
         <div className={Styles.listItem}>
-          {basketData?.map((item, index) => {
+          {basketData?.map(({ item, index }: { item: any; index: number }) => {
             return <BasketItem key={index} {...item} />;
           })}
         </div>
