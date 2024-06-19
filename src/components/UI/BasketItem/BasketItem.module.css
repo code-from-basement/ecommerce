@@ -3,7 +3,6 @@
   display: flex;
   gap: var(--spacing-sm);
   height: 10rem;
-  border: 1px solid;
 }
 
 .imageContainer {

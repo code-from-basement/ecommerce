@@ -14,10 +14,10 @@ const ProductItem = ({ product }: { product: any }) => {
   return (
     <motion.div {...fadeInAnimation} className={Styles.productItem}>
       <div className={Styles.productItem__action}>
+        <button onClick={() => addToBasket(product)}>{isLoading ? <LoaderCircle className={Styles.spinner} /> : <PlusIcon />}</button>
         <button>
-          <PlusIcon />
+          <HeartIcon />
         </button>
-        <button onClick={() => addToBasket(product)}>{isLoading ? <LoaderCircle className={Styles.spinner} /> : <HeartIcon />}</button>
       </div>
       <Link to={`/${title}`}>
         <div className={Styles.productItem__tag}>{isNew ? <span className={Styles.tagNew}>New</span> : ""}</div>

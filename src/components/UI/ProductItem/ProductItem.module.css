@@ -72,7 +72,7 @@
   gap: var(--spacing-sm);
   transform: translateY(4px);
   transition: all 0.2s ease;
-  z-index: 700;
+  z-index: 300;
 }
 .productItem__action button {
   background-color: var(--color-btn);
