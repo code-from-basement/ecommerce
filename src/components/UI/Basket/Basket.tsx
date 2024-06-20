@@ -1,9 +1,9 @@
+import { motion } from "framer-motion";
 import { useGlobalContext } from "../../../context/globalContext";
 import { basketAnimation } from "../Animation/Animation";
 import BasketItem from "../BasketItem/BasketItem";
 import { ButtonPrimary, CloseButton } from "../Buttons/Buttons";
 import Styles from "./Basket.module.css";
-import { motion } from "framer-motion";
 
 function Basket() {
   const { uiToggle, setUiToggle, basketData } = useGlobalContext();

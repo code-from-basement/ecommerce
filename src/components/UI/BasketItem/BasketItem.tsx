@@ -1,9 +1,11 @@
 import Styles from "./BasketItem.module.css";
-import { PlusIcon, MinusIcon } from "lucide-react";
+import { PlusIcon, MinusIcon, Trash2Icon } from "lucide-react";
 export default function BasketItem(item: any) {
-  console.log(item, "item");
   return (
     <div className={Styles.container}>
+      <button className={Styles.btn__delete}>
+        <Trash2Icon />
+      </button>
       <div className={Styles.imageContainer}>
         <img src={`src/assets/image/${item.images[0]}`} alt="image of the added product" />
       </div>
