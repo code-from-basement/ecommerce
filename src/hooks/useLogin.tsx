@@ -19,7 +19,6 @@ const useLogin = () => {
         body: JSON.stringify(currentUserData),
       });
       const data = await response.json();
-      const userID = data?._id;
       localStorage.setItem("userData", JSON.stringify(data));
 
       // fetching the basket list
@@ -28,13 +27,12 @@ const useLogin = () => {
       // console.log(basketData);
 
       // fetching the wishlist
-      const favoritesResponse = await fetch(`http://127.0.0.1:5555/api/favorites/${userID}`);
-      const favoritesData = await favoritesResponse.json();
-      console.log(favoritesData);
+      // const favoritesResponse = await fetch(`http://127.0.0.1:5555/api/favorites/${userID}`);
+      // const favoritesData = await favoritesResponse.json();
 
       setTimeout(() => {
         setAuthUser(data);
-        setFavoritesListData(favoritesData);
+        // setFavoritesListData(favoritesData);
         // setBasketData(basketData);
       }, 2000);
     } catch (err) {

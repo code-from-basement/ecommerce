@@ -13,7 +13,7 @@ const useAddToBasket = () => {
   const addToBasket = async (product: any) => {
     setIsLoading(true);
     try {
-      const addNewItem = await fetch(`http://127.0.0.1:5555/api/basket/add/665887115410397b7d72db38`, {
+      const addNewItem = await fetch(`http://127.0.0.1:5555/api/basket/add/${authUser._id}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -21,7 +21,7 @@ const useAddToBasket = () => {
         body: JSON.stringify({ itemObject: product }),
       });
       await addNewItem.json();
-      const getBasketData = await fetch(`http://127.0.0.1:5555/api/basket/665887115410397b7d72db38`);
+      const getBasketData = await fetch(`http://127.0.0.1:5555/api/basket/${authUser._id}`);
       const basketDataResponse = await getBasketData.json();
       setTimeout(async () => {
         await setBasketData(basketDataResponse?.data);
