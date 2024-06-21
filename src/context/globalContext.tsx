@@ -9,6 +9,7 @@ const GlobalContextProvider = ({ children }: { children: React.ReactNode }) => {
     isBasketOpen: boolean;
     isLoadingFullViewShow: boolean;
   };
+  const [basketData, setBasketData] = useState<object[]>([]);
 
   const [uiToggle, setUiToggle] = useState<UiToggleState>({
     isSearchOpen: false,
@@ -16,8 +17,6 @@ const GlobalContextProvider = ({ children }: { children: React.ReactNode }) => {
     isBasketOpen: false,
     isLoadingFullViewShow: false,
   });
-
-  const [basketData, setBasketData] = useState<object[]>([]);
 
   const [favoritesListData, setFavoritesListData] = useState<object[]>([]);
   return (

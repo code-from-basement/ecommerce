@@ -16,7 +16,7 @@ function Basket() {
       });
     };
 
-    if (!isBasketEmpty) {
+    if (basketData.length > 0) {
       return children;
     } else {
       return (

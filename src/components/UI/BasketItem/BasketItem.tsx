@@ -1,9 +1,23 @@
+import { MinusIcon, PlusIcon, Trash2Icon } from "lucide-react";
+import useDeleteBasketItem from "../../../hooks/useDeleteBasketItem";
 import Styles from "./BasketItem.module.css";
-import { PlusIcon, MinusIcon, Trash2Icon } from "lucide-react";
+import { Loader2 } from "lucide-react";
+
 export default function BasketItem(item: any) {
+  const { deleteBasketItemHandler, isLoading, error } = useDeleteBasketItem();
+
+  const LoadingLayout = () => {
+    return (
+      <div className={Styles.loadingLayout}>
+        <Loader2 />
+      </div>
+    );
+  };
+
   return (
     <div className={Styles.container}>
-      <button className={Styles.btn__delete}>
+      {isLoading && <LoadingLayout />}
+      <button className={Styles.btn__delete} onClick={() => deleteBasketItemHandler(item?._id)}>
         <Trash2Icon />
       </button>
       <div className={Styles.imageContainer}>
