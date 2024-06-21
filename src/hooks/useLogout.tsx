@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/authContext";
+import { useGlobalContext } from "../context/globalContext";
 
 export default function useLogout(currentData: any) {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const { setAuthUser } = useAuthContext();
+  const { setBasketData } = useGlobalContext();
+
   const logoutHandler = async () => {
     setIsLoading(true);
 
@@ -20,7 +23,10 @@ export default function useLogout(currentData: any) {
       });
       const data = await response.json();
       console.log(data);
-      setAuthUser(null);
+      await setAuthUser();
+      console.log("authuser empty");
+      await setBasketData([]);
+      console.log("basket empty");
       localStorage.removeItem("userData");
       navigate("/");
     } catch (err) {

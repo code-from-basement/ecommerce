@@ -8,7 +8,6 @@ import Styles from "./Basket.module.css";
 function Basket() {
   const { uiToggle, setUiToggle, basketData } = useGlobalContext();
   const { isBasketEmpty, isBasketOpen } = uiToggle;
-  console.log(basketData);
 
   const EmptyBasket = ({ children }: { children: React.ReactNode }) => {
     const onCLickCLoseBasketHandler = () => {

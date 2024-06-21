@@ -23,6 +23,7 @@ function App() {
   const { uiToggle } = useGlobalContext();
   const { isLoadingFullViewShow } = uiToggle;
   const { authUser } = useAuthContext();
+  console.log(authUser);
 
   return (
     <div>
