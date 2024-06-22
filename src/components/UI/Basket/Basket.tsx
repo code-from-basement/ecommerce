@@ -4,43 +4,30 @@ import { basketAnimation } from "../Animation/Animation";
 import BasketItem from "../BasketItem/BasketItem";
 import { ButtonPrimary, CloseButton } from "../Buttons/Buttons";
 import Styles from "./Basket.module.css";
+import BasketItemList from "../BasketItemList/BasketItemList";
+import BasketEmpty from "../BasketEmpty/BasketEmpty";
+import { useEffect } from "react";
 
 function Basket() {
   const { uiToggle, setUiToggle, basketData } = useGlobalContext();
-  const { isBasketEmpty, isBasketOpen } = uiToggle;
+  const { isBasketOpen } = uiToggle;
+  useEffect(() => {
+    console.log(basketData);
+  }, [basketData]);
 
-  const EmptyBasket = ({ children }: { children: React.ReactNode }) => {
-    const onCLickCLoseBasketHandler = () => {
-      setUiToggle((prevData: any) => {
-        return { ...prevData, isBasketOpen: false };
-      });
-    };
-
-    if (basketData.length > 0) {
-      return children;
-    } else {
-      return (
-        <motion.div id="basket" {...basketAnimation} className={Styles.emptyBasket}>
-          <h1>Basket is empty</h1>
-          <CloseButton onClick={onCLickCLoseBasketHandler}></CloseButton>
-        </motion.div>
-      );
-    }
-  };
   const onCLickCLoseBasketHandler = () => {
     setUiToggle((prevData: any) => {
       return { ...prevData, isBasketOpen: false };
     });
   };
 
-  return (
-    <EmptyBasket>
+  if (basketData?.length === 0) {
+    return <BasketEmpty />;
+  }
+  if (basketData?.length > 0) {
+    return (
       <motion.div id="basket" {...basketAnimation} className={Styles.basket}>
-        <div className={Styles.listItem}>
-          {basketData?.map((item: any, index: number) => {
-            return <BasketItem key={index} {...item} />;
-          })}
-        </div>
+        <BasketItemList />
         <hr />
         <div className={Styles.subTotal}>
           <h2 className={Styles.subTotal__title}>Subtotal</h2>
@@ -57,8 +44,8 @@ function Basket() {
         </div>
         <CloseButton onClick={onCLickCLoseBasketHandler}></CloseButton>
       </motion.div>
-    </EmptyBasket>
-  );
+    );
+  }
 }
 
 export default Basket;

@@ -1,0 +1,16 @@
+.emptyBasket {
+  width: clamp(32rem, 100%, 42rem);
+  height: 5.5rem;
+  padding: var(--spacing-md);
+  box-shadow: 0 1rem 3rem #00000010;
+  background-color: var(--color-white);
+  top: 120%;
+  right: 1.5rem;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.emptyBasket h1 {
+  font-size: var(--font-s-md);
+}

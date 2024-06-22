@@ -1,19 +1,7 @@
-import React from "react";
-import Styles from "./Buttons.module.css";
 import closeIcon from "./../../../assets/icons/close-outline.svg";
+import Styles from "./Buttons.module.css";
 
-export function ButtonPrimary({
-  children,
-  disabled,
-  onClick,
-  style,
-}: {
-  children: string;
-  disabled: boolean;
-  onClick: () => void;
-  style: any;
-}) {
-  console.log(style);
+export function ButtonPrimary({ children, disabled, onClick, style }: { children: string; disabled: boolean; onClick: () => void; style: any }) {
   return (
     <button style={style} onClick={onClick || undefined} className={Styles.primaryButton} disabled={disabled}>
       {children}
@@ -28,7 +16,7 @@ export function ButtonSecondary() {
 export function ButtonOutline({ children, icon }: { children: string; icon: string | undefined }) {
   return (
     <button className={Styles.outlineButton}>
-      <img src={icon} alt="" />
+      <img src={icon} alt="button outline" />
       {children}
     </button>
   );

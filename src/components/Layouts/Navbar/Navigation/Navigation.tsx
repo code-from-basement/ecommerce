@@ -12,7 +12,7 @@ import Styles from "./Navigation.module.css";
 
 function Navigation() {
   const { authUser } = useAuthContext();
-  const { setUiToggle } = useGlobalContext();
+  const { setUiToggle, basketData } = useGlobalContext();
 
   // Open search bar logic
   const onClickSearchButtonHandler = () => {
@@ -72,6 +72,8 @@ function Navigation() {
         </Link>
         <button className={Styles.basketTrigger} onClick={onCLickBasketHandler}>
           <img src={basketIcon} alt="" />
+
+          {basketData.length > 0 ? <span>{basketData?.length}</span> : null}
         </button>
       </div>
     </motion.div>

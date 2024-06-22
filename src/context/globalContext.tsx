@@ -5,7 +5,6 @@ const GlobalContext = createContext<any>(null);
 const GlobalContextProvider = ({ children }: { children: React.ReactNode }) => {
   type UiToggleState = {
     isSearchOpen: boolean;
-    isBasketEmpty: boolean;
     isBasketOpen: boolean;
     isLoadingFullViewShow: boolean;
   };
@@ -13,7 +12,6 @@ const GlobalContextProvider = ({ children }: { children: React.ReactNode }) => {
 
   const [uiToggle, setUiToggle] = useState<UiToggleState>({
     isSearchOpen: false,
-    isBasketEmpty: false,
     isBasketOpen: false,
     isLoadingFullViewShow: false,
   });
