@@ -33,7 +33,7 @@ const useAddToBasket = () => {
     }
     setTimeout(() => {
       setIsLoading(false);
-      toast.success(`${product.title} added to basket`);
+      toast.success(`${product.title} added to basket.`);
     }, 1000);
   };
 

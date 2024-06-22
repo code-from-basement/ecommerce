@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useGlobalContext } from "../context/globalContext";
 import { useAuthContext } from "../context/authContext";
+import toast from "react-hot-toast";
 
 export default function useDeleteBasketItem() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -34,6 +35,9 @@ export default function useDeleteBasketItem() {
     } finally {
       setTimeout(() => {
         setIsLoading(false);
+        toast.success("The item has been deleted from basket.", {
+          icon: "🗑️",
+        });
       }, 1000);
     }
   };

@@ -37,7 +37,7 @@ export default function BasketItem(item: any) {
             </button>
           </div>
           <div className={Styles.unitPrice}>
-            <p>$ {item?.price}</p>
+            <p>${item?.price}</p>
           </div>
         </div>
       </div>

@@ -5,6 +5,7 @@ import checkIcon from "./../../../../../assets/icons/checkmark-outline.svg";
 import heartIcon from "./../../../../../assets/icons/heart-outline.svg";
 import lockIcon from "./../../../../../assets/icons/lock-closed-outline.svg";
 import Styles from "./SideBody.module.css";
+import useAddToBasket from "../../../../../hooks/useAddToBasket";
 
 const ColorPanelComponent = (colors: any) => {
   return (
@@ -25,6 +26,7 @@ const ColorPanelComponent = (colors: any) => {
 const SideBody = memo(({ sideBodyData }: any) => {
   const { colors, delivery_time, available } = sideBodyData.data[0];
   const [color, setColor] = useState(colors[0]?.name || "");
+  const { addToBasket, isLoading, error } = useAddToBasket();
 
   const onChangeColorHandler = (e: any) => {
     setColor(e.target.id);
@@ -51,8 +53,7 @@ const SideBody = memo(({ sideBodyData }: any) => {
         <div className={Styles.textAndIcon}>
           <InStock available={available} />
           <span>
-            {`${available === false ? "It is not" : "It is in"}`} stock.{" "}
-            {available === false ? "" : `and ships in ${delivery_time - 1}-${delivery_time} business days.`}
+            {`${available === false ? "It is not" : "It is in"}`} stock. {available === false ? "" : `and ships in ${delivery_time - 1}-${delivery_time} business days.`}
           </span>
         </div>
       </div>
