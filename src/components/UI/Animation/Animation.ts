@@ -57,3 +57,10 @@ export const fadeInSearchProductItemAnimation = {
   animate: { opacity: 1 },
   transition: { duration: 0.4, delay: 1 },
 };
+
+export const basketItemAnimation = {
+  key: "basketItemAnimation",
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  transition: { duration: 0.3 },
+};

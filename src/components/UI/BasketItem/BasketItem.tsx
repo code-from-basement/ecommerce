@@ -2,21 +2,27 @@ import { MinusIcon, PlusIcon, Trash2Icon } from "lucide-react";
 import useDeleteBasketItem from "../../../hooks/useDeleteBasketItem";
 import Styles from "./BasketItem.module.css";
 import { Loader2 } from "lucide-react";
+import useIncrementBasketItem from "../../../hooks/useIncrementBasketItem";
+import { motion } from "framer-motion";
+import { basketItemAnimation } from "../Animation/Animation";
 
 export default function BasketItem(item: any) {
-  const { deleteBasketItemHandler, isLoading, error } = useDeleteBasketItem();
+  console.log(item);
+  const { deleteBasketItemHandler, isLoading: deleteLoading, error: deleteError } = useDeleteBasketItem();
+  const { incrementBasketItemHandler, isLoading: incrementLoading, error: incrementError } = useIncrementBasketItem();
 
   const LoadingLayout = () => {
     return (
-      <div className={Styles.loadingLayout}>
+      <motion.div {...basketItemAnimation} className={Styles.loadingLayout}>
         <Loader2 />
-      </div>
+      </motion.div>
     );
   };
 
   return (
     <div className={Styles.container}>
-      {isLoading && <LoadingLayout />}
+      {deleteLoading && <LoadingLayout />}
+      {incrementLoading && <LoadingLayout />}
       <button className={Styles.btn__delete} onClick={() => deleteBasketItemHandler(item?._id)}>
         <Trash2Icon />
       </button>
@@ -32,7 +38,7 @@ export default function BasketItem(item: any) {
               <MinusIcon />
             </button>
             <p className={Styles.controllers__num}>{item?.quantity}</p>
-            <button>
+            <button onClick={() => incrementBasketItemHandler(item)}>
               <PlusIcon />
             </button>
           </div>

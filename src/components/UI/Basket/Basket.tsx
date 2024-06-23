@@ -1,19 +1,14 @@
 import { motion } from "framer-motion";
 import { useGlobalContext } from "../../../context/globalContext";
 import { basketAnimation } from "../Animation/Animation";
-import BasketItem from "../BasketItem/BasketItem";
+import BasketEmpty from "../BasketEmpty/BasketEmpty";
+import BasketItemList from "../BasketItemList/BasketItemList";
 import { ButtonPrimary, CloseButton } from "../Buttons/Buttons";
 import Styles from "./Basket.module.css";
-import BasketItemList from "../BasketItemList/BasketItemList";
-import BasketEmpty from "../BasketEmpty/BasketEmpty";
-import { useEffect } from "react";
 
 function Basket() {
   const { uiToggle, setUiToggle, basketData } = useGlobalContext();
   const { isBasketOpen } = uiToggle;
-  useEffect(() => {
-    console.log(basketData);
-  }, [basketData]);
 
   const onCLickCLoseBasketHandler = () => {
     setUiToggle((prevData: any) => {
