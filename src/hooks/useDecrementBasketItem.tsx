@@ -1,26 +1,26 @@
 import { useState } from "react";
-import toast from "react-hot-toast";
 import { useAuthContext } from "../context/authContext";
 import { useGlobalContext } from "../context/globalContext";
+import toast from "react-hot-toast";
 
-export default function useIncrementBasketItem() {
+export default function useDecrementBasketItem() {
   const { authUser } = useAuthContext();
   const { setBasketData } = useGlobalContext();
-  const [incrementLoading, setIncrementLoading] = useState<boolean>(false);
-  const [incrementError, setIncrementError] = useState<any>(null);
+  const [decrementLoading, setDecrementLoading] = useState<boolean>(false);
+  const [decrementError, setDecrementError] = useState<any>(null);
 
-  const incrementBasketItemHandler = async (product: any) => {
-    setIncrementLoading(true);
+  const decrementBasketItemHandler = async (product: any) => {
+    setDecrementLoading(true);
     try {
       // Increment the item in the basket
-      const incrementItem = await fetch(`http://127.0.0.1:5555/api/basket/increment/${authUser._id}`, {
+      const decrementItem = await fetch(`http://127.0.0.1:5555/api/basket/decrement/${authUser._id}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ itemObject: product }),
       });
-      await incrementItem.json();
+      await decrementItem.json();
 
       // Get the updated basket data
       const getBasketData = await fetch(`http://127.0.0.1:5555/api/basket/${authUser._id}`);
@@ -29,13 +29,13 @@ export default function useIncrementBasketItem() {
         setBasketData(basketDataResponse?.data);
       }, 1000);
     } catch (error) {
+      setDecrementError(error);
     } finally {
-      setTimeout(() => {
-        setIncrementLoading(false);
-        toast.success(`You Added ${product.title} in shopping card.`);
+      setTimeout(async () => {
+        setDecrementLoading(false);
+        toast.success(`You decrease ${product.title} from shopping card.`);
       }, 1000);
     }
   };
-
-  return { incrementBasketItemHandler, incrementLoading, incrementError };
+  return { decrementBasketItemHandler, decrementLoading, decrementError };
 }

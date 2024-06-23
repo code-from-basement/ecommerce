@@ -20,13 +20,11 @@ export default function useDeleteBasketItem() {
         },
         body: JSON.stringify({ itemID }),
       });
-
       await deleteItemResponse.json();
 
       const getBasketData = await fetch(`http://127.0.0.1:5555/api/basket/${authUser?._id}`);
       const basketDataResponse = await getBasketData.json();
       setTimeout(async () => {
-        console.log(basketDataResponse?.data);
         await setBasketData(basketDataResponse?.data);
       }, 1000);
     } catch (error) {
