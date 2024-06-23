@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import basketIcon from "../../../../assets/icons/basket-outline.svg";
 import favoriteIcon from "../../../../assets/icons/heart-outline.svg";
@@ -13,6 +14,12 @@ import Styles from "./Navigation.module.css";
 function Navigation() {
   const { authUser } = useAuthContext();
   const { setUiToggle, basketData } = useGlobalContext();
+  const Span = () => {
+    return <span>{basketData?.length}</span>;
+  };
+  useEffect(() => {
+    Span();
+  }, [basketData]);
 
   // Open search bar logic
   const onClickSearchButtonHandler = () => {
@@ -73,7 +80,7 @@ function Navigation() {
         <button className={Styles.basketTrigger} onClick={onCLickBasketHandler}>
           <img src={basketIcon} alt="" />
 
-          {basketData.length > 0 ? <span>{basketData?.length}</span> : null}
+          {basketData.length > 0 ? <Span /> : null}
         </button>
       </div>
     </motion.div>

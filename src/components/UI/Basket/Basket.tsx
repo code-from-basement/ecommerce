@@ -5,10 +5,17 @@ import BasketEmpty from "../BasketEmpty/BasketEmpty";
 import BasketItemList from "../BasketItemList/BasketItemList";
 import { ButtonPrimary, CloseButton } from "../Buttons/Buttons";
 import Styles from "./Basket.module.css";
+import { useClickAway } from "@uidotdev/usehooks";
 
 function Basket() {
   const { uiToggle, setUiToggle, basketData } = useGlobalContext();
   const { isBasketOpen } = uiToggle;
+  const ref = useClickAway(() => {
+    console.log("ref");
+    setUiToggle((prevData: any) => {
+      return { ...prevData, isBasketOpen: false };
+    });
+  });
 
   const onCLickCLoseBasketHandler = () => {
     setUiToggle((prevData: any) => {

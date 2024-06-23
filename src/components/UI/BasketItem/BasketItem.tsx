@@ -1,11 +1,10 @@
-import { MinusIcon, PlusIcon, Trash2Icon } from "lucide-react";
-import useDeleteBasketItem from "../../../hooks/useDeleteBasketItem";
-import Styles from "./BasketItem.module.css";
-import { Loader2 } from "lucide-react";
-import useIncrementBasketItem from "../../../hooks/useIncrementBasketItem";
 import { motion } from "framer-motion";
-import { basketItemAnimation } from "../Animation/Animation";
+import { Loader2, MinusIcon, PlusIcon, Trash2Icon } from "lucide-react";
 import useDecrementBasketItem from "../../../hooks/useDecrementBasketItem";
+import useDeleteBasketItem from "../../../hooks/useDeleteBasketItem";
+import useIncrementBasketItem from "../../../hooks/useIncrementBasketItem";
+import { basketItemAnimation } from "../Animation/Animation";
+import Styles from "./BasketItem.module.css";
 
 export default function BasketItem(item: any) {
   const { deleteBasketItemHandler, isLoading: deleteLoading, error: deleteError } = useDeleteBasketItem();
