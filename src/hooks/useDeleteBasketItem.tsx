@@ -4,13 +4,13 @@ import { useAuthContext } from "../context/authContext";
 import toast from "react-hot-toast";
 
 export default function useDeleteBasketItem() {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [error, setError] = useState<any>(null);
+  const [deleteLoading, setDeleteLoading] = useState<boolean>(false);
+  const [deleteError, setDeleteError] = useState<any>(null);
   const { setBasketData } = useGlobalContext();
   const { authUser } = useAuthContext();
 
   const deleteBasketItemHandler = async (itemID: string) => {
-    setIsLoading(true);
+    setDeleteLoading(true);
 
     try {
       const deleteItemResponse = await fetch(`http://127.0.0.1:5555/api/basket/del/${authUser?._id}`, {
@@ -29,10 +29,10 @@ export default function useDeleteBasketItem() {
       }, 1000);
     } catch (error) {
       console.log("error from delete basket item custom hook ", error);
-      setError(error);
+      setDeleteError(error);
     } finally {
       setTimeout(() => {
-        setIsLoading(false);
+        setDeleteLoading(false);
         toast.success("The item has been deleted from basket.", {
           icon: "🗑️",
         });
@@ -40,5 +40,5 @@ export default function useDeleteBasketItem() {
     }
   };
 
-  return { deleteBasketItemHandler, isLoading, error };
+  return { deleteBasketItemHandler, deleteLoading, deleteError };
 }

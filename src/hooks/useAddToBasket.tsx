@@ -4,7 +4,7 @@ import { useAuthContext } from "../context/authContext";
 import { useGlobalContext } from "../context/globalContext";
 
 const useAddToBasket = () => {
-  const { basketData, setBasketData } = useGlobalContext();
+  const { setBasketData } = useGlobalContext();
   const { authUser } = useAuthContext();
 
   const [isLoading, setIsLoading] = useState<boolean>(false);

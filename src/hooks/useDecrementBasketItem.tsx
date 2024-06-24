@@ -25,6 +25,7 @@ export default function useDecrementBasketItem() {
       // Get the updated basket data
       const getBasketData = await fetch(`http://127.0.0.1:5555/api/basket/${authUser._id}`);
       const basketDataResponse = await getBasketData.json();
+
       setTimeout(() => {
         setBasketData(basketDataResponse?.data);
       }, 1000);

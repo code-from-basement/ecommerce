@@ -7,7 +7,7 @@ import { basketItemAnimation } from "../Animation/Animation";
 import Styles from "./BasketItem.module.css";
 
 export default function BasketItem(item: any) {
-  const { deleteBasketItemHandler, isLoading: deleteLoading, error: deleteError } = useDeleteBasketItem();
+  const { deleteBasketItemHandler, deleteLoading, deleteError } = useDeleteBasketItem();
   const { incrementBasketItemHandler, incrementLoading, incrementError } = useIncrementBasketItem();
   const { decrementBasketItemHandler, decrementLoading, decrementError } = useDecrementBasketItem();
 
