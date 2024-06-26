@@ -6,9 +6,11 @@ import ProductPageHeader from "../../UI/ProductPageHeader/ProductPageHeader";
 import ProductPageListItem from "../../UI/ProductPageListItem/ProductPageListItem";
 import Styles from "./Keycaps.module.css";
 import useMetaDataUpdater from "../../../hooks/useMetaDataUpdater";
+import { useGlobalContext } from "../../../context/globalContext";
 
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 function Keycaps() {
-  const fetcher = (url: string) => fetch(url).then((res) => res.json());
+  const { favoritesListData } = useGlobalContext();
 
   const location = useLocation();
   const url = `${location.pathname}${location.search}`;
@@ -16,13 +18,19 @@ function Keycaps() {
     revalidateIfStale: false,
   });
   useMetaDataUpdater(url);
+  const KeyCapsModifiedData = data?.data.map((keyCap: any) => {
+    return {
+      ...keyCap,
+      isLiked: favoritesListData?.some((item: any) => item._id === keyCap._id),
+    };
+  });
 
   return (
     <div className={Styles.keycaps}>
       <ProductPageGrid>
         <Filters />
-        <ProductPageHeader {...data} />
-        <ProductPageListItem {...data} />
+        <ProductPageHeader data={KeyCapsModifiedData} />
+        <ProductPageListItem data={KeyCapsModifiedData} />
       </ProductPageGrid>
     </div>
   );
