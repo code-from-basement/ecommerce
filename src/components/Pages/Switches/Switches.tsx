@@ -6,9 +6,11 @@ import ProductPageListItem from "../../UI/ProductPageListItem/ProductPageListIte
 import { useLocation } from "react-router-dom";
 import useSWR from "swr";
 import Filters from "../../UI/ProductPageFilter/ProductPageFilter";
+import { useGlobalContext } from "../../../context/globalContext";
 
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 function Switches() {
-  const fetcher = (url: string) => fetch(url).then((res) => res.json());
+  const { favoritesListData } = useGlobalContext();
 
   const location = useLocation();
   const url = `${location.pathname}${location.search}`;
@@ -16,12 +18,18 @@ function Switches() {
     revalidateIfStale: false,
   });
 
+  const switchesModifiedData = data?.data.map((obj: any) => {
+    return {
+      ...obj,
+      isLiked: favoritesListData?.some((item: any) => item._id === obj._id),
+    };
+  });
   return (
     <div className={Styles.switches}>
       <ProductPageGrid>
         <Filters />
-        <ProductPageHeader {...data} />
-        <ProductPageListItem {...data} />
+        <ProductPageHeader data={switchesModifiedData} />
+        <ProductPageListItem data={switchesModifiedData} />
       </ProductPageGrid>
     </div>
   );
