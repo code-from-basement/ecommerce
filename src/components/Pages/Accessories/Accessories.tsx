@@ -7,23 +7,30 @@ import ProductPageHeader from "../../UI/ProductPageHeader/ProductPageHeader";
 import ProductPageListItem from "../../UI/ProductPageListItem/ProductPageListItem";
 import { useLocation } from "react-router-dom";
 import useSWR from "swr";
+import { useGlobalContext } from "../../../context/globalContext";
 
-
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 function Accessories() {
-  const fetcher = (url:string) => fetch(url).then((res)=>res.json());
+  const { favoritesListData } = useGlobalContext();
   const location = useLocation();
   const url = `${location.pathname}${location.search}`;
-  const {data} = useSWR([`http://127.0.0.1:5555/api/products/${url}`], fetcher, {
+  const { data } = useSWR([`http://127.0.0.1:5555/api/products/${url}`], fetcher, {
     revalidateIfStale: false,
   });
-  console.log(data, "data from accessories");
+
+  const accessoriesModifiedData = data?.data.map((accessory: any) => {
+    return {
+      ...accessory,
+      isLiked: favoritesListData?.some((item: any) => item._id === accessory._id),
+    };
+  });
 
   return (
     <div className={Styles.accessories}>
       <ProductPageGrid>
-        <Filters/>
-        <ProductPageHeader {...data}/>
-        <ProductPageListItem {...data}/>
+        <Filters />
+        <ProductPageHeader data={accessoriesModifiedData} />
+        <ProductPageListItem data={accessoriesModifiedData} />
       </ProductPageGrid>
     </div>
   );
