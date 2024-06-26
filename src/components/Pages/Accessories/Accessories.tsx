@@ -1,13 +1,11 @@
-import React from "react";
-import Styles from "./Accessories.module.css";
-import Row from "../../UI/Row/Row";
-import ProductPageGrid from "../../UI/ProductPageGrid/ProductPageGrid";
-import Filters from "../../UI/ProductPageFilter/ProductPageFilter";
-import ProductPageHeader from "../../UI/ProductPageHeader/ProductPageHeader";
-import ProductPageListItem from "../../UI/ProductPageListItem/ProductPageListItem";
 import { useLocation } from "react-router-dom";
 import useSWR from "swr";
 import { useGlobalContext } from "../../../context/globalContext";
+import Filters from "../../UI/ProductPageFilter/ProductPageFilter";
+import ProductPageGrid from "../../UI/ProductPageGrid/ProductPageGrid";
+import ProductPageHeader from "../../UI/ProductPageHeader/ProductPageHeader";
+import ProductPageListItem from "../../UI/ProductPageListItem/ProductPageListItem";
+import Styles from "./Accessories.module.css";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 function Accessories() {
