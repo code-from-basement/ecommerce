@@ -7,7 +7,7 @@ export default function useLogout(currentData: any) {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const { setAuthUser } = useAuthContext();
-  const { setBasketData } = useGlobalContext();
+  const { setBasketData, setFavoritesListData } = useGlobalContext();
 
   const logoutHandler = async () => {
     setIsLoading(true);
@@ -21,11 +21,11 @@ export default function useLogout(currentData: any) {
         credentials: "include",
         body: JSON.stringify(currentData),
       });
-      const data = await response.json();
-      console.log(data);
+      await response.json();
       await setAuthUser();
       console.log("authuser empty");
       await setBasketData([]);
+      await setFavoritesListData([]);
       console.log("basket empty");
       localStorage.removeItem("userData");
       navigate("/");

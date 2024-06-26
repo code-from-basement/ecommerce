@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 
 export default function useLikeItem() {
   const { authUser } = useAuthContext();
-  const { setFavoritesListData } = useGlobalContext();
+  const { setFavoritesListData, favoritesListData } = useGlobalContext();
   const [likeItemLoading, setLikeItemLoading] = useState<boolean>(false);
   const [likeItemError, setLikeItemError] = useState<any>(null);
 
@@ -33,7 +33,8 @@ export default function useLikeItem() {
     } finally {
       setTimeout(() => {
         setLikeItemLoading(false);
-        toast.success(`${product.title} has been added to your favorite list.`);
+        const val = favoritesListData?.some((item: any) => item._id === product._id);
+        toast.success(`${product.title} ${!val ? "has been added to your favorite list." : "has been removed from your favorite list."}`);
       }, 1000);
     }
   };
