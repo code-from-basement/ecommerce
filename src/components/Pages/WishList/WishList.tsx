@@ -1,11 +1,15 @@
-import React from "react";
-import Styles from "./WishList.module.css";
+import { useGlobalContext } from "../../../context/globalContext";
 import Row from "../../UI/Row/Row";
+import Styles from "./WishList.module.css";
 function WishList() {
+  const { favoritesListData } = useGlobalContext();
   return (
     <div className={Styles.wishlist}>
       <Row>
-        <h1>Your wishlist is empty</h1>
+        <h1>You have {favoritesListData?.length} products in your wishlist:</h1>
+        <em>
+          ***you need to create product item for <b>each liked item</b> in favorite list with <b>unlike</b> button***
+        </em>
       </Row>
     </div>
   );

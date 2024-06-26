@@ -149,6 +149,11 @@ select {
   z-index: 200;
 }
 
+em {
+  font-size: large;
+  opacity: 0.75;
+}
+
 /* Breakpoints */
 
 /* 1200px */
