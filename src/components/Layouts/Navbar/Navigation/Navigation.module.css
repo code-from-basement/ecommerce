@@ -147,6 +147,31 @@
   font-size: var(--font-s-xs);
   animation: 0.4s numAnimate ease-in-out;
 }
+.wishlistIcon {
+  background-color: transparent;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+  position: relative;
+}
+.wishlistIcon span {
+  position: absolute;
+  bottom: -1rem;
+  right: -1rem;
+  background-color: var(--color-red-tint);
+  color: var(--color-red-shade);
+  border-radius: 999px;
+  width: 1.6rem;
+  height: 1.6rem;
+  font-size: var(--font-s-xs);
+  font-weight: 600;
+  animation: 0.4s numAnimate ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 @keyframes numAnimate {
   0% {

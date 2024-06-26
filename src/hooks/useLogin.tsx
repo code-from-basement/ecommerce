@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useAuthContext } from "../context/authContext";
 import { useGlobalContext } from "../context/globalContext";
+import { set } from "react-hook-form";
 
 const useLogin = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { authUser, setAuthUser } = useAuthContext();
-  const { setFavoritesListData, setBasketData } = useGlobalContext();
+  const { setFavoritesListData, setBasketData, favoritesListData } = useGlobalContext();
 
   const loginHandler = async (currentUserData: { username: string; password: string }) => {
     setIsLoading(true);
@@ -20,7 +21,7 @@ const useLogin = () => {
         body: JSON.stringify(currentUserData),
       });
       const data = await response.json();
-      setAuthUser(data);
+      await setAuthUser(data);
       localStorage.setItem("userData", JSON.stringify(data));
 
       // fetching the basket list
@@ -28,9 +29,10 @@ const useLogin = () => {
       const basketDataResponse = await getBasketData.json();
       await setBasketData(basketDataResponse?.data);
 
-      // fetching the wishlist
-      // const favoritesResponse = await fetch(`http://127.0.0.1:5555/api/favorites/${userID}`);
-      // const favoritesData = await favoritesResponse.json();
+      // fetching Favorite list data
+      const getFavoritesResponse = await fetch(`http://127.0.0.1:5555/api/favorites/${data?._id}`);
+      const getFavoritesData = await getFavoritesResponse.json();
+      await setFavoritesListData(getFavoritesData?.data);
     } catch (err) {
       alert(err);
     } finally {

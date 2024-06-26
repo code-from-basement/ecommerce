@@ -6,18 +6,19 @@ import StarsBar from "../StarsBar/StarsBar";
 import { motion } from "framer-motion";
 import { fadeInAnimation } from "../Animation/Animation";
 import useAddToBasket from "../../../hooks/useAddToBasket";
+import useLikeItem from "../../../hooks/useLikeItem";
 
 const ProductItem = ({ product }: { product: any }) => {
   const { addToBasket, error, isLoading } = useAddToBasket();
+  const { addItemToFavoriteHandler, likeItemLoading, likeItemError } = useLikeItem();
   const { _id, title, price, new: isNew, rate_average, colors, description, images } = product;
+  console.log(product);
 
   return (
     <motion.div {...fadeInAnimation} className={Styles.productItem}>
       <div className={Styles.productItem__action}>
         <button onClick={() => addToBasket(product)}>{isLoading ? <LoaderCircle className={Styles.spinner} /> : <PlusIcon />}</button>
-        <button>
-          <HeartIcon />
-        </button>
+        <button onClick={() => addItemToFavoriteHandler(product)}>{likeItemLoading ? <LoaderCircle className={Styles.spinner} /> : <HeartIcon />}</button>
       </div>
       <Link to={`/${title}`}>
         <div className={Styles.productItem__tag}>{isNew ? <span className={Styles.tagNew}>New</span> : ""}</div>

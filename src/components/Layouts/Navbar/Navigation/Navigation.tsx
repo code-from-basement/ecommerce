@@ -13,13 +13,18 @@ import Styles from "./Navigation.module.css";
 
 function Navigation() {
   const { authUser } = useAuthContext();
-  const { setUiToggle, basketData } = useGlobalContext();
-  const Span = () => {
+  const { setUiToggle, basketData, favoritesListData } = useGlobalContext();
+  const BasketNumber = () => {
     return <span>{basketData?.length}</span>;
   };
+
+  const WishlistNumber = () => {
+    return <span>{favoritesListData?.length}</span>;
+  };
   useEffect(() => {
-    Span();
-  }, [basketData]);
+    BasketNumber();
+    WishlistNumber();
+  }, [basketData, favoritesListData]);
 
   // Open search bar logic
   const onClickSearchButtonHandler = () => {
@@ -74,13 +79,13 @@ function Navigation() {
           <img src={profileIcon} alt="" />
           {/* {authUser ? <img src={authUser.profilePicture} /> : <img src={profileIcon} alt="" />} */}
         </Link>
-        <Link to="wishlist">
+        <Link to="wishlist" className={Styles.wishlistIcon}>
           <img src={favoriteIcon} alt="" />
+          {favoritesListData?.length > 0 ? <WishlistNumber /> : null}
         </Link>
         <button className={Styles.basketTrigger} onClick={onCLickBasketHandler}>
           <img src={basketIcon} alt="" />
-
-          {basketData.length > 0 ? <Span /> : null}
+          {basketData.length > 0 ? <BasketNumber /> : null}
         </button>
       </div>
     </motion.div>
