@@ -7,3 +7,11 @@
   max-height: min-content;
   padding: var(--container-padding) var(--spacing-md);
 }
+.gridList {
+  grid-column: 2/-1;
+  grid-row: 2/-1;
+  padding: var(--spacing-md) 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(34rem, 1fr));
+  grid-gap: var(--spacing-md);
+}

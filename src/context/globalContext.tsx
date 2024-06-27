@@ -1,14 +1,17 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 const GlobalContext = createContext<any>(null);
-
 const GlobalContextProvider = ({ children }: { children: React.ReactNode }) => {
   type UiToggleState = {
     isSearchOpen: boolean;
     isBasketOpen: boolean;
     isLoadingFullViewShow: boolean;
   };
+
+  // Basket Data
   const [basketData, setBasketData] = useState<object[]>([]);
+  // Favorites list Data
+  const [favoritesListData, setFavoritesListData] = useState<object[]>([]);
 
   const [uiToggle, setUiToggle] = useState<UiToggleState>({
     isSearchOpen: false,
@@ -16,7 +19,6 @@ const GlobalContextProvider = ({ children }: { children: React.ReactNode }) => {
     isLoadingFullViewShow: false,
   });
 
-  const [favoritesListData, setFavoritesListData] = useState<object[]>([]);
   return (
     <GlobalContext.Provider
       value={{

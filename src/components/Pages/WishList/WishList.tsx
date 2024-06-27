@@ -1,16 +1,27 @@
 import { useGlobalContext } from "../../../context/globalContext";
-import Row from "../../UI/Row/Row";
+import WishListItem from "../../UI/WishListItem/WishListItem";
 import Styles from "./WishList.module.css";
 function WishList() {
   const { favoritesListData } = useGlobalContext();
+
+  const EmptyWishList = () => {
+    return (
+      <div>
+        <h1>You haven't add any product in your wish list.</h1>
+      </div>
+    );
+  };
+
   return (
     <div className={Styles.wishlist}>
-      <Row>
-        <h1>You have {favoritesListData?.length} products in your wishlist:</h1>
-        <em>
-          ***you need to create product item for <b>each liked item</b> in favorite list with <b>unlike</b> button***
-        </em>
-      </Row>
+      {favoritesListData.length === 0 && <EmptyWishList />}
+      {favoritesListData.length !== 0 && <h1>You have {favoritesListData?.length} products in your wishlist:</h1>}
+
+      <div className={Styles.gridList}>
+        {favoritesListData?.map((item: any) => {
+          return <WishListItem data={item} />;
+        })}
+      </div>
     </div>
   );
 }

@@ -1,13 +1,12 @@
 import { useLocation } from "react-router-dom";
 import useSWR from "swr";
+import { useGlobalContext } from "../../../context/globalContext";
+import useMetaDataUpdater from "../../../hooks/useMetaDataUpdater";
 import Filters from "../../UI/ProductPageFilter/ProductPageFilter";
 import ProductPageGrid from "../../UI/ProductPageGrid/ProductPageGrid";
 import ProductPageHeader from "../../UI/ProductPageHeader/ProductPageHeader";
 import ProductPageListItem from "../../UI/ProductPageListItem/ProductPageListItem";
 import Styles from "./Keyboards.module.css";
-import useMetaDataUpdater from "../../../hooks/useMetaDataUpdater";
-import { useGlobalContext } from "../../../context/globalContext";
-import { useEffect } from "react";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
