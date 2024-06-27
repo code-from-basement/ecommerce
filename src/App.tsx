@@ -18,8 +18,12 @@ import LoadingFullView from "./components/UI/LoadingFullView/LoadingFullView";
 import { useGlobalContext } from "./context/globalContext";
 import { useAuthContext } from "./context/authContext";
 import { Toaster } from "react-hot-toast";
+import CTASubscribe from "./components/UI/CTASubscribe/CTASubscribe";
+import { useCookies } from "react-cookie";
+import ConsentForm from "./components/UI/ConsentForm/ConsentForm";
 
 function App() {
+  const [cookie] = useCookies();
   const { uiToggle } = useGlobalContext();
   const { isLoadingFullViewShow } = uiToggle;
   const { authUser } = useAuthContext();
@@ -27,6 +31,8 @@ function App() {
   return (
     <div>
       <Navbar />
+      {!cookie._CTASub && <CTASubscribe />}
+      {/* <ConsentForm /> */}
       {isLoadingFullViewShow && <LoadingFullView />}
       <Routes>
         <Route path="/" element={<Home />} />

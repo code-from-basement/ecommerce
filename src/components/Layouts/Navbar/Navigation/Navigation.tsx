@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import basketIcon from "../../../../assets/icons/basket-outline.svg";
 import favoriteIcon from "../../../../assets/icons/heart-outline.svg";
@@ -14,17 +13,16 @@ import Styles from "./Navigation.module.css";
 function Navigation() {
   const { authUser } = useAuthContext();
   const { setUiToggle, basketData, favoritesListData } = useGlobalContext();
+
+  //
   const BasketNumber = () => {
     return <span>{basketData?.length}</span>;
   };
 
+  //
   const WishlistNumber = () => {
     return <span>{favoritesListData?.length}</span>;
   };
-  useEffect(() => {
-    BasketNumber();
-    WishlistNumber();
-  }, [basketData, favoritesListData]);
 
   // Open search bar logic
   const onClickSearchButtonHandler = () => {

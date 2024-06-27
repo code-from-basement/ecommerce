@@ -18,8 +18,8 @@ function WishList() {
       {favoritesListData.length !== 0 && <h1>You have {favoritesListData?.length} products in your wishlist:</h1>}
 
       <div className={Styles.gridList}>
-        {favoritesListData?.map((item: any) => {
-          return <WishListItem data={item} />;
+        {favoritesListData?.map((item: any, index: number) => {
+          return <WishListItem key={index} data={item} />;
         })}
       </div>
     </div>
