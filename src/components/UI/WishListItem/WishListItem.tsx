@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { HeartIcon, HeartOffIcon, LoaderCircle, PlusIcon } from "lucide-react";
+import { HeartOffIcon, LoaderCircle, PlusIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import useAddToBasket from "../../../hooks/useAddToBasket";
 import useLikeItem from "../../../hooks/useLikeItem";
@@ -22,13 +22,13 @@ const WishListItem = ({ data }: { data: any }) => {
         <div className={Styles.productItem__tag}>{isNew ? <span className={Styles.tagNew}>New</span> : ""}</div>
         {/* <span className={Styles.tagDiscontinue}>discontinued</span> */}
         <div className={Styles.productItem__header}>
-          {/* {colors.length !== 0 && (
+          {colors.length !== 0 && (
             <div className={Styles.productItem__colors}>
               {colors?.map((color: any, index: number) => {
                 return <span key={index} className={Styles.colors__block} style={{ backgroundColor: `${color.hex}` }}></span>;
               })}
             </div>
-          )} */}
+          )}
           <img src={`/src/assets/image/${images[0]}`} alt={title} />
         </div>
         <div className={Styles.productItem__footer}>
