@@ -5,10 +5,19 @@ import BasketEmpty from "../BasketEmpty/BasketEmpty";
 import BasketItemList from "../BasketItemList/BasketItemList";
 import { ButtonPrimary, CloseButton } from "../Buttons/Buttons";
 import Styles from "./Basket.module.css";
+import {useClickAway} from 'react-use';
+import { useRef } from "react";
 
 function Basket() {
   const { uiToggle, setUiToggle, basketData } = useGlobalContext();
   const { isBasketOpen } = uiToggle;
+  const ref = useRef(null);
+
+  useClickAway(ref, () => {
+    setUiToggle((prevData: any) => {
+      return { ...prevData, isBasketOpen: false };
+    });
+  })
 
   const onCLickCLoseBasketHandler = () => {
     setUiToggle((prevData: any) => {
@@ -21,7 +30,7 @@ function Basket() {
   }
   if (basketData?.length > 0) {
     return (
-      <motion.div id="basket" {...basketAnimation} className={Styles.basket}>
+      <motion.div id="basket" {...basketAnimation} className={Styles.basket} ref={ref}>
         <BasketItemList />
         <hr />
         <div className={Styles.subTotal}>
