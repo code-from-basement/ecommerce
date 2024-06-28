@@ -13,9 +13,9 @@ export function ButtonSecondary() {
   return <button>button secondary</button>;
 }
 
-export function ButtonOutline({ children, icon }: { children: string; icon: string | undefined }) {
+export function ButtonOutline({ children, icon, onClick }: { children: string; icon: string | undefined, onClick: () => void }) {
   return (
-    <button className={Styles.outlineButton}>
+    <button className={Styles.outlineButton} onClick={onClick || undefined}>
       <img src={icon} alt="button outline" />
       {children}
     </button>

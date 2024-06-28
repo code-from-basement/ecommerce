@@ -6,6 +6,7 @@ const GlobalContextProvider = ({ children }: { children: React.ReactNode }) => {
     isSearchOpen: boolean;
     isBasketOpen: boolean;
     isLoadingFullViewShow: boolean;
+    isModalRedirectionShow:boolean;
   };
 
   // Basket Data
@@ -17,6 +18,7 @@ const GlobalContextProvider = ({ children }: { children: React.ReactNode }) => {
     isSearchOpen: false,
     isBasketOpen: false,
     isLoadingFullViewShow: false,
+    isModalRedirectionShow:true,
   });
 
   return (

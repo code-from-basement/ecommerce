@@ -21,16 +21,18 @@ import { Toaster } from "react-hot-toast";
 import CTASubscribe from "./components/UI/CTASubscribe/CTASubscribe";
 import { useCookies } from "react-cookie";
 import ConsentForm from "./components/UI/ConsentForm/ConsentForm";
+import ModalRedirection from "./components/UI/ModalRedirection/ModalRedirection";
 
 function App() {
   const [cookie] = useCookies();
   const { uiToggle } = useGlobalContext();
-  const { isLoadingFullViewShow } = uiToggle;
+  const { isLoadingFullViewShow , isModalRedirectionShow} = uiToggle;
   const { authUser } = useAuthContext();
 
   return (
     <div>
       <Navbar />
+      {isModalRedirectionShow && <ModalRedirection/>}
       {!cookie._CTASub && <CTASubscribe />}
       {/* <ConsentForm /> */}
       {isLoadingFullViewShow && <LoadingFullView />}
