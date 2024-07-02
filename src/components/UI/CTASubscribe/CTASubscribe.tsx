@@ -1,8 +1,10 @@
+import { XIcon } from "lucide-react";
+import { useRef } from "react";
 import { useCookies } from "react-cookie";
 import { Link } from "react-router-dom";
+import { useClickAway } from "react-use";
 import { ButtonPrimary } from "../Buttons/Buttons";
 import Styles from "./CTASubscribe.module.css";
-import { XIcon } from "lucide-react";
 
 export default function CTASubscribe() {
   const [cookie, setCookie] = useCookies(["_CTASub"]);
@@ -12,10 +14,18 @@ export default function CTASubscribe() {
     });
   };
 
+  // Click away logic fro CTA Subscribe Modal
+  const modalRef = useRef(null);
+  useClickAway(modalRef, () => {
+    setCookie("_CTASub", true, {
+      expires: new Date(Date.now() + 1000 * 60),
+    });
+  });
+
   return (
     <div className={Styles.CTASubscribe}>
-      <div className={Styles.container}>
-        <button className={Styles.closeBtn}>
+      <div className={Styles.container} ref={modalRef}>
+        <button onClick={setCookieHandler} className={Styles.closeBtn}>
           <XIcon />
         </button>
         <div className={Styles.imageSection}></div>
@@ -31,7 +41,7 @@ export default function CTASubscribe() {
             </ButtonPrimary>
           </div>
           <p className={Styles.formSection__detailText}>You can unsubscribe any time.</p>
-          <Link className={Styles.formSection__noThanksBtn} to="#">
+          <Link onClick={setCookieHandler} className={Styles.formSection__noThanksBtn} to="#">
             No Thanks
           </Link>
         </div>

@@ -1,31 +1,31 @@
-import React, { useRef } from "react";
-import Styles from "./ModalRedirection.module.css";
-import { useClickAway } from "react-use";
-import { useGlobalContext } from "../../../context/globalContext";
-import { ButtonOutline, ButtonPrimary, ButtonSecondary, CloseButton } from "../Buttons/Buttons";
-import arrowIcon from "../../../assets/icons/arrow-right.svg";
+import { motion } from "framer-motion";
+import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import {motion} from 'framer-motion'
+import { useClickAway } from "react-use";
+import arrowIcon from "../../../assets/icons/arrow-right.svg";
+import { useGlobalContext } from "../../../context/globalContext";
 import { animationOpacity } from "../Animation/Animation";
+import { ButtonOutline, ButtonPrimary, CloseButton } from "../Buttons/Buttons";
+import Styles from "./ModalRedirection.module.css";
 
 function ModalRedirection() {
   const { uiToggle, setUiToggle } = useGlobalContext();
   const { isModalRedirectionShow } = uiToggle;
   const navigate = useNavigate();
 
-  const onClickRedirectToLoginHandler = () =>{
-    if(isModalRedirectionShow){
+  const onClickRedirectToLoginHandler = () => {
+    if (isModalRedirectionShow) {
       setUiToggle((prevData: any) => {
-        return { ...prevData, isModalRedirectionShow: false , isLoadingFullViewShow: true };
+        return { ...prevData, isModalRedirectionShow: false, isLoadingFullViewShow: true };
       });
       setTimeout(() => {
         setUiToggle((prevData: any) => {
-            return { ...prevData, isLoadingFullViewShow: false };
-          });
-        navigate('account/signup');
+          return { ...prevData, isLoadingFullViewShow: false };
+        });
+        navigate("account/signup");
       }, 500);
     }
-  }
+  };
 
   const ref = useRef(null);
   useClickAway(ref, () => {
@@ -36,11 +36,10 @@ function ModalRedirection() {
     }
   });
 
-  const closeButtonHandler = () => { 
+  const closeButtonHandler = () => {
     setUiToggle((prevData: any) => {
-        return { ...prevData, isModalRedirectionShow: false };
-      });
-  
+      return { ...prevData, isModalRedirectionShow: false };
+    });
   };
 
   return (
@@ -53,13 +52,15 @@ function ModalRedirection() {
           <p>To add this item to your wishlist you need to login first.</p>
         </div>
         <div className={Styles.cardContainer__footer}>
-          <ButtonPrimary style={{  backgroundColor: "#00deb0" }} disabled={false} onClick={onClickRedirectToLoginHandler}>
+          <ButtonPrimary style={{ backgroundColor: "#00deb0" }} disabled={false} onClick={onClickRedirectToLoginHandler}>
             Login
           </ButtonPrimary>
-          <ButtonOutline icon={arrowIcon} onClick={closeButtonHandler}>Continue without Login</ButtonOutline>          
+          <ButtonOutline icon={arrowIcon} onClick={closeButtonHandler}>
+            Continue without Login
+          </ButtonOutline>
         </div>
         <div className={Styles.cardContainer__closeButton}>
-        <CloseButton onClick={closeButtonHandler}></CloseButton>
+          <CloseButton onClick={closeButtonHandler}></CloseButton>
         </div>
       </motion.div>
     </div>

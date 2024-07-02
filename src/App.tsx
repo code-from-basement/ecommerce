@@ -32,9 +32,9 @@ function App() {
   return (
     <div>
       {!cookie._CTASub && <CTASubscribe />}
+      {!cookie._CTAConsent && <ConsentForm />}
       <Navbar />
       {isModalRedirectionShow && <ModalRedirection />}
-      {/* <ConsentForm /> */}
       {isLoadingFullViewShow && <LoadingFullView />}
       <Routes>
         <Route path="/" element={<Home />} />
