@@ -3,7 +3,7 @@ import { ButtonPrimary } from "../Buttons/Buttons";
 import Styles from "./ConsentForm.module.css";
 
 export default function ConsentForm() {
-  const [cookie, setCookie, removeCookie] = useCookies(["_CTAConsent"]);
+  const [cookie, setCookie] = useCookies(["_CTAConsent"]);
   const setCookieHandler = () => {
     setCookie("_CTAConsent", true, {
       expires: new Date(Date.now() + 1000 * 60),
