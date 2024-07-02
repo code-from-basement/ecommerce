@@ -31,9 +31,9 @@ function App() {
 
   return (
     <div>
+      {!cookie._CTASub && <CTASubscribe />}
       <Navbar />
       {isModalRedirectionShow && <ModalRedirection />}
-      {/* {!cookie._CTASub && <CTASubscribe />} */}
       {/* <ConsentForm /> */}
       {isLoadingFullViewShow && <LoadingFullView />}
       <Routes>
