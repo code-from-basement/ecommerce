@@ -26,14 +26,14 @@ import ModalRedirection from "./components/UI/ModalRedirection/ModalRedirection"
 function App() {
   const [cookie] = useCookies();
   const { uiToggle } = useGlobalContext();
-  const { isLoadingFullViewShow , isModalRedirectionShow} = uiToggle;
+  const { isLoadingFullViewShow, isModalRedirectionShow } = uiToggle;
   const { authUser } = useAuthContext();
 
   return (
     <div>
       <Navbar />
-      {isModalRedirectionShow && <ModalRedirection/>}
-      {!cookie._CTASub && <CTASubscribe />}
+      {isModalRedirectionShow && <ModalRedirection />}
+      {/* {!cookie._CTASub && <CTASubscribe />} */}
       {/* <ConsentForm /> */}
       {isLoadingFullViewShow && <LoadingFullView />}
       <Routes>
