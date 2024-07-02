@@ -5,7 +5,7 @@
   max-height: 20vh;
   z-index: 900;
   border-radius: var(--border-r) var(--border-r) 0 0;
-  padding: var(--spacing-md);
+  padding: var(--spacing-lg);
   position: fixed;
   bottom: 0;
   right: 50%;
@@ -14,6 +14,7 @@
   align-items: stretch;
   gap: var(--spacing-md);
   transform: translate(50%);
+  box-shadow: 0 -1rem 3rem #00000035;
 }
 .content {
   flex: 1;
