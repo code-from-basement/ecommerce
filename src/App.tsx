@@ -22,6 +22,7 @@ import CTASubscribe from "./components/UI/CTASubscribe/CTASubscribe";
 import { useCookies } from "react-cookie";
 import ConsentForm from "./components/UI/ConsentForm/ConsentForm";
 import ModalRedirection from "./components/UI/ModalRedirection/ModalRedirection";
+import CheckoutPage from "./components/Pages/CheckoutPage/CheckoutPage";
 
 function App() {
   const [cookie] = useCookies();
@@ -51,6 +52,7 @@ function App() {
         <Route path="wishlist" element={<WishList />} />
         <Route path="search" element={<Search />} />
         <Route path="/:title" element={<ItemPage />} />
+        <Route path="checkout" element={<CheckoutPage />} />
       </Routes>
       <Footer />
       <Toaster

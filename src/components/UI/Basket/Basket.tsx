@@ -5,10 +5,12 @@ import BasketEmpty from "../BasketEmpty/BasketEmpty";
 import BasketItemList from "../BasketItemList/BasketItemList";
 import { ButtonPrimary, CloseButton } from "../Buttons/Buttons";
 import Styles from "./Basket.module.css";
-import {useClickAway} from 'react-use';
+import { useClickAway } from "react-use";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Basket() {
+  const navigate = useNavigate();
   const { uiToggle, setUiToggle, basketData } = useGlobalContext();
   const { isBasketOpen } = uiToggle;
   const ref = useRef(null);
@@ -17,7 +19,7 @@ function Basket() {
     setUiToggle((prevData: any) => {
       return { ...prevData, isBasketOpen: false };
     });
-  })
+  });
 
   const onCLickCLoseBasketHandler = () => {
     setUiToggle((prevData: any) => {
@@ -39,7 +41,7 @@ function Basket() {
         </div>
 
         <div className={Styles.footer}>
-          <ButtonPrimary style={{ width: "100%" }} disabled={false} onClick={() => console.log("checkout")}>
+          <ButtonPrimary style={{ width: "100%" }} disabled={false} onClick={() => navigate("checkout")}>
             Checkout
           </ButtonPrimary>
         </div>

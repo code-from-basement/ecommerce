@@ -17,6 +17,7 @@ function Keyboards() {
   const { data } = useSWR([`http://127.0.0.1:5555/api/products/${url}`], fetcher, {
     revalidateIfStale: false,
   });
+
   useMetaDataUpdater(url);
 
   const keyboardsModifiedData = data?.data.map((keyboard: any) => {

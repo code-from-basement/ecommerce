@@ -1,0 +1,135 @@
+.container {
+  width: 100%;
+  display: flex;
+  gap: var(--spacing-sm);
+  height: min-content;
+  position: relative;
+  background-color: #f1f1f5;
+  padding: var(--spacing-md);
+  border-radius: var(--border-r);
+}
+
+.imageContainer {
+  width: 10rem;
+  height: 10rem;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-r);
+}
+
+.contentContainer {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--spacing-xs);
+}
+
+.contentContainer__title {
+  font-size: var(--font-s-lg);
+  font-weight: 400;
+}
+
+.contentContainer__description {
+  font-size: var(--font-s-sm);
+}
+
+.counterContainer {
+  flex: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controllers {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+
+  /* border-radius: var(--border-r-select); */
+  overflow: hidden;
+}
+.controllers__num {
+  font-size: var(--font-s-lg);
+}
+.controllers button {
+  padding: 0.4rem;
+  border-radius: 0;
+  /* width: 2.8rem;
+  height: 2.8rem; */
+  background-color: transparent;
+  border-radius: 100rem;
+  border: 1px solid var(--color-btn);
+}
+.controllers button:hover {
+  color: var(--color-white);
+  background-color: var(--color-btn);
+}
+.controllers button:active {
+  filter: brightness(120%);
+}
+.controllers button svg {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+.controllers button:disabled {
+  background-color: transparent !important;
+  border: 0.1rem solid lightgray;
+  color: lightgray !important ;
+}
+.unitPrice {
+  font-weight: 500;
+  font-size: var(--font-s-lg);
+  /* opacity: 0.7; */
+}
+.deleteContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.btn__delete {
+  /* position: absolute; */
+  padding: var(--spacing-xs);
+  width: 2.8rem;
+  height: 2.8rem;
+
+  padding: var(--spacing-xs);
+  color: var(--color-text-gray);
+  background-color: transparent;
+  z-index: 200;
+  transition: all 0.2s;
+}
+.btn__delete:hover {
+  color: var(--color-red);
+}
+
+.loadingLayout {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff99;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.loadingLayout svg {
+  color: var(--color-btn);
+
+  animation: spinner 1s linear infinite;
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
