@@ -1,10 +1,10 @@
+import { motion } from "framer-motion";
 import { Loader2, MinusIcon, PlusIcon, Trash2Icon } from "lucide-react";
 import useDecrementBasketItem from "../../../hooks/useDecrementBasketItem";
 import useDeleteBasketItem from "../../../hooks/useDeleteBasketItem";
 import useIncrementBasketItem from "../../../hooks/useIncrementBasketItem";
-import Styles from "./CheckoutItem.module.css";
-import { motion } from "framer-motion";
 import { basketItemAnimation } from "../Animation/Animation";
+import Styles from "./CheckoutItem.module.css";
 export default function CheckoutItem({ item }: { item: any }) {
   const { deleteBasketItemHandler, deleteLoading, deleteError } = useDeleteBasketItem();
   const { incrementBasketItemHandler, incrementLoading, incrementError } = useIncrementBasketItem();

@@ -16,6 +16,7 @@
   background-color: var(--color-btn);
   color: var(--color-white);
   height: 5.6rem;
+  gap: var(--spacing-sm);
 }
 .primaryBtn:disabled {
   background-color: red !important;

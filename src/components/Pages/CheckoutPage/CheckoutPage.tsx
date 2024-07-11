@@ -1,4 +1,5 @@
 import { useGlobalContext } from "../../../context/globalContext";
+import CheckoutCart from "../../UI/CheckoutCart/CheckoutCart";
 import CheckoutItem from "../../UI/CheckoutItem/CheckoutItem";
 import Styles from "./CheckoutPage.module.css";
 
@@ -14,7 +15,9 @@ export default function CheckoutPage() {
           })}
         </div>
       </div>
-      <div className={Styles.checkoutContainer}>check out container</div>
+      <div className={Styles.checkoutContainer}>
+        <CheckoutCart />
+      </div>
     </div>
   );
 }
