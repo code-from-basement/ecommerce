@@ -71,6 +71,13 @@
   font-size: var(--font-s-lg);
   font-weight: 800;
 }
+
+.footer {
+  width: 100%;
+}
+.footer button {
+  width: 100%;
+}
 .subFooter {
   width: 100%;
   padding: 0 var(--spacing-xl);
