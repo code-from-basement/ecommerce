@@ -29,7 +29,7 @@ export default function CheckoutCart() {
           Checkout
         </ButtonPrimary>
         <ButtonOutline disabled={false} style={{ width: "100%" }} icon={<ShoppingBagIcon />} onClick={() => {}}>
-          Continue Shopping
+          Continue Shopping.
         </ButtonOutline>
       </div>
     </div>

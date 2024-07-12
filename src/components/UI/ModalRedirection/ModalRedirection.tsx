@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useClickAway } from "react-use";
-import arrowIcon from "../../../assets/icons/arrow-right.svg";
+import { ShoppingBasket, LogInIcon } from "lucide-react";
 import { useGlobalContext } from "../../../context/globalContext";
 import { animationOpacity } from "../Animation/Animation";
 import { ButtonOutline, ButtonPrimary, CloseButton } from "../Buttons/Buttons";
@@ -52,10 +52,10 @@ function ModalRedirection() {
           <p>To add this item to your wishlist you need to login first.</p>
         </div>
         <div className={Styles.cardContainer__footer}>
-          <ButtonPrimary style={{ backgroundColor: "#00deb0" }} disabled={false} onClick={onClickRedirectToLoginHandler}>
+          <ButtonPrimary icon={<LogInIcon />} onClick={onClickRedirectToLoginHandler} disabled={false}>
             Login
           </ButtonPrimary>
-          <ButtonOutline icon={arrowIcon} onClick={closeButtonHandler}>
+          <ButtonOutline icon={<ShoppingBasket />} onClick={closeButtonHandler} disabled={false}>
             Continue without Login
           </ButtonOutline>
         </div>

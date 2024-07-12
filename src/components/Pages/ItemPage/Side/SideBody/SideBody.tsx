@@ -1,11 +1,12 @@
 import React, { memo, useState } from "react";
+import useAddToBasket from "../../../../../hooks/useAddToBasket";
 import { ButtonOutline, ButtonPrimary } from "../../../../UI/Buttons/Buttons";
 import InStock from "../../../../UI/InStock/InStock";
 import checkIcon from "./../../../../../assets/icons/checkmark-outline.svg";
-import heartIcon from "./../../../../../assets/icons/heart-outline.svg";
+
 import lockIcon from "./../../../../../assets/icons/lock-closed-outline.svg";
 import Styles from "./SideBody.module.css";
-import useAddToBasket from "../../../../../hooks/useAddToBasket";
+import { ShoppingBasket, HeartIcon } from "lucide-react";
 
 const ColorPanelComponent = (colors: any) => {
   return (
@@ -57,8 +58,12 @@ const SideBody = memo(({ sideBodyData }: any) => {
           </span>
         </div>
       </div>
-      <ButtonPrimary disabled={!available}>add to basket</ButtonPrimary>
-      <ButtonOutline icon={heartIcon}>add to wishlist</ButtonOutline>
+      <ButtonPrimary icon={<ShoppingBasket />} disabled={!available} onClick={() => {}}>
+        add to basket
+      </ButtonPrimary>
+      <ButtonOutline icon={<HeartIcon />} disabled={false} onClick={() => {}}>
+        add to wishlist
+      </ButtonOutline>
     </div>
   );
 });
