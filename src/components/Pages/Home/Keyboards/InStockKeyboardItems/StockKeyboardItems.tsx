@@ -5,18 +5,20 @@ import StarsBar from "../../../../UI/StarsBar/StarsBar";
 import useAddToBasket from "../../../../../hooks/useAddToBasket";
 import { motion } from "framer-motion";
 import { fadeInAnimation } from "../../../../UI/Animation/Animation";
-import { HeartIcon, LoaderCircle, PlusIcon } from "lucide-react";
+import { HeartIcon, HeartOffIcon, LoaderCircle, PlusIcon } from "lucide-react";
+import useLikeItem from "../../../../../hooks/useLikeItem";
 
 function StockKeyboardItems({ item }: any) {
   const { addToBasket, error, isLoading } = useAddToBasket();
-  const { _id, title, new: isNew } = item;
+  const { addItemToFavoriteHandler, likeItemLoading, likeItemError } = useLikeItem();
+  const { _id, title, new: isNew , isLiked } = item;
 
   return (
     <motion.div {...fadeInAnimation} className={Styles.itemContainer}>
       <div className={Styles.itemContainer__action}>
         <button onClick={() => addToBasket(item)}>{isLoading ? <LoaderCircle className={Styles.spinner} /> : <PlusIcon />}</button>
-        <button>
-          <HeartIcon />
+        <button onClick={()=> addItemToFavoriteHandler(item)}>
+          {likeItemLoading ? <LoaderCircle className={Styles.spinner}/> : isLiked ? <HeartOffIcon /> : <HeartIcon />}
         </button>
       </div>
       <Link to={`/${title}`}>

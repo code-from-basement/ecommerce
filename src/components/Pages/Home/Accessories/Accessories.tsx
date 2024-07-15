@@ -2,8 +2,11 @@ import { useEffect, useState } from "react";
 import Styles from "./Accessories.module.css";
 import ItemAccessories from "./ItemAccessories/ItemAccessories";
 import useSWR from "swr";
+import { useGlobalContext } from "../../../../context/globalContext";
 
 function Accessories() {
+
+  const {favoritesListData } = useGlobalContext();
   //fetch for first five accessories in home page
 
   const fetcher = (url: string) => fetch(url).then((res)=>res.json());
@@ -11,11 +14,18 @@ function Accessories() {
     revalidateIfStale: false
   });
 
+  const ModifiedData = data?.data.map((eachItem: any) => {
+    return {
+      ...eachItem,
+      isLiked: favoritesListData?.some((item: any) => item._id === eachItem._id),
+    };
+  });
+
   return (
     <div className={Styles.accessoriesContainer}>
       <h2>Accessories</h2>
       <div className={Styles.accessoriesItems}>
-        {data?.data.map((item: any, index: number) => (
+        {ModifiedData?.map((item: any, index: number) => (
           <ItemAccessories key={index} item={item} />
         ))}
       </div>
