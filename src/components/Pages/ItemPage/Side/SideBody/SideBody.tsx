@@ -6,7 +6,8 @@ import checkIcon from "./../../../../../assets/icons/checkmark-outline.svg";
 
 import lockIcon from "./../../../../../assets/icons/lock-closed-outline.svg";
 import Styles from "./SideBody.module.css";
-import { ShoppingBasket, HeartIcon } from "lucide-react";
+import { ShoppingBasket, HeartIcon, LoaderCircle, PlusIcon, DotIcon, HeartOffIcon } from "lucide-react";
+import useLikeItem from "../../../../../hooks/useLikeItem";
 
 const ColorPanelComponent = (colors: any) => {
   return (
@@ -24,10 +25,11 @@ const ColorPanelComponent = (colors: any) => {
   );
 };
 
-const SideBody = memo(({ sideBodyData }: any) => {
-  const { colors, delivery_time, available } = sideBodyData.data[0];
+const SideBody = memo(({ ModifiedData }: any) => {
+  const { colors, delivery_time, available, isLiked } = ModifiedData[0];
   const [color, setColor] = useState(colors[0]?.name || "");
   const { addToBasket, isLoading, error } = useAddToBasket();
+  const {addItemToFavoriteHandler, likeItemLoading} = useLikeItem();
 
   const onChangeColorHandler = (e: any) => {
     setColor(e.target.id);
@@ -58,10 +60,11 @@ const SideBody = memo(({ sideBodyData }: any) => {
           </span>
         </div>
       </div>
-      <ButtonPrimary icon={<ShoppingBasket />} disabled={!available} onClick={() => {}}>
+      <ButtonPrimary icon={isLoading? <LoaderCircle className={Styles.spinner}/> :<ShoppingBasket />} disabled={!available} onClick={() => {addToBasket(ModifiedData[0])}}>
+        {/* {isLoading ? "Add to basket ..." : "Add to basket"} */}
         add to basket
       </ButtonPrimary>
-      <ButtonOutline icon={<HeartIcon />} disabled={false} onClick={() => {}}>
+      <ButtonOutline icon={likeItemLoading ? <LoaderCircle className={Styles.spinner} /> : isLiked ? <HeartOffIcon /> : <HeartIcon />} disabled={false} onClick={() => {addItemToFavoriteHandler(ModifiedData[0])}}>
         add to wishlist
       </ButtonOutline>
     </div>

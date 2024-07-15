@@ -2,7 +2,7 @@ import closeIcon from "./../../../assets/icons/close-outline.svg";
 import Styles from "./Buttons.module.css";
 
 //*Primary Button
-export function ButtonPrimary({ children, icon, disabled, onClick }: { children: string; disabled: boolean; onClick: () => void; icon: JSX.Element }) {
+export function ButtonPrimary({ children, icon, disabled, onClick }: { children: any; disabled: boolean; onClick: () => void; icon: JSX.Element }) {
   return (
     <button onClick={onClick || undefined} className={Styles.primaryButton} disabled={disabled}>
       {icon}

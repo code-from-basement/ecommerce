@@ -4,12 +4,12 @@ import SideBody from "./SideBody/SideBody";
 import SideFooter from "./SideFooter/SideFooter";
 import SideHeader from "./SideHeader/SideHeader";
 
-function Side(data: any) {
+function Side(ModifiedData: any) {
   return (
     <div className={Styles.side}>
-      <SideHeader {...data} />
+      <SideHeader {...ModifiedData} />
       <DividerH />
-      <SideBody sideBodyData={data} />
+      <SideBody {...ModifiedData} />
       <SideFooter />
     </div>
   );

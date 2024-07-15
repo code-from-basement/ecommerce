@@ -11,7 +11,7 @@ import Side from "./Side/Side";
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 function ItemPage() {
-  const { setUiToggle } = useGlobalContext();
+  const { setUiToggle, favoritesListData } = useGlobalContext();
   const location = useLocation();
   let url = `${location.pathname}`;
   useMetaDataUpdater(url);
@@ -19,6 +19,13 @@ function ItemPage() {
   // Fetching through SWR
   const { data } = useSWR(`http://127.0.0.1:5555/api/products${url}`, fetcher, {});
   const result = data?.data[0];
+
+  const ModifiedData = data?.data.map((eachItem: any) => {
+    return {
+      ...eachItem,
+      isLiked: favoritesListData?.some((item: any) => item._id === eachItem._id),
+    };
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -38,7 +45,7 @@ function ItemPage() {
     return (
       <motion.div {...fadeInItemPage} className={Styles.itemPage}>
         <ImageGallery {...data} />
-        <Side {...data} />
+        <Side ModifiedData={ModifiedData} />
       </motion.div>
     );
   }

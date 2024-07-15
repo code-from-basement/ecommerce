@@ -1,8 +1,8 @@
 import StarsBar from "../../../../UI/StarsBar/StarsBar";
 import Styles from "./SideHeader.module.css";
 
-function SideHeader({ data }: any) {
-  const { title, price, rate_average, description } = data[0];
+function SideHeader({ ModifiedData }: any) {
+  const { title, price, rate_average, description } = ModifiedData[0];
   return (
     <div className={Styles.sideHeader}>
       <p>NuPhy®</p>
