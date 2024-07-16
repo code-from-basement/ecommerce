@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import searchIcon from "../../../../assets/icons/search-outline.svg";
 import { useGlobalContext } from "../../../../context/globalContext";
@@ -52,6 +52,10 @@ function SearchBar() {
     return;
   };
 
+  useEffect(() => {
+    searchInputRef.current?.focus();
+  }, []);
+
   return (
     <motion.div className={Styles.searchContainer} {...searchBarAnimation}>
       <input
@@ -59,9 +63,7 @@ function SearchBar() {
         type="text"
         placeholder="Search here..."
         ref={searchInputRef}
-        onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) =>
-          e.key === "Enter" && onClickSearchButtonHandler(e as any)
-        }
+        onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => e.key === "Enter" && onClickSearchButtonHandler(e as any)}
       />
       <button className={Styles.BtnSearch} onClick={onClickSearchButtonHandler}>
         <img src={searchIcon} alt="" />
