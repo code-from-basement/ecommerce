@@ -1,7 +1,9 @@
+import { CreditCard, ShoppingBagIcon } from "lucide-react";
 import { ButtonOutline, ButtonPrimary } from "../Buttons/Buttons";
 import Styles from "./CheckoutCart.module.css";
-import { ShoppingBagIcon, CreditCard } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 export default function CheckoutCart() {
+  const navigate = useNavigate();
   return (
     <div className={Styles.container}>
       <div className={Styles.header}>
@@ -25,11 +27,11 @@ export default function CheckoutCart() {
       </div>
       <hr />
       <div className={Styles.footer}>
-        <ButtonPrimary icon={<CreditCard />} style={{ width: "100%" }} disabled={false} onClick={() => {}}>
+        <ButtonPrimary icon={<CreditCard />} disabled={false} onClick={() => {}}>
           Checkout
         </ButtonPrimary>
-        <ButtonOutline disabled={false} style={{ width: "100%" }} icon={<ShoppingBagIcon />} onClick={() => {}}>
-          Continue Shopping.
+        <ButtonOutline disabled={false} icon={<ShoppingBagIcon />} onClick={() => navigate(-1)}>
+          Continue Shopping
         </ButtonOutline>
       </div>
     </div>

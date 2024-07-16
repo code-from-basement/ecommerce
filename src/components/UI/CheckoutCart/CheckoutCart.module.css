@@ -11,20 +11,24 @@
 .header {
 }
 
+.header h1 {
+  font-size: var(--font-s-xl);
+}
+
 .body {
   width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  gap: var(--spacing-xs);
+  gap: var(--spacing-sm);
 }
 
 .footer {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   flex-direction: column;
   gap: var(--spacing-sm);
 }

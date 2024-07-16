@@ -5,6 +5,7 @@ import Styles from "./Login.module.css";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import useLogin from "../../../../hooks/useLogin";
+import { useEffect } from "react";
 
 function Login() {
   const { isLoading, loginHandler } = useLogin();
@@ -14,6 +15,11 @@ function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  useEffect(() => {
+    document.title = "Sign In - Login to your account";
+    window.scrollTo(0, 0);
+  }, []);
 
   const ErrorMessage = ({ message }: { message: string }) => <p className={Styles.error}>{message}</p>;
   const InputDescription = () => <p className={Styles.inputDescription}>*At least 3 character needed.</p>;

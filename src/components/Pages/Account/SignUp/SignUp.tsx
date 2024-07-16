@@ -5,6 +5,7 @@ import Styles from "./SignUp.module.css";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import useSignUp from "../../../../hooks/useSignup";
+import { useEffect } from "react";
 
 function SignUp() {
   const { isLoading, signUpHandler } = useSignUp();
@@ -13,6 +14,11 @@ function SignUp() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  useEffect(() => {
+    document.title = "Sign Up - Create new account";
+    window.scrollTo(0, 0);
+  }, []);
 
   const ErrorMessage = ({ message }: { message: string }) => <p className={Styles.error}>{message}</p>;
   const InputDescription = () => <p className={Styles.inputDescription}>*At least 3 character needed.</p>;

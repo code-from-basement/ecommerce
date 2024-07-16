@@ -18,7 +18,17 @@
   min-width: 80rem;
   max-height: 80dvh;
   overflow-y: scroll;
+  padding: 0 var(--spacing-md);
 }
+
+.listItemContainer::-webkit-scrollbar {
+  width: 1rem;
+}
+.listItemContainer::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 0.5rem;
+}
+
 /* checkoutContainer */
 .checkoutContainer {
   flex: 1;
