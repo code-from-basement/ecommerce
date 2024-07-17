@@ -23,6 +23,7 @@ const GlobalContextProvider = ({ children }: { children: React.ReactNode }) => {
     isModalRedirectionShow: false,
   });
 
+  // get the user data , basket data and favorites data from local storage
   useEffect(() => {
     // get the user data from local storage
     const userData: any = localStorage.getItem("userData");
