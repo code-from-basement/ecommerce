@@ -27,6 +27,7 @@ export default function useDecrementBasketItem() {
       const basketDataResponse = await getBasketData.json();
 
       setTimeout(() => {
+        localStorage.setItem("basketData", JSON.stringify(basketDataResponse?.data));
         setBasketData(basketDataResponse?.data);
       }, 1000);
     } catch (error) {

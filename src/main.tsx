@@ -9,11 +9,11 @@ import { AuthContextProvider } from "./context/authContext.tsx";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
-      <GlobalContextProvider>
-        <AuthContextProvider>
+      <AuthContextProvider>
+        <GlobalContextProvider>
           <App />
-        </AuthContextProvider>
-      </GlobalContextProvider>
+        </GlobalContextProvider>
+      </AuthContextProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

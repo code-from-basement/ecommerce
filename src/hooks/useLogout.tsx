@@ -28,6 +28,8 @@ export default function useLogout(currentData: any) {
       await setFavoritesListData([]);
       console.log("basket empty");
       localStorage.removeItem("userData");
+      localStorage.removeItem("basketData");
+      localStorage.removeItem("favoritesData");
       navigate("/");
     } catch (err) {
       alert(err);

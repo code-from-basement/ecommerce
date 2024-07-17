@@ -32,6 +32,7 @@ export default function useLikeItem() {
         const getAllFavorites = await fetch(`http://127.0.0.1:5555/api/favorites/${authUser._id}`);
         const favoritesData = await getAllFavorites.json();
         setTimeout(() => {
+          localStorage.setItem("favoritesData", JSON.stringify(favoritesData?.data));
           setFavoritesListData(favoritesData?.data);
         }, 1000);
       } catch (error) {

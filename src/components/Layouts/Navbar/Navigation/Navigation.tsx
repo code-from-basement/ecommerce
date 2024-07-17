@@ -43,6 +43,7 @@ function Navigation() {
       <div className={Styles.navbar__brand}>
         <Link to="/">
           <img src={logo} alt="brand of the compony " />
+          <h1 style={{ color: "red" }}>{authUser && "login"}</h1>
         </Link>
       </div>
       <div className={Styles.navbar__links}>

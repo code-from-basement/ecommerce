@@ -28,11 +28,13 @@ const useLogin = () => {
       const getBasketData = await fetch(`http://127.0.0.1:5555/api/basket/${data?._id}`);
       const basketDataResponse = await getBasketData.json();
       await setBasketData(basketDataResponse?.data);
+      localStorage.setItem("basketData", JSON.stringify(basketDataResponse?.data));
 
       // fetching Favorite list data
       const getFavoritesResponse = await fetch(`http://127.0.0.1:5555/api/favorites/${data?._id}`);
       const getFavoritesData = await getFavoritesResponse.json();
       await setFavoritesListData(getFavoritesData?.data);
+      localStorage.setItem("favoritesData", JSON.stringify(getFavoritesData?.data));
     } catch (err) {
       alert(err);
     } finally {

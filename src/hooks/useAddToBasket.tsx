@@ -33,6 +33,7 @@ const useAddToBasket = () => {
         const basketDataResponse = await getBasketData.json();
 
         setTimeout(async () => {
+          localStorage.setItem("basketData", JSON.stringify(basketDataResponse?.data));
           await setBasketData(basketDataResponse?.data);
         }, 1000);
       } catch (error) {

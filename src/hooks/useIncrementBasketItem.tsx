@@ -26,6 +26,7 @@ export default function useIncrementBasketItem() {
       const getBasketData = await fetch(`http://127.0.0.1:5555/api/basket/${authUser._id}`);
       const basketDataResponse = await getBasketData.json();
       setTimeout(() => {
+        localStorage.setItem("basketData", JSON.stringify(basketDataResponse?.data));
         setBasketData(basketDataResponse?.data);
       }, 1000);
     } catch (error) {
