@@ -9,19 +9,15 @@ function UserProfile() {
   const { isLoading, logoutHandler } = useLogout();
   let profilePictureLInkInLocalstorge = localStorage.getItem("userData");
   profilePictureLInkInLocalstorge = JSON.parse(profilePictureLInkInLocalstorge ?? "");
-  console.log(profilePictureLInkInLocalstorge);
+
   return (
     <motion.div {...fadeInAnimation} className={Styles.userProfile}>
       <div className={Styles.userProfile__userImage}>
-        <img
-          src={authUser.profilePicture || profilePictureLInLocalstorge.profilePicture}
-          alt="profile picture of user"
-          aria-label="profile picture of the logged in user."
-        />
+        <img src={authUser?.profilePicture} alt="profile picture of user" aria-label="profile picture of the logged in user." />
       </div>
       <h1 className={Styles.pageTitle}>Welcome, user {authUser.username}</h1>
       <p>You are logged In</p>
-      <ButtonPrimary disabled={isLoading} onClick={() => logoutHandler(authUser?._id)}>
+      <ButtonPrimary icon={<></>} disabled={isLoading} onClick={() => logoutHandler(authUser?._id)}>
         Logout
       </ButtonPrimary>
     </motion.div>

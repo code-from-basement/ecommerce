@@ -12,6 +12,7 @@ import Styles from "./Navigation.module.css";
 
 function Navigation() {
   const { authUser } = useAuthContext();
+
   const { setUiToggle, basketData, favoritesListData } = useGlobalContext();
 
   //

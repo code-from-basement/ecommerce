@@ -23,13 +23,13 @@ const GlobalContextProvider = ({ children }: { children: React.ReactNode }) => {
     isModalRedirectionShow: false,
   });
 
-  // get the user data , basket data and favorites data from local storage
+  // get the user data , basket data and favorites data from local storage.
   useEffect(() => {
     // get the user data from local storage
     const userData: any = localStorage.getItem("userData");
     console.log(userData);
     const userDataParsed = JSON.parse(userData);
-    setAuthUser({ ...userDataParsed });
+    setAuthUser(userDataParsed);
 
     // get the basket data from local storage
     const basketData = localStorage.getItem("basketData") ? JSON.parse(localStorage.getItem("basketData") as string) : [];
@@ -37,8 +37,14 @@ const GlobalContextProvider = ({ children }: { children: React.ReactNode }) => {
 
     // get the favorites data from local storage
     const favoritesData = localStorage.getItem("favoritesData") ? JSON.parse(localStorage.getItem("favoritesData") as string) : [];
-
     setFavoritesListData(favoritesData);
+
+    // remove the data from local storage when the user close the browser double try
+    window.addEventListener("beforeunload", () => {
+      localStorage.removeItem("userData");
+      localStorage.removeItem("basketData");
+      localStorage.removeItem("favoritesData");
+    });
   }, []);
 
   return (
