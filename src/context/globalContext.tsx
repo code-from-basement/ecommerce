@@ -38,13 +38,6 @@ const GlobalContextProvider = ({ children }: { children: React.ReactNode }) => {
     // get the favorites data from local storage
     const favoritesData = localStorage.getItem("favoritesData") ? JSON.parse(localStorage.getItem("favoritesData") as string) : [];
     setFavoritesListData(favoritesData);
-
-    // remove the data from local storage when the user close the browser double try
-    window.addEventListener("beforeunload", () => {
-      localStorage.removeItem("userData");
-      localStorage.removeItem("basketData");
-      localStorage.removeItem("favoritesData");
-    });
   }, []);
 
   return (
