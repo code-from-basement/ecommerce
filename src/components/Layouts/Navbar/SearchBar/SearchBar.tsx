@@ -63,7 +63,9 @@ function SearchBar() {
         type="text"
         placeholder="Search here..."
         ref={searchInputRef}
-        onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => e.key === "Enter" && onClickSearchButtonHandler(e as any)}
+        onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) =>
+          e.key === "Enter" && onClickSearchButtonHandler(e as any)
+        }
       />
       <button className={Styles.BtnSearch} onClick={onClickSearchButtonHandler}>
         <img src={searchIcon} alt="" />

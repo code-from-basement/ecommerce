@@ -27,16 +27,19 @@ const GlobalContextProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     // get the user data from local storage
     const userData: any = localStorage.getItem("userData");
-    console.log(userData);
     const userDataParsed = JSON.parse(userData);
     setAuthUser(userDataParsed);
 
     // get the basket data from local storage
-    const basketData = localStorage.getItem("basketData") ? JSON.parse(localStorage.getItem("basketData") as string) : [];
+    const basketData = localStorage.getItem("basketData")
+      ? JSON.parse(localStorage.getItem("basketData") as string)
+      : [];
     setBasketData(basketData);
 
     // get the favorites data from local storage
-    const favoritesData = localStorage.getItem("favoritesData") ? JSON.parse(localStorage.getItem("favoritesData") as string) : [];
+    const favoritesData = localStorage.getItem("favoritesData")
+      ? JSON.parse(localStorage.getItem("favoritesData") as string)
+      : [];
     setFavoritesListData(favoritesData);
   }, []);
 

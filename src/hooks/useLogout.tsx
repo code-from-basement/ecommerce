@@ -22,11 +22,12 @@ export default function useLogout(currentData: any) {
         body: JSON.stringify(currentData),
       });
       await response.json();
+      // Clear context data
       await setAuthUser(null);
-      console.log("authuser empty");
       await setBasketData([]);
       await setFavoritesListData([]);
 
+      // Clear local storage
       localStorage.removeItem("userData");
       localStorage.removeItem("basketData");
       localStorage.removeItem("favoritesData");
