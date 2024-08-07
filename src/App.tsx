@@ -47,7 +47,7 @@ function App() {
           <Route index element={<Navigate to={`${!authUser ? "login" : "userprofile"}`} />} />
           <Route path="login" element={!authUser ? <Login /> : <Navigate to={"/"} />} />
           <Route path="userprofile" element={authUser ? <UserProfile /> : <Navigate to={"/"} />} />
-          <Route path="signup" element={<SignUp />} />
+          <Route path="signup" element={!authUser ? <SignUp /> : <UserProfile />} />
         </Route>
         <Route path="wishlist" element={<WishList />} />
         <Route path="search" element={<Search />} />

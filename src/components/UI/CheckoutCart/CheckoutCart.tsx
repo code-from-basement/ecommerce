@@ -4,10 +4,17 @@ import Styles from "./CheckoutCart.module.css";
 import { useNavigate } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 import { useGlobalContext } from "../../../context/globalContext";
+import { useEffect, useState } from "react";
 
 export default function CheckoutCart() {
   const navigate = useNavigate();
-  const { basketData } = useGlobalContext();
+  const { basketData, totalPrice } = useGlobalContext();
+  const [finalTotal, setFinalTotal] = useState<any>(0);
+
+  useEffect(() => {
+    const finalTotalPrice = (+totalPrice + 10).toFixed(2).toString();
+    setFinalTotal(finalTotalPrice);
+  }, [finalTotal]);
 
   const paymentHandler = async () => {
     const stripe = await loadStripe(
@@ -27,8 +34,6 @@ export default function CheckoutCart() {
     const result = await stripe?.redirectToCheckout({
       sessionId: session.id,
     });
-
-    console.log(result);
   };
 
   return (
@@ -39,7 +44,7 @@ export default function CheckoutCart() {
       <div className={Styles.body}>
         <div className={Styles.row}>
           <p>Subtotal</p>
-          <p>265$</p>
+          <p>{totalPrice}$</p>
         </div>
         <div className={Styles.row}>
           <p>Shipping cost </p>
@@ -48,7 +53,8 @@ export default function CheckoutCart() {
         <div className={Styles.row}>
           <h2>Total:</h2>
           <h2>
-            <span>USD</span> 325$
+            <span>USD</span>
+            {finalTotal}
           </h2>
         </div>
       </div>
