@@ -14,7 +14,7 @@ function Basket() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { uiToggle, setUiToggle, basketData } = useGlobalContext();
+  const { uiToggle, setUiToggle, basketData, totalPrice } = useGlobalContext();
   const { isBasketOpen } = uiToggle;
   const ref = useRef(null);
 
@@ -49,11 +49,16 @@ function Basket() {
         <hr />
         <div className={Styles.subTotal}>
           <h2 className={Styles.subTotal__title}>Subtotal</h2>
-          <h2 className={Styles.subTotal__number}>$0.00</h2>
+          <h2 className={Styles.subTotal__number}>${totalPrice}</h2>
         </div>
 
         <div className={Styles.footer}>
-          <ButtonPrimary disabled={false} onClick={onClickCheckoutHandler} icon={<ShoppingBasketIcon />}>
+          <ButtonPrimary
+            style={undefined}
+            disabled={false}
+            onClick={onClickCheckoutHandler}
+            icon={<ShoppingBasketIcon />}
+          >
             Checkout
           </ButtonPrimary>
         </div>

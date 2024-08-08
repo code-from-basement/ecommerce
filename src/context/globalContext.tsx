@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, SetStateAction, useContext, useEffect, useState } from "react";
 import { useAuthContext } from "./authContext";
 
 const GlobalContext = createContext<any>(null);
@@ -9,12 +9,15 @@ const GlobalContextProvider = ({ children }: { children: React.ReactNode }) => {
     isLoadingFullViewShow: boolean;
     isModalRedirectionShow: boolean;
   };
+
   const { authUser, setAuthUser } = useAuthContext();
 
   // Basket Data
   const [basketData, setBasketData] = useState<object[]>([]);
   // Favorites list Data
   const [favoritesListData, setFavoritesListData] = useState<object[]>([]);
+  // total price of the basket
+  const [totalPrice, setTotalPrice] = useState<any>();
 
   const [uiToggle, setUiToggle] = useState<UiToggleState>({
     isSearchOpen: false,
@@ -43,15 +46,27 @@ const GlobalContextProvider = ({ children }: { children: React.ReactNode }) => {
     setFavoritesListData(favoritesData);
   }, []);
 
+  // Logic for Basket checkout total calculation
+  useEffect(() => {
+    const totalCalculation: string = basketData
+      ?.reduce((acc: number, item: any) => {
+        return acc + item.price * item.quantity;
+      }, 0)
+      .toFixed(2);
+    setTotalPrice(totalCalculation);
+  }, [basketData]);
+
   return (
     <GlobalContext.Provider
       value={{
         uiToggle,
         basketData,
         favoritesListData,
+        totalPrice,
         setUiToggle,
         setBasketData,
         setFavoritesListData,
+        setTotalPrice,
       }}
     >
       {children}

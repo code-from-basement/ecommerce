@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useAuthContext } from "../context/authContext";
 
 export default function useSignUp() {
   const [isLoading, setIsLoading] = useState(false);
+  const { authUser, setAuthUser } = useAuthContext();
 
   const signUpHandler = async (userData: { username: string; password: string }) => {
     setIsLoading(true);
@@ -14,10 +16,17 @@ export default function useSignUp() {
         body: JSON.stringify(userData),
       });
       const data = await response.json();
+
+      setTimeout(async () => {
+        await setAuthUser(data);
+        localStorage.setItem("userData", JSON.stringify(data));
+      }, 2000);
     } catch (err) {
       console.log(err);
     } finally {
-      setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 2000);
     }
   };
 

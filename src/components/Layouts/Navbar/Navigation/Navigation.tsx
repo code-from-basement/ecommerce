@@ -1,14 +1,12 @@
 import { motion } from "framer-motion";
+import { FolderHeartIcon, SearchIcon, ShoppingBagIcon, User } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
-import basketIcon from "../../../../assets/icons/basket-outline.svg";
-import favoriteIcon from "../../../../assets/icons/heart-outline.svg";
-import profileIcon from "../../../../assets/icons/person-outline.svg";
-import searchIcon from "../../../../assets/icons/search-outline.svg";
 import logo from "../../../../assets/image/logo_web03_100x.webp";
 import { useAuthContext } from "../../../../context/authContext";
 import { useGlobalContext } from "../../../../context/globalContext";
 import { navigationAnimation } from "../../../UI/Animation/Animation";
 import Styles from "./Navigation.module.css";
+import { capitalize } from "@mui/material";
 
 function Navigation() {
   const { authUser } = useAuthContext();
@@ -43,8 +41,7 @@ function Navigation() {
     <motion.div {...navigationAnimation} className={Styles.navigation}>
       <div className={Styles.navbar__brand}>
         <Link to="/">
-          <img src={logo} alt="brand of the compony " />
-          <h1 style={{ color: "red" }}>{authUser && "login"}</h1>
+          <img src={logo} alt="brand of the compony" />
         </Link>
       </div>
       <div className={Styles.navbar__links}>
@@ -73,18 +70,20 @@ function Navigation() {
       </div>
       <div className={Styles.navbar__siteItem}>
         <button className={Styles.searchTrigger} onClick={onClickSearchButtonHandler}>
-          <img src={searchIcon} alt="" />
+          <SearchIcon />
         </button>
         <Link to="account">
-          <img src={profileIcon} alt="" />
-          {/* {authUser ? <img src={authUser.profilePicture} /> : <img src={profileIcon} alt="" />} */}
+          <User color={`${authUser ? "#05d1a8" : "#1d1d1f"}`} />
+          {authUser && <span>{`${capitalize(authUser?.username)}`}</span>}
         </Link>
         <Link to="wishlist" className={Styles.wishlistIcon}>
-          <img src={favoriteIcon} alt="" />
+          {/* <img src={favoriteIcon} alt="" /> */}
+          <FolderHeartIcon />
           {favoritesListData?.length > 0 ? <WishlistNumber /> : null}
         </Link>
         <button className={Styles.basketTrigger} onClick={onCLickBasketHandler}>
-          <img src={basketIcon} alt="" />
+          {/* <img src={basketIcon} alt="" /> */}
+          <ShoppingBagIcon />
           {basketData.length > 0 ? <BasketNumber /> : null}
         </button>
       </div>
