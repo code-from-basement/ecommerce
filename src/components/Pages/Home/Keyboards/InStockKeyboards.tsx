@@ -7,11 +7,15 @@ import { useGlobalContext } from "../../../../context/globalContext";
 function InStockKeyboards() {
   //fetch for first five accessories in home page
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
-  const { data } = useSWR(["http://127.0.0.1:5555/api/products/keyboards?first=5"], fetcher, {
-    revalidateIfStale: false,
-  });
+  const { data } = useSWR(
+    [`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/products/keyboards?first=5`],
+    fetcher,
+    {
+      revalidateIfStale: false,
+    }
+  );
 
-  const {favoritesListData } = useGlobalContext();
+  const { favoritesListData } = useGlobalContext();
   const ModifiedData = data?.data.map((eachItem: any) => {
     return {
       ...eachItem,

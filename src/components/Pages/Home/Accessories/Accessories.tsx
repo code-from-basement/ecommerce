@@ -5,14 +5,18 @@ import useSWR from "swr";
 import { useGlobalContext } from "../../../../context/globalContext";
 
 function Accessories() {
-
-  const {favoritesListData } = useGlobalContext();
+  const { favoritesListData } = useGlobalContext();
   //fetch for first five accessories in home page
+  console.log(import.meta.env.VITE_REACT_APP_BACKEND_BASEURL);
 
-  const fetcher = (url: string) => fetch(url).then((res)=>res.json());
-  const {data} = useSWR(['http://127.0.0.1:5555/api/products/accessories?first=5'], fetcher, {
-    revalidateIfStale: false
-  });
+  const fetcher = (url: string) => fetch(url).then((res) => res.json());
+  const { data } = useSWR(
+    `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/products/accessories?first=5`,
+    fetcher,
+    {
+      revalidateIfStale: false,
+    }
+  );
 
   const ModifiedData = data?.data.map((eachItem: any) => {
     return {
