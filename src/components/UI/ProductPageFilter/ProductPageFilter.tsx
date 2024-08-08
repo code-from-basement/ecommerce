@@ -36,15 +36,12 @@ function Filters() {
     const filterProperty = filterValue;
     // choose first filter option
     if (!hasQuery) {
-      console.log("1");
       searchParams.append("filterProperty", filterProperty);
       searchParams.append("value", value);
       searchParams.append("filter", "true");
       setSearchParams(searchParams);
     }
     if (hasQuery && !e.target.checked) {
-      console.log("2");
-
       // Logic for filtering section
       const filterPropertyArray = Array.from(searchParams.entries());
       for (let i = 0; i < filterPropertyArray.length; i++) {
@@ -52,7 +49,6 @@ function Filters() {
           searchParams.getAll("filterProperty")?.length > 1 &&
           searchParams.getAll("filterProperty")[i] === searchParams.getAll("filterProperty")[i + 1]
         ) {
-          console.log("2 / 1");
           searchParams.delete("filterProperty", filterProperty);
           searchParams.delete("value", value);
           searchParams.append("filterProperty", filterProperty);
@@ -63,14 +59,12 @@ function Filters() {
           searchParams.getAll("filterProperty")?.length > 1 &&
           searchParams.getAll("filterProperty")[i] !== searchParams.getAll("filterProperty")[i + 1]
         ) {
-          console.log("2 / 2");
           searchParams.delete("filterProperty", filterProperty);
           searchParams.delete("value", value);
           return setSearchParams(searchParams);
         }
 
         if (searchParams.getAll("filterProperty").length === 1) {
-          console.log("2 / 3");
           searchParams.delete("filterProperty", filterProperty);
           searchParams.delete("value", value);
           searchParams.delete("filter");
@@ -81,7 +75,6 @@ function Filters() {
 
     // choose second filter option
     if (hasQuery) {
-      console.log("3");
       searchParams.append("filterProperty", filterProperty);
       searchParams.append("value", value);
       // searchParams.append("filter", "true");

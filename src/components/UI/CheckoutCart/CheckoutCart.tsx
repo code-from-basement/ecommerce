@@ -11,16 +11,17 @@ export default function CheckoutCart() {
   const { basketData, totalPrice } = useGlobalContext();
   const [finalTotal, setFinalTotal] = useState<any>(0);
 
+  // calculate the final total including shopping cost
   useEffect(() => {
     const finalTotalPrice = (+totalPrice + 10).toFixed(2).toString();
     setFinalTotal(finalTotalPrice);
   }, [finalTotal]);
 
+  // handle payment with stripe
   const paymentHandler = async () => {
     const stripe = await loadStripe(
       "pk_test_51PiX6lRpmzXCZXyOqJOE3a1C8xeBO8ZgS7CVzfWfxzaH6hCbNoWWMfIVDOJ59KvfL9VKSY6KHQXlxzjNiLMyqZzV00H5RRhQ5N"
     );
-
     const response = await fetch("http://127.0.0.1:5555/api/basket/create-checkout-session", {
       method: "POST",
       headers: {
@@ -28,9 +29,7 @@ export default function CheckoutCart() {
       },
       body: JSON.stringify(basketData),
     });
-
     const session = await response.json();
-
     const result = await stripe?.redirectToCheckout({
       sessionId: session.id,
     });

@@ -2,9 +2,21 @@ import closeIcon from "./../../../assets/icons/close-outline.svg";
 import Styles from "./Buttons.module.css";
 
 //*Primary Button
-export function ButtonPrimary({ children, icon, disabled, onClick }: { children: any; disabled: boolean; onClick: () => void; icon: JSX.Element }) {
+export function ButtonPrimary({
+  children,
+  icon,
+  disabled,
+  onClick,
+  style,
+}: {
+  children: any;
+  disabled: boolean | undefined;
+  onClick: () => void;
+  icon: JSX.Element | undefined;
+  style: any;
+}) {
   return (
-    <button onClick={onClick || undefined} className={Styles.primaryButton} disabled={disabled}>
+    <button style={style} onClick={onClick || undefined} className={Styles.primaryButton} disabled={disabled}>
       {icon}
       {children}
     </button>
@@ -12,7 +24,17 @@ export function ButtonPrimary({ children, icon, disabled, onClick }: { children:
 }
 
 // *Outline Button
-export function ButtonOutline({ children, icon, onClick, disabled }: { children: string; icon: JSX.Element; onClick: () => void; disabled: boolean }) {
+export function ButtonOutline({
+  children,
+  icon,
+  onClick,
+  disabled,
+}: {
+  children: string;
+  icon: JSX.Element;
+  onClick: () => void;
+  disabled: boolean;
+}) {
   return (
     <button className={Styles.outlineButton} onClick={onClick || undefined} disabled={disabled}>
       {icon}
@@ -31,6 +53,21 @@ export function CloseButton({ onClick }: { onClick: () => void }) {
 }
 
 // *Button Secondary
-export function ButtonSecondary() {
-  return <button>button secondary</button>;
+export function ButtonSecondary({
+  children,
+  icon,
+  onClick,
+  disabled,
+}: {
+  children: String;
+  onClick: () => void;
+  disabled: boolean;
+  icon: JSX.Element | undefined;
+}) {
+  return (
+    <button onClick={onClick} disabled={disabled}>
+      {icon}
+      {children}
+    </button>
+  );
 }

@@ -47,7 +47,6 @@ const GlobalContextProvider = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   // Logic for Basket checkout total calculation
-
   useEffect(() => {
     const totalCalculation: string = basketData
       ?.reduce((acc: number, item: any) => {
@@ -55,7 +54,6 @@ const GlobalContextProvider = ({ children }: { children: React.ReactNode }) => {
       }, 0)
       .toFixed(2);
     setTotalPrice(totalCalculation);
-    console.log(totalCalculation);
   }, [basketData]);
 
   return (

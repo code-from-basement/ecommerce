@@ -10,7 +10,6 @@ import { capitalize } from "@mui/material";
 
 function Navigation() {
   const { authUser } = useAuthContext();
-  console.log(authUser);
 
   const { setUiToggle, basketData, favoritesListData } = useGlobalContext();
 

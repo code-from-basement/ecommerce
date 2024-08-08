@@ -53,7 +53,12 @@ function Basket() {
         </div>
 
         <div className={Styles.footer}>
-          <ButtonPrimary disabled={false} onClick={onClickCheckoutHandler} icon={<ShoppingBasketIcon />}>
+          <ButtonPrimary
+            style={undefined}
+            disabled={false}
+            onClick={onClickCheckoutHandler}
+            icon={<ShoppingBasketIcon />}
+          >
             Checkout
           </ButtonPrimary>
         </div>

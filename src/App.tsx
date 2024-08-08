@@ -20,9 +20,10 @@ import { useAuthContext } from "./context/authContext";
 import { Toaster } from "react-hot-toast";
 import CTASubscribe from "./components/UI/CTASubscribe/CTASubscribe";
 import { useCookies } from "react-cookie";
-import ConsentForm from "./components/UI/ConsentForm/ConsentForm";
+// import ConsentForm from "./components/UI/ConsentForm/ConsentForm";
 import ModalRedirection from "./components/UI/ModalRedirection/ModalRedirection";
 import CheckoutPage from "./components/Pages/CheckoutPage/CheckoutPage";
+import AccountError from "./components/Pages/Account/Error";
 
 function App() {
   const [cookie] = useCookies();
@@ -32,7 +33,7 @@ function App() {
 
   return (
     <div>
-      {/* {!cookie._CTASub && <CTASubscribe />} */}
+      {!cookie._CTASub && <CTASubscribe />}
       {/* {!cookie._CTAConsent && <ConsentForm />} */}
       <Navbar />
       {isModalRedirectionShow && <ModalRedirection />}
@@ -48,6 +49,7 @@ function App() {
           <Route path="login" element={!authUser ? <Login /> : <Navigate to={"/"} />} />
           <Route path="userprofile" element={authUser ? <UserProfile /> : <Navigate to={"/"} />} />
           <Route path="signup" element={!authUser ? <SignUp /> : <UserProfile />} />
+          <Route path="loginFailed" element={<AccountError />} />
         </Route>
         <Route path="wishlist" element={<WishList />} />
         <Route path="search" element={<Search />} />

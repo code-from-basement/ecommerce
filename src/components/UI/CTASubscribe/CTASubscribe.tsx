@@ -10,7 +10,7 @@ export default function CTASubscribe() {
   const [cookie, setCookie] = useCookies(["_CTASub"]);
   const setCookieHandler = () => {
     setCookie("_CTASub", true, {
-      expires: new Date(Date.now() + 1000 * 60),
+      expires: new Date(Date.now() + 1000 * 60 * 60),
     });
   };
 
@@ -33,10 +33,12 @@ export default function CTASubscribe() {
           <h1 className={Styles.formSection__title}>
             Join the list. <br /> Save $10 today
           </h1>
-          <p className={Styles.formSection__subTitle}>Subscribe to our newsletter and get 10% off your first purchase.</p>
+          <p className={Styles.formSection__subTitle}>
+            Subscribe to our newsletter and get 10% off your first purchase.
+          </p>
           <div>
             <input type="email" style={{ width: "100%", marginBottom: "1rem" }} placeholder="Enter your email" />
-            <ButtonPrimary style={{ width: "100%" }} disabled={false} onClick={setCookieHandler}>
+            <ButtonPrimary style={{ width: "100%" }} disabled={false} onClick={setCookieHandler} icon={undefined}>
               Subscribe
             </ButtonPrimary>
           </div>
