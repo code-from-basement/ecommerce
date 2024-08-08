@@ -9,13 +9,10 @@ import { useEffect, useState } from "react";
 export default function CheckoutCart() {
   const navigate = useNavigate();
   const { basketData, totalPrice } = useGlobalContext();
-  const [finalTotal, setFinalTotal] = useState<any>(0);
+  const [total, final] = totalPrice;
 
   // calculate the final total including shopping cost
-  useEffect(() => {
-    const finalTotalPrice = (+totalPrice + 10).toFixed(2).toString();
-    setFinalTotal(finalTotalPrice);
-  }, [finalTotal]);
+  useEffect(() => {}, [basketData]);
 
   // handle payment with stripe
   const paymentHandler = async () => {
@@ -43,7 +40,7 @@ export default function CheckoutCart() {
       <div className={Styles.body}>
         <div className={Styles.row}>
           <p>Subtotal</p>
-          <p>{totalPrice}$</p>
+          <p>{total}$</p>
         </div>
         <div className={Styles.row}>
           <p>Shipping cost </p>
@@ -53,13 +50,13 @@ export default function CheckoutCart() {
           <h2>Total:</h2>
           <h2>
             <span>USD</span>
-            {finalTotal}
+            {final}
           </h2>
         </div>
       </div>
       <hr />
       <div className={Styles.footer}>
-        <ButtonPrimary icon={<CreditCard />} disabled={false} onClick={paymentHandler}>
+        <ButtonPrimary icon={<CreditCard />} disabled={false} onClick={paymentHandler} style={undefined}>
           Checkout
         </ButtonPrimary>
         <ButtonOutline disabled={false} icon={<ShoppingBagIcon />} onClick={() => navigate(-1)}>

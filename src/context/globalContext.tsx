@@ -17,7 +17,7 @@ const GlobalContextProvider = ({ children }: { children: React.ReactNode }) => {
   // Favorites list Data
   const [favoritesListData, setFavoritesListData] = useState<object[]>([]);
   // total price of the basket
-  const [totalPrice, setTotalPrice] = useState<any>();
+  const [totalPrice, setTotalPrice] = useState<any>([]);
 
   const [uiToggle, setUiToggle] = useState<UiToggleState>({
     isSearchOpen: false,
@@ -53,7 +53,9 @@ const GlobalContextProvider = ({ children }: { children: React.ReactNode }) => {
         return acc + item.price * item.quantity;
       }, 0)
       .toFixed(2);
-    setTotalPrice(totalCalculation);
+    const finalPrice = +totalCalculation + 10;
+
+    setTotalPrice([totalCalculation, finalPrice]);
   }, [basketData]);
 
   return (
