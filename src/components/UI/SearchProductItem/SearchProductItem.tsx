@@ -4,17 +4,21 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import StarsBar from "../StarsBar/StarsBar";
 import useAddToBasket from "../../../hooks/useAddToBasket";
-import { HeartIcon, LoaderCircle, PlusIcon } from "lucide-react";
+import { HeartIcon, HeartOffIcon, LoaderCircle, PlusIcon } from "lucide-react";
+import useLikeItem from "../../../hooks/useLikeItem";
+
 export default function SearchProductItem({ data }: any) {
   const { addToBasket, error, isLoading } = useAddToBasket();
-  const { _id, title, price, images, rate_average, description, new: isNew, colors } = data;
+  const { addItemToFavoriteHandler, likeItemLoading, likeItemError } = useLikeItem();
+  const { _id, title, price, images, rate_average, description, new: isNew, colors, isLiked } = data;
+  console.log(data, "data from searchbar");
 
   return (
     <motion.div {...fadeInSearchProductItemAnimation} className={Styles.productItem}>
       <div className={Styles.productItem__action}>
         <button onClick={() => addToBasket(data)}>{isLoading ? <LoaderCircle className={Styles.spinner} /> : <PlusIcon />}</button>
-        <button>
-          <HeartIcon />
+        <button onClick={()=> addItemToFavoriteHandler(data)}>
+          {likeItemLoading ? <LoaderCircle className={Styles.spinner}/> : isLiked ? <HeartOffIcon /> : <HeartIcon />}
         </button>
       </div>
       <Link to={`/${title}`}>

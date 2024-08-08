@@ -6,9 +6,11 @@ import Styles from "./Search.module.css";
 import { motion } from "framer-motion";
 import { fadeInNotFoundMessage } from "../../UI/Animation/Animation";
 import useMetaDataUpdater from "../../../hooks/useMetaDataUpdater";
+import { useGlobalContext } from "../../../context/globalContext";
 
 const Search = memo(() => {
   const location = useLocation();
+  const {favoritesListData } = useGlobalContext();
   const NoItemFoundComponent = () => {
     return (
       <motion.div {...fadeInNotFoundMessage} className={Styles.NotFoundMessage}>
@@ -18,6 +20,13 @@ const Search = memo(() => {
   };
   const url = `${location.pathname}`;
   useMetaDataUpdater(url);
+
+  const ModifiedData = location.state?.data.map((eachItem: any) => {
+    return {
+      ...eachItem,
+      isLiked: favoritesListData?.some((item: any) => item._id === eachItem._id),
+    };
+  });
 
   return (
     <div className={Styles.search}>
@@ -30,7 +39,7 @@ const Search = memo(() => {
       <Row>
         <div className={Styles.product__list}>
           {location.state?.data.length > 0
-            ? location.state?.data.map((item: any) => {
+            ? ModifiedData.map((item: any) => {
                 return <SearchProductItem key={item._id} data={item} />;
               })
             : NoItemFoundComponent()}
