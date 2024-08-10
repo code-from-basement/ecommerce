@@ -1,10 +1,10 @@
+import { loadStripe } from "@stripe/stripe-js";
 import { CreditCard, ShoppingBagIcon } from "lucide-react";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useGlobalContext } from "../../../context/globalContext";
 import { ButtonOutline, ButtonPrimary } from "../Buttons/Buttons";
 import Styles from "./CheckoutCart.module.css";
-import { useNavigate } from "react-router-dom";
-import { loadStripe } from "@stripe/stripe-js";
-import { useGlobalContext } from "../../../context/globalContext";
-import { useEffect, useState } from "react";
 
 export default function CheckoutCart() {
   const navigate = useNavigate();
@@ -27,7 +27,7 @@ export default function CheckoutCart() {
       body: JSON.stringify(basketData),
     });
     const session = await response.json();
-    const result = await stripe?.redirectToCheckout({
+    await stripe?.redirectToCheckout({
       sessionId: session.id,
     });
   };
@@ -55,6 +55,7 @@ export default function CheckoutCart() {
         </div>
       </div>
       <hr />
+      <em>*Shipping is included on your order.</em>
       <div className={Styles.footer}>
         <ButtonPrimary icon={<CreditCard />} disabled={false} onClick={paymentHandler} style={undefined}>
           Checkout

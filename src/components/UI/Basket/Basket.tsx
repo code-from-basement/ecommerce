@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ShoppingBasketIcon } from "lucide-react";
 import { useRef } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useClickAway } from "react-use";
 import { useGlobalContext } from "../../../context/globalContext";
 import { basketAnimation } from "../Animation/Animation";
@@ -12,10 +12,10 @@ import Styles from "./Basket.module.css";
 
 function Basket() {
   const navigate = useNavigate();
-  const location = useLocation();
 
-  const { uiToggle, setUiToggle, basketData, totalPrice } = useGlobalContext();
-  const { isBasketOpen } = uiToggle;
+  const { setUiToggle, basketData, totalPrice } = useGlobalContext();
+  const [total] = totalPrice;
+
   const ref = useRef(null);
 
   useClickAway(ref, () => {
@@ -49,7 +49,7 @@ function Basket() {
         <hr />
         <div className={Styles.subTotal}>
           <h2 className={Styles.subTotal__title}>Subtotal</h2>
-          <h2 className={Styles.subTotal__number}>${totalPrice}</h2>
+          <h2 className={Styles.subTotal__number}>${total}</h2>
         </div>
 
         <div className={Styles.footer}>

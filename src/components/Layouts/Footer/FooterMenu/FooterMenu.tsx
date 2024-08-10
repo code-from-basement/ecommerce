@@ -1,9 +1,8 @@
-import React from "react";
-import Styles from "./FooterMenu.module.css";
-import instaIcon from "./../../../../assets/icons/logo-instagram.svg";
 import facebookIcon from "./../../../../assets/icons/logo-facebook.svg";
+import instaIcon from "./../../../../assets/icons/logo-instagram.svg";
 import twitterIcon from "./../../../../assets/icons/logo-twitter.svg";
 import youtubeIcon from "./../../../../assets/icons/logo-youtube.svg";
+import Styles from "./FooterMenu.module.css";
 
 function FooterMenu() {
   return (

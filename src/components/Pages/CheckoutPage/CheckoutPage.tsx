@@ -4,8 +4,7 @@ import CheckoutItem from "../../UI/CheckoutItem/CheckoutItem";
 import Styles from "./CheckoutPage.module.css";
 
 export default function CheckoutPage() {
-  const { basketData, uiToggle, setUiToggle } = useGlobalContext();
-  const { isBasketOpen } = uiToggle;
+  const { basketData } = useGlobalContext();
 
   return (
     <div className={Styles.container}>

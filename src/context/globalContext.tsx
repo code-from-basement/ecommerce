@@ -1,4 +1,4 @@
-import { createContext, SetStateAction, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useAuthContext } from "./authContext";
 
 const GlobalContext = createContext<any>(null);
@@ -10,7 +10,7 @@ const GlobalContextProvider = ({ children }: { children: React.ReactNode }) => {
     isModalRedirectionShow: boolean;
   };
 
-  const { authUser, setAuthUser } = useAuthContext();
+  const { setAuthUser } = useAuthContext();
 
   // Basket Data
   const [basketData, setBasketData] = useState<object[]>([]);

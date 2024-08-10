@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
-import Styles from "./InStockKeyboards.module.css";
-import StockKeyboardItems from "./InStockKeyboardItems/StockKeyboardItems";
 import useSWR from "swr";
 import { useGlobalContext } from "../../../../context/globalContext";
+import StockKeyboardItems from "./InStockKeyboardItems/StockKeyboardItems";
+import Styles from "./InStockKeyboards.module.css";
 
 function InStockKeyboards() {
   //fetch for first five accessories in home page

@@ -1,12 +1,11 @@
-import React from "react";
-import Styles from "./Switches.module.css";
+import { useLocation } from "react-router-dom";
+import useSWR from "swr";
+import { useGlobalContext } from "../../../context/globalContext";
+import Filters from "../../UI/ProductPageFilter/ProductPageFilter";
 import ProductPageGrid from "../../UI/ProductPageGrid/ProductPageGrid";
 import ProductPageHeader from "../../UI/ProductPageHeader/ProductPageHeader";
 import ProductPageListItem from "../../UI/ProductPageListItem/ProductPageListItem";
-import { useLocation } from "react-router-dom";
-import useSWR from "swr";
-import Filters from "../../UI/ProductPageFilter/ProductPageFilter";
-import { useGlobalContext } from "../../../context/globalContext";
+import Styles from "./Switches.module.css";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 function Switches() {

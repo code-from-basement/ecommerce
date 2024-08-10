@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
-import Styles from "./Style.module.css";
-import StyleItems from "./StylesItems/StyleItems";
 import useSWR from "swr";
 import { useGlobalContext } from "../../../../context/globalContext";
+import Styles from "./Style.module.css";
+import StyleItems from "./StylesItems/StyleItems";
 
 function Style() {
   const { favoritesListData } = useGlobalContext();

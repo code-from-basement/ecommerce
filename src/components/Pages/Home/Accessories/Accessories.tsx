@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
-import Styles from "./Accessories.module.css";
-import ItemAccessories from "./ItemAccessories/ItemAccessories";
 import useSWR from "swr";
 import { useGlobalContext } from "../../../../context/globalContext";
+import Styles from "./Accessories.module.css";
+import ItemAccessories from "./ItemAccessories/ItemAccessories";
 
 function Accessories() {
   const { favoritesListData } = useGlobalContext();

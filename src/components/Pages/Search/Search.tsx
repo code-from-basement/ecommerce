@@ -1,16 +1,16 @@
+import { motion } from "framer-motion";
 import { memo } from "react";
 import { useLocation } from "react-router-dom";
+import { useGlobalContext } from "../../../context/globalContext";
+import useMetaDataUpdater from "../../../hooks/useMetaDataUpdater";
+import { fadeInNotFoundMessage } from "../../UI/Animation/Animation";
 import Row from "../../UI/Row/Row";
 import SearchProductItem from "../../UI/SearchProductItem/SearchProductItem";
 import Styles from "./Search.module.css";
-import { motion } from "framer-motion";
-import { fadeInNotFoundMessage } from "../../UI/Animation/Animation";
-import useMetaDataUpdater from "../../../hooks/useMetaDataUpdater";
-import { useGlobalContext } from "../../../context/globalContext";
 
 const Search = memo(() => {
   const location = useLocation();
-  const {favoritesListData } = useGlobalContext();
+  const { favoritesListData } = useGlobalContext();
   const NoItemFoundComponent = () => {
     return (
       <motion.div {...fadeInNotFoundMessage} className={Styles.NotFoundMessage}>

@@ -6,9 +6,9 @@ function CollapseBar({ data }: { data: { title: string; content: string; disable
   const { title, content, disable } = data;
 
   const onCLickCollapseBarHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const nextTarget = e.target.nextElementSibling;
+    const nextTarget = (e.target as HTMLElement).nextElementSibling;
     nextTarget?.classList.toggle(Styles.collapseBar__content__active);
-    const target = e.target;
+    const target = e.target as HTMLButtonElement;
     target?.classList.toggle(Styles.collapseBar__btn__active);
   };
 

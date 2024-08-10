@@ -1,23 +1,24 @@
-import React from "react";
-import Styles from "./StyleItems.module.css";
-import { Link } from "react-router-dom";
-import StarsBar from "../../../../UI/StarsBar/StarsBar";
-import useAddToBasket from "../../../../../hooks/useAddToBasket";
 import { motion } from "framer-motion";
-import { fadeInAnimation } from "../../../../UI/Animation/Animation";
 import { HeartIcon, HeartOffIcon, LoaderCircle, PlusIcon } from "lucide-react";
+import { Link } from "react-router-dom";
+import useAddToBasket from "../../../../../hooks/useAddToBasket";
 import useLikeItem from "../../../../../hooks/useLikeItem";
+import { fadeInAnimation } from "../../../../UI/Animation/Animation";
+import StarsBar from "../../../../UI/StarsBar/StarsBar";
+import Styles from "./StyleItems.module.css";
 
 function StyleItems({ item }: any) {
-  const { addToBasket, error, isLoading } = useAddToBasket();
-  const { addItemToFavoriteHandler, likeItemLoading, likeItemError } = useLikeItem();
-  const { _id, title, new: isNew, isLiked } = item;
+  const { addToBasket, isLoading } = useAddToBasket();
+  const { addItemToFavoriteHandler, likeItemLoading } = useLikeItem();
+  const { title, new: isNew, isLiked } = item;
   return (
     <motion.div {...fadeInAnimation} className={Styles.itemContainer}>
       <div className={Styles.itemContainer__action}>
-        <button onClick={() => addToBasket(item)}>{isLoading ? <LoaderCircle className={Styles.spinner} /> : <PlusIcon />}</button>
-        <button onClick={()=> addItemToFavoriteHandler(item)}>
-          {likeItemLoading ? <LoaderCircle className={Styles.spinner}/> : isLiked ? <HeartOffIcon /> : <HeartIcon />}
+        <button onClick={() => addToBasket(item)}>
+          {isLoading ? <LoaderCircle className={Styles.spinner} /> : <PlusIcon />}
+        </button>
+        <button onClick={() => addItemToFavoriteHandler(item)}>
+          {likeItemLoading ? <LoaderCircle className={Styles.spinner} /> : isLiked ? <HeartOffIcon /> : <HeartIcon />}
         </button>
       </div>
       <Link to={`/${title}`}>
@@ -28,7 +29,9 @@ function StyleItems({ item }: any) {
           {item.colors.length !== 0 && (
             <div className={Styles.itemContainer__colors}>
               {item.colors.map((color: any, index: number) => {
-                return <span key={index} className={Styles.colors__block} style={{ backgroundColor: `${color.hex}` }}></span>;
+                return (
+                  <span key={index} className={Styles.colors__block} style={{ backgroundColor: `${color.hex}` }}></span>
+                );
               })}
             </div>
           )}

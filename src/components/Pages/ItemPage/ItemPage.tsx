@@ -18,7 +18,7 @@ function ItemPage() {
 
   // Fetching through SWR
   const { data } = useSWR(`http://127.0.0.1:5555/api/products${url}`, fetcher, {});
-  const result = data?.data[0];
+  // const result = data?.data[0];
 
   const ModifiedData = data?.data.map((eachItem: any) => {
     return {

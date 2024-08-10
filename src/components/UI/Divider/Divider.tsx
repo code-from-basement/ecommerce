@@ -1,4 +1,3 @@
-import React from "react";
 import Styles from "./Divider.module.css";
 
 export function DividerH() {
